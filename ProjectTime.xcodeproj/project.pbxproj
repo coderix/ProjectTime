@@ -7,11 +7,32 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		434D9A15273D2C270009C72C /* SequenceSort.swift in Sources */ = {isa = PBXBuildFile; fileRef = 434D99FA273D2C270009C72C /* SequenceSort.swift */; };
+		434D9A16273D2C270009C72C /* TimeIntervalExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 434D99FB273D2C270009C72C /* TimeIntervalExtension.swift */; };
+		434D9A17273D2C270009C72C /* DateExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 434D99FC273D2C270009C72C /* DateExtension.swift */; };
+		434D9A18273D2C270009C72C /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 434D99FD273D2C270009C72C /* HomeView.swift */; };
+		434D9A19273D2C270009C72C /* SelectSomethingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 434D99FF273D2C270009C72C /* SelectSomethingView.swift */; };
+		434D9A1A273D2C270009C72C /* ProjectHoursView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 434D9A01273D2C270009C72C /* ProjectHoursView.swift */; };
+		434D9A1B273D2C270009C72C /* EditHour.swift in Sources */ = {isa = PBXBuildFile; fileRef = 434D9A02273D2C270009C72C /* EditHour.swift */; };
+		434D9A1C273D2C270009C72C /* Hour-CoreDataHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 434D9A03273D2C270009C72C /* Hour-CoreDataHelpers.swift */; };
+		434D9A1D273D2C270009C72C /* AddHourView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 434D9A04273D2C270009C72C /* AddHourView.swift */; };
+		434D9A1E273D2C270009C72C /* Task-CoreDataHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 434D9A06273D2C270009C72C /* Task-CoreDataHelpers.swift */; };
+		434D9A1F273D2C270009C72C /* TasksView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 434D9A07273D2C270009C72C /* TasksView.swift */; };
+		434D9A20273D2C270009C72C /* EditTaskView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 434D9A08273D2C270009C72C /* EditTaskView.swift */; };
+		434D9A21273D2C270009C72C /* DataController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 434D9A09273D2C270009C72C /* DataController.swift */; };
+		434D9A22273D2C270009C72C /* EditClientView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 434D9A0B273D2C270009C72C /* EditClientView.swift */; };
+		434D9A23273D2C270009C72C /* ClientsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 434D9A0C273D2C270009C72C /* ClientsView.swift */; };
+		434D9A24273D2C270009C72C /* Client-CoreDataHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 434D9A0D273D2C270009C72C /* Client-CoreDataHelpers.swift */; };
+		434D9A25273D2C270009C72C /* ProjectsList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 434D9A0F273D2C270009C72C /* ProjectsList.swift */; };
+		434D9A26273D2C270009C72C /* Project-CoreDataHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 434D9A10273D2C270009C72C /* Project-CoreDataHelpers.swift */; };
+		434D9A27273D2C270009C72C /* ProjectInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 434D9A11273D2C270009C72C /* ProjectInfoView.swift */; };
+		434D9A28273D2C270009C72C /* EditProjectView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 434D9A12273D2C270009C72C /* EditProjectView.swift */; };
+		434D9A29273D2C270009C72C /* ProjectsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 434D9A13273D2C270009C72C /* ProjectsView.swift */; };
+		434D9A2A273D2C270009C72C /* AddProjectView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 434D9A14273D2C270009C72C /* AddProjectView.swift */; };
 		439FC8B1273D272F004B15DB /* ProjectTimeApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 439FC8B0273D272F004B15DB /* ProjectTimeApp.swift */; };
 		439FC8B3273D272F004B15DB /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 439FC8B2273D272F004B15DB /* ContentView.swift */; };
 		439FC8B5273D2730004B15DB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 439FC8B4273D2730004B15DB /* Assets.xcassets */; };
 		439FC8B8273D2730004B15DB /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 439FC8B7273D2730004B15DB /* Preview Assets.xcassets */; };
-		439FC8BA273D2730004B15DB /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = 439FC8B9273D2730004B15DB /* Persistence.swift */; };
 		439FC8BD273D2730004B15DB /* ProjectTime.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 439FC8BB273D2730004B15DB /* ProjectTime.xcdatamodeld */; };
 		439FC8C7273D2731004B15DB /* ProjectTimeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 439FC8C6273D2731004B15DB /* ProjectTimeTests.swift */; };
 		439FC8D1273D2731004B15DB /* ProjectTimeUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 439FC8D0273D2731004B15DB /* ProjectTimeUITests.swift */; };
@@ -36,12 +57,33 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		434D99FA273D2C270009C72C /* SequenceSort.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SequenceSort.swift; sourceTree = "<group>"; };
+		434D99FB273D2C270009C72C /* TimeIntervalExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimeIntervalExtension.swift; sourceTree = "<group>"; };
+		434D99FC273D2C270009C72C /* DateExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DateExtension.swift; sourceTree = "<group>"; };
+		434D99FD273D2C270009C72C /* HomeView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
+		434D99FF273D2C270009C72C /* SelectSomethingView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SelectSomethingView.swift; sourceTree = "<group>"; };
+		434D9A01273D2C270009C72C /* ProjectHoursView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProjectHoursView.swift; sourceTree = "<group>"; };
+		434D9A02273D2C270009C72C /* EditHour.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditHour.swift; sourceTree = "<group>"; };
+		434D9A03273D2C270009C72C /* Hour-CoreDataHelpers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Hour-CoreDataHelpers.swift"; sourceTree = "<group>"; };
+		434D9A04273D2C270009C72C /* AddHourView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddHourView.swift; sourceTree = "<group>"; };
+		434D9A06273D2C270009C72C /* Task-CoreDataHelpers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Task-CoreDataHelpers.swift"; sourceTree = "<group>"; };
+		434D9A07273D2C270009C72C /* TasksView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TasksView.swift; sourceTree = "<group>"; };
+		434D9A08273D2C270009C72C /* EditTaskView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditTaskView.swift; sourceTree = "<group>"; };
+		434D9A09273D2C270009C72C /* DataController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataController.swift; sourceTree = "<group>"; };
+		434D9A0B273D2C270009C72C /* EditClientView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditClientView.swift; sourceTree = "<group>"; };
+		434D9A0C273D2C270009C72C /* ClientsView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ClientsView.swift; sourceTree = "<group>"; };
+		434D9A0D273D2C270009C72C /* Client-CoreDataHelpers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Client-CoreDataHelpers.swift"; sourceTree = "<group>"; };
+		434D9A0F273D2C270009C72C /* ProjectsList.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProjectsList.swift; sourceTree = "<group>"; };
+		434D9A10273D2C270009C72C /* Project-CoreDataHelpers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Project-CoreDataHelpers.swift"; sourceTree = "<group>"; };
+		434D9A11273D2C270009C72C /* ProjectInfoView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProjectInfoView.swift; sourceTree = "<group>"; };
+		434D9A12273D2C270009C72C /* EditProjectView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditProjectView.swift; sourceTree = "<group>"; };
+		434D9A13273D2C270009C72C /* ProjectsView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProjectsView.swift; sourceTree = "<group>"; };
+		434D9A14273D2C270009C72C /* AddProjectView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddProjectView.swift; sourceTree = "<group>"; };
 		439FC8AD273D272F004B15DB /* ProjectTime.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ProjectTime.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		439FC8B0273D272F004B15DB /* ProjectTimeApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectTimeApp.swift; sourceTree = "<group>"; };
 		439FC8B2273D272F004B15DB /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		439FC8B4273D2730004B15DB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		439FC8B7273D2730004B15DB /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
-		439FC8B9273D2730004B15DB /* Persistence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Persistence.swift; sourceTree = "<group>"; };
 		439FC8BC273D2730004B15DB /* ProjectTime.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = ProjectTime.xcdatamodel; sourceTree = "<group>"; };
 		439FC8C2273D2731004B15DB /* ProjectTimeTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ProjectTimeTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		439FC8C6273D2731004B15DB /* ProjectTimeTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectTimeTests.swift; sourceTree = "<group>"; };
@@ -75,6 +117,68 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		434D99F9273D2C270009C72C /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				434D99FA273D2C270009C72C /* SequenceSort.swift */,
+				434D99FB273D2C270009C72C /* TimeIntervalExtension.swift */,
+				434D99FC273D2C270009C72C /* DateExtension.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		434D99FE273D2C270009C72C /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				434D99FF273D2C270009C72C /* SelectSomethingView.swift */,
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
+		434D9A00273D2C270009C72C /* Hour */ = {
+			isa = PBXGroup;
+			children = (
+				434D9A01273D2C270009C72C /* ProjectHoursView.swift */,
+				434D9A02273D2C270009C72C /* EditHour.swift */,
+				434D9A03273D2C270009C72C /* Hour-CoreDataHelpers.swift */,
+				434D9A04273D2C270009C72C /* AddHourView.swift */,
+			);
+			path = Hour;
+			sourceTree = "<group>";
+		};
+		434D9A05273D2C270009C72C /* Task */ = {
+			isa = PBXGroup;
+			children = (
+				434D9A06273D2C270009C72C /* Task-CoreDataHelpers.swift */,
+				434D9A07273D2C270009C72C /* TasksView.swift */,
+				434D9A08273D2C270009C72C /* EditTaskView.swift */,
+			);
+			path = Task;
+			sourceTree = "<group>";
+		};
+		434D9A0A273D2C270009C72C /* Client */ = {
+			isa = PBXGroup;
+			children = (
+				434D9A0B273D2C270009C72C /* EditClientView.swift */,
+				434D9A0C273D2C270009C72C /* ClientsView.swift */,
+				434D9A0D273D2C270009C72C /* Client-CoreDataHelpers.swift */,
+			);
+			path = Client;
+			sourceTree = "<group>";
+		};
+		434D9A0E273D2C270009C72C /* Project */ = {
+			isa = PBXGroup;
+			children = (
+				434D9A0F273D2C270009C72C /* ProjectsList.swift */,
+				434D9A10273D2C270009C72C /* Project-CoreDataHelpers.swift */,
+				434D9A11273D2C270009C72C /* ProjectInfoView.swift */,
+				434D9A12273D2C270009C72C /* EditProjectView.swift */,
+				434D9A13273D2C270009C72C /* ProjectsView.swift */,
+				434D9A14273D2C270009C72C /* AddProjectView.swift */,
+			);
+			path = Project;
+			sourceTree = "<group>";
+		};
 		439FC8A4273D272F004B15DB = {
 			isa = PBXGroup;
 			children = (
@@ -98,10 +202,17 @@
 		439FC8AF273D272F004B15DB /* ProjectTime */ = {
 			isa = PBXGroup;
 			children = (
+				434D9A0A273D2C270009C72C /* Client */,
+				434D9A09273D2C270009C72C /* DataController.swift */,
+				434D99F9273D2C270009C72C /* Extensions */,
+				434D99FE273D2C270009C72C /* Helpers */,
+				434D99FD273D2C270009C72C /* HomeView.swift */,
+				434D9A00273D2C270009C72C /* Hour */,
+				434D9A0E273D2C270009C72C /* Project */,
+				434D9A05273D2C270009C72C /* Task */,
 				439FC8B0273D272F004B15DB /* ProjectTimeApp.swift */,
 				439FC8B2273D272F004B15DB /* ContentView.swift */,
 				439FC8B4273D2730004B15DB /* Assets.xcassets */,
-				439FC8B9273D2730004B15DB /* Persistence.swift */,
 				439FC8BB273D2730004B15DB /* ProjectTime.xcdatamodeld */,
 				439FC8B6273D2730004B15DB /* Preview Content */,
 			);
@@ -263,10 +374,31 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				439FC8BA273D2730004B15DB /* Persistence.swift in Sources */,
+				434D9A22273D2C270009C72C /* EditClientView.swift in Sources */,
 				439FC8B3273D272F004B15DB /* ContentView.swift in Sources */,
+				434D9A27273D2C270009C72C /* ProjectInfoView.swift in Sources */,
+				434D9A18273D2C270009C72C /* HomeView.swift in Sources */,
+				434D9A1C273D2C270009C72C /* Hour-CoreDataHelpers.swift in Sources */,
+				434D9A1F273D2C270009C72C /* TasksView.swift in Sources */,
+				434D9A17273D2C270009C72C /* DateExtension.swift in Sources */,
+				434D9A16273D2C270009C72C /* TimeIntervalExtension.swift in Sources */,
+				434D9A25273D2C270009C72C /* ProjectsList.swift in Sources */,
+				434D9A1A273D2C270009C72C /* ProjectHoursView.swift in Sources */,
+				434D9A2A273D2C270009C72C /* AddProjectView.swift in Sources */,
+				434D9A26273D2C270009C72C /* Project-CoreDataHelpers.swift in Sources */,
 				439FC8BD273D2730004B15DB /* ProjectTime.xcdatamodeld in Sources */,
+				434D9A1E273D2C270009C72C /* Task-CoreDataHelpers.swift in Sources */,
+				434D9A20273D2C270009C72C /* EditTaskView.swift in Sources */,
+				434D9A19273D2C270009C72C /* SelectSomethingView.swift in Sources */,
+				434D9A15273D2C270009C72C /* SequenceSort.swift in Sources */,
 				439FC8B1273D272F004B15DB /* ProjectTimeApp.swift in Sources */,
+				434D9A28273D2C270009C72C /* EditProjectView.swift in Sources */,
+				434D9A29273D2C270009C72C /* ProjectsView.swift in Sources */,
+				434D9A21273D2C270009C72C /* DataController.swift in Sources */,
+				434D9A24273D2C270009C72C /* Client-CoreDataHelpers.swift in Sources */,
+				434D9A1D273D2C270009C72C /* AddHourView.swift in Sources */,
+				434D9A1B273D2C270009C72C /* EditHour.swift in Sources */,
+				434D9A23273D2C270009C72C /* ClientsView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
