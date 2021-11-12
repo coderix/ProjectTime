@@ -10,22 +10,22 @@ import SwiftUI
 struct ProjectHoursView: View {
     @Environment(\.managedObjectContext) private var viewContext
     @Environment(\.presentationMode) var presentationMode
-
+    
     @ObservedObject var project: Project
     @State private var showingAddScreen = false
     @State private var showingEditScreen = false
-
+    
     @FetchRequest(
         sortDescriptors: [NSSortDescriptor(keyPath: \Task.title, ascending: false)],
         animation: .default)
     private var tasks: FetchedResults<Task>
-
+    
     @State private var selectedHour: Hour?
-
+    
     private func deleteHours1(offsets: IndexSet) {
         withAnimation {
             offsets.map { project.projectHours[$0] }.forEach(viewContext.delete)
-
+            
             do {
                 try viewContext.save()
             } catch {
@@ -34,7 +34,7 @@ struct ProjectHoursView: View {
                 // You should not use this function in a shipping application,
                 // although it may be useful during development.
                 let nsError = error as NSError
-
+                
                 fatalError("Unresolved error \(nsError), \(nsError.userInfo)")
             }
         }
@@ -54,7 +54,7 @@ struct ProjectHoursView: View {
      PersistenceController.shared.save()
      }
      */
-
+    
     private func deleteHours(offsets: IndexSet) {
         let hours = project.projectHours
         viewContext.perform {
@@ -67,18 +67,18 @@ struct ProjectHoursView: View {
                 //  displayMessage.toggle()
             }
         }
-
+        
     }
-
+    
     func cancel() {
-      //  presentationMode.wrappedValue.dismiss()
+        //  presentationMode.wrappedValue.dismiss()
     }
     private func add() {
         showingAddScreen.toggle()
     }
-
+    
     var body: some View {
-
+        
         VStack {
             Text("Project Times")
                 .padding(.top)
@@ -91,7 +91,7 @@ struct ProjectHoursView: View {
                 .disabled(tasks.count == 0)
             }
             .padding()
-
+            
             HStack {
                 Text("Total: ")
                 Text(project.projectDurationString)
@@ -102,18 +102,18 @@ struct ProjectHoursView: View {
             .padding(.leading, 15.0)
             List {
                 ForEach(project.projectHours) { hour in
-
+                    
                     HStack {
                         Text(hour.formattedStartDay)
                             .font(.footnote)
                             .frame(width: 70, height: 30, alignment: .leading)
                         // .border(Color.red)
-
+                        
                         Text(hour.formattedStartTime)
                             .font(.footnote)
                             .frame(width: 50, height: 30, alignment: .leading)
                         //  .border(Color.red)
-
+                        
                         Text("-")
                             .font(.footnote)
                             .frame(width: 10, height: 30)
@@ -124,21 +124,21 @@ struct ProjectHoursView: View {
                         Text(hour.task?.taskTitle ?? "")
                             .font(.footnote)
                             .frame(width: 90, height: 30, alignment: .leading)
-
+                        
                     }
                     .onTapGesture {
                         self.selectedHour = hour
                     }
                 }
                 .onDelete(perform: deleteHours)
-
+                
             }
             /*
              There is a bug when you add an hour: the newly created hour and sometimes some more hours cannot be edited immidiately after adding. So I decided to close the whole project list: onDismiss: cancel // swiftlint:disable:this line_length
              */
             .sheet(isPresented: $showingAddScreen, onDismiss: cancel) {
                 AddHourView(project: project).environment(\.managedObjectContext, self.viewContext)
-
+                
             }
             .sheet(item: self.$selectedHour) { hour in
                 NavigationView {
@@ -149,10 +149,10 @@ struct ProjectHoursView: View {
                 EditProjectView(project: project)
                     .environment(\.managedObjectContext, viewContext)
             }
-
+            
             .navigationTitle(Text(project.projectTitle))
             .navigationBarTitleDisplayMode(.inline)
-
+            
             .navigationBarItems(trailing: Button {
                 self.showingEditScreen.toggle()
             } label: {
@@ -160,15 +160,44 @@ struct ProjectHoursView: View {
             })
         }
     }
-
+    
 }
 
 struct ProjectHoursView_Previews: PreviewProvider {
+    static var dataController = DataController.preview
+    static var viewContext = dataController.container.viewContext
     static var previews: some View {
-
-        return NavigationView {
-            ProjectHoursView(project: Project.example)
-        }
-      //  .environment(\.managedObjectContext, Datacontroller.preview.container.viewContext)
+        
+        let client = Client(context: viewContext)
+        client.id = UUID()
+        client.timestamp = Date()
+        client.name = "Example Client"
+        
+        let project = Project(context: viewContext)
+        project.id = UUID()
+        project.title = "Example Project"
+        project.details = "huagadaddmök hhlköhjäö jlkhlökhköljhlökj hjöih"
+        project.rate = 76.50
+        project.timestamp = Date()
+        project.client = client
+        
+        let task = Task(context: viewContext)
+        task.id = UUID()
+        task.title = "Example Task"
+        
+        let hour = Hour(context: viewContext)
+        hour.id = UUID()
+        hour.start = Date()
+        var dateComponents = DateComponents()
+        dateComponents.hour = 1
+        hour.end = Calendar.current.date(byAdding: dateComponents, to: hour.start ?? Date())
+        hour.details = "Besonderheiten dieser Aufgabe"
+        hour.running = false
+        hour.project = project
+        hour.task = task
+        
+        return ProjectHoursView(project: project)
+            .environment(\.managedObjectContext, dataController.container.viewContext)
     }
+   
 }
