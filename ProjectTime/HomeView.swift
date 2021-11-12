@@ -15,11 +15,14 @@ struct HomeView: View {
     var body: some View {
         NavigationView {
             VStack {
+                /*
+                #if DEBUG
                 Button("Insert Example Data") {
                     dataController.deleteAll()
                     try? dataController.createSampleData()
                 }
-
+                #endif
+*/
                 NavigationLink("Tasks", destination: TasksView())
 
                 Spacer()
