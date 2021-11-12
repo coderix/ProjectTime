@@ -176,7 +176,7 @@ struct ProjectHoursView_Previews: PreviewProvider {
         let project = Project(context: viewContext)
         project.id = UUID()
         project.title = "Example Project"
-        project.details = "huagadaddmök hhlköhjäö jlkhlökhköljhlökj hjöih"
+        project.details = "Project information"
         project.rate = 76.50
         project.timestamp = Date()
         project.client = client
