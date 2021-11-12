@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		433BB398273D7105006200AA /* CloudKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 433BB397273D7105006200AA /* CloudKit.framework */; };
 		434D9A15273D2C270009C72C /* SequenceSort.swift in Sources */ = {isa = PBXBuildFile; fileRef = 434D99FA273D2C270009C72C /* SequenceSort.swift */; };
 		434D9A16273D2C270009C72C /* TimeIntervalExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 434D99FB273D2C270009C72C /* TimeIntervalExtension.swift */; };
 		434D9A17273D2C270009C72C /* DateExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 434D99FC273D2C270009C72C /* DateExtension.swift */; };
@@ -57,6 +58,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		433BB395273D702D006200AA /* ProjectTime.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = ProjectTime.entitlements; sourceTree = "<group>"; };
+		433BB397273D7105006200AA /* CloudKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CloudKit.framework; path = System/Library/Frameworks/CloudKit.framework; sourceTree = SDKROOT; };
 		434D99FA273D2C270009C72C /* SequenceSort.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SequenceSort.swift; sourceTree = "<group>"; };
 		434D99FB273D2C270009C72C /* TimeIntervalExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimeIntervalExtension.swift; sourceTree = "<group>"; };
 		434D99FC273D2C270009C72C /* DateExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DateExtension.swift; sourceTree = "<group>"; };
@@ -97,6 +100,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				433BB398273D7105006200AA /* CloudKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -117,6 +121,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		433BB396273D7105006200AA /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				433BB397273D7105006200AA /* CloudKit.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		434D99F9273D2C270009C72C /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
@@ -186,6 +198,7 @@
 				439FC8C5273D2731004B15DB /* ProjectTimeTests */,
 				439FC8CF273D2731004B15DB /* ProjectTimeUITests */,
 				439FC8AE273D272F004B15DB /* Products */,
+				433BB396273D7105006200AA /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -202,6 +215,7 @@
 		439FC8AF273D272F004B15DB /* ProjectTime */ = {
 			isa = PBXGroup;
 			children = (
+				433BB395273D702D006200AA /* ProjectTime.entitlements */,
 				434D9A0A273D2C270009C72C /* Client */,
 				434D9A09273D2C270009C72C /* DataController.swift */,
 				434D99F9273D2C270009C72C /* Extensions */,
@@ -556,8 +570,9 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = ProjectTime/ProjectTime.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 0.0.1;
 				DEVELOPMENT_ASSET_PATHS = "\"ProjectTime/Preview Content\"";
 				DEVELOPMENT_TEAM = KE9E6T5ST4;
 				ENABLE_PREVIEWS = YES;
@@ -571,7 +586,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0;
+				MARKETING_VERSION = 0.0.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "de.internetberatung-berlin.ProjectTime";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
@@ -585,8 +600,9 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = ProjectTime/ProjectTime.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 0.0.1;
 				DEVELOPMENT_ASSET_PATHS = "\"ProjectTime/Preview Content\"";
 				DEVELOPMENT_TEAM = KE9E6T5ST4;
 				ENABLE_PREVIEWS = YES;
@@ -600,7 +616,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0;
+				MARKETING_VERSION = 0.0.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "de.internetberatung-berlin.ProjectTime";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;

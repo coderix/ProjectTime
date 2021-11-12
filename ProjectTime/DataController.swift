@@ -32,6 +32,8 @@ class DataController: ObservableObject {
             }
         })
 
+        self.container.viewContext.automaticallyMergesChangesFromParent = true
+        
         #if DEBUG
         if CommandLine.arguments.contains("enable-testing") {
             self.deleteAll()
