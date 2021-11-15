@@ -95,37 +95,47 @@ struct ProjectHoursView: View {
             HStack {
                 Text("Total: ")
                 Text(project.projectDurationString)
-                Text("Salary:")
+                Text("Invoice:")
                 Text(project.projectSalaryString)
                 Spacer()
             }
             .padding(.leading, 15.0)
-            List {
+            ScrollView{
                 ForEach(project.projectHours) { hour in
                     
                     HStack {
-                        Text(hour.formattedStartDay)
-                            .font(.footnote)
-                            .frame(width: 70, height: 30, alignment: .leading)
-                        // .border(Color.red)
-                        
-                        Text(hour.formattedStartTime)
-                            .font(.footnote)
-                            .frame(width: 50, height: 30, alignment: .leading)
-                        //  .border(Color.red)
-                        
-                        Text("-")
-                            .font(.footnote)
-                            .frame(width: 10, height: 30)
-                        Text(hour.formattedEndTime)
-                            .font(.footnote)
-                            .frame(width: 50, height: 30, alignment: .leading)
-                        //   .border(Color.red)
-                        Text(hour.task?.taskTitle ?? "")
-                            .font(.footnote)
-                            .frame(width: 90, height: 30, alignment: .leading)
-                        
+                        VStack {
+                            
+                            HStack {
+                                Text(hour.formattedStartDay)
+                                    .font(.footnote)
+                                    .fontWeight(.medium)
+                                
+                                Text(hour.formattedStartTime)
+                                    .font(.footnote)
+                                
+                                Text("-")
+                                    .font(.footnote)
+                                
+                                Text(hour.formattedEndTime)
+                                    .font(.footnote)
+                                
+                                Spacer()
+                                Text(hour.durationString)
+                                    .font(.footnote)
+                            }
+                            
+                            HStack {
+                                Text(hour.task?.taskTitle ?? "")
+                                    .font(.footnote)
+                                Spacer()
+                            }
+                        }
                     }
+                    .padding()
+                    .background(Color.secondarySystemGroupedBackground)
+                    .cornerRadius(10)
+                    .shadow(color: Color.black.opacity(0.2), radius: 5)
                     .onTapGesture {
                         self.selectedHour = hour
                     }
@@ -133,6 +143,9 @@ struct ProjectHoursView: View {
                 .onDelete(perform: deleteHours)
                 
             }
+            .padding()
+            .background(Color.systemGroupedBackground.ignoresSafeArea())
+           
             /*
              There is a bug when you add an hour: the newly created hour and sometimes some more hours cannot be edited immidiately after adding. So I decided to close the whole project list: onDismiss: cancel // swiftlint:disable:this line_length
              */
@@ -198,6 +211,7 @@ struct ProjectHoursView_Previews: PreviewProvider {
         
         return ProjectHoursView(project: project)
             .environment(\.managedObjectContext, dataController.container.viewContext)
+            .previewInterfaceOrientation(.portraitUpsideDown)
     }
-   
+    
 }

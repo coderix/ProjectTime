@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4313904127428E1F00DE8DFE /* ColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4313904027428E1F00DE8DFE /* ColorExtension.swift */; };
 		433BB398273D7105006200AA /* CloudKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 433BB397273D7105006200AA /* CloudKit.framework */; };
 		434D9A15273D2C270009C72C /* SequenceSort.swift in Sources */ = {isa = PBXBuildFile; fileRef = 434D99FA273D2C270009C72C /* SequenceSort.swift */; };
 		434D9A16273D2C270009C72C /* TimeIntervalExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 434D99FB273D2C270009C72C /* TimeIntervalExtension.swift */; };
@@ -58,6 +59,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		4313904027428E1F00DE8DFE /* ColorExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorExtension.swift; sourceTree = "<group>"; };
 		433BB395273D702D006200AA /* ProjectTime.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = ProjectTime.entitlements; sourceTree = "<group>"; };
 		433BB397273D7105006200AA /* CloudKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CloudKit.framework; path = System/Library/Frameworks/CloudKit.framework; sourceTree = SDKROOT; };
 		434D99FA273D2C270009C72C /* SequenceSort.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SequenceSort.swift; sourceTree = "<group>"; };
@@ -135,6 +137,7 @@
 				434D99FA273D2C270009C72C /* SequenceSort.swift */,
 				434D99FB273D2C270009C72C /* TimeIntervalExtension.swift */,
 				434D99FC273D2C270009C72C /* DateExtension.swift */,
+				4313904027428E1F00DE8DFE /* ColorExtension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -413,6 +416,7 @@
 				434D9A1D273D2C270009C72C /* AddHourView.swift in Sources */,
 				434D9A1B273D2C270009C72C /* EditHour.swift in Sources */,
 				434D9A23273D2C270009C72C /* ClientsView.swift in Sources */,
+				4313904127428E1F00DE8DFE /* ColorExtension.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
