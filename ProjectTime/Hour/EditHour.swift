@@ -70,7 +70,7 @@ struct EditHour: View {
     }
 
     var body: some View {
-        NavigationView {
+    //    NavigationView {
             VStack {
                 Form {
                     HStack {
@@ -127,7 +127,7 @@ struct EditHour: View {
             }
             .navigationBarTitle(Text(hour.project?.projectTitle ?? ""))
             .navigationBarTitleDisplayMode(.inline)
-        }
+     //   }
     }
 }
 

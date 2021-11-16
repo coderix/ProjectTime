@@ -102,7 +102,7 @@ struct AddHourView: View {
                         }
                     }
                     Section(header: Text("Time")) {
-                        DatePicker("Star", selection: $start, displayedComponents: [.date, .hourAndMinute])
+                        DatePicker("Start", selection: $start, displayedComponents: [.date, .hourAndMinute])
                         DatePicker("End", selection: $end, in: start..., displayedComponents: [.date, .hourAndMinute])
                     }
                     Section(header: Text("Details")) {
