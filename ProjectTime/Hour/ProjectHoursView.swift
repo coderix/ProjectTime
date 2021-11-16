@@ -9,6 +9,7 @@ import SwiftUI
 
 struct ProjectHoursView: View {
     @Environment(\.managedObjectContext) private var viewContext
+    @EnvironmentObject var dataController: DataController
     @Environment(\.presentationMode) var presentationMode
     
     @ObservedObject var project: Project
@@ -22,40 +23,18 @@ struct ProjectHoursView: View {
     
     @State private var selectedHour: Hour?
     
-    private func deleteHours1(offsets: IndexSet) {
-        withAnimation {
-            offsets.map { project.projectHours[$0] }.forEach(viewContext.delete)
-            
-            do {
-                try viewContext.save()
-            } catch {
-                // Replace this implementation with code to handle the error appropriately.
-                // fatalError() causes the application to generate a crash log and terminate.
-                // You should not use this function in a shipping application,
-                // although it may be useful during development.
-                let nsError = error as NSError
-                
-                fatalError("Unresolved error \(nsError), \(nsError.userInfo)")
-            }
-        }
-    }
-    /*
-     Her we get an Error: https://stackoverflow.com/questions/65080970/swiftui-coredata-simultaneous-accesses-to-0x7f92efc61cb8-but-modification-requ //swiftlint:disable:this line_length
-     
-     
-     private func deleteHours(offsets: IndexSet) {
-     
-     let hours = project.projectHours
-     for index in offsets {
-     let h = hours[index]
-     PersistenceController.shared.delete(h)
-     
-     }
-     PersistenceController.shared.save()
-     }
-     */
-    
     private func deleteHours(offsets: IndexSet) {
+        
+        let hours = project.projectHours
+        for index in offsets {
+            let h = hours[index]
+            dataController.delete(h)
+        }
+        dataController.save()
+    }
+     
+    /*
+    private func deleteHoursOld(offsets: IndexSet) {
         let hours = project.projectHours
         viewContext.perform {
             offsets.map { hours[$0]}.forEach(viewContext.delete)
@@ -69,6 +48,7 @@ struct ProjectHoursView: View {
         }
         
     }
+    */
     
     func cancel() {
         //  presentationMode.wrappedValue.dismiss()
@@ -100,7 +80,7 @@ struct ProjectHoursView: View {
                 Spacer()
             }
             .padding(.leading, 15.0)
-            ScrollView{
+            List{
                 ForEach(project.projectHours) { hour in
                     
                     HStack {
@@ -146,9 +126,7 @@ struct ProjectHoursView: View {
             .padding()
             .background(Color.systemGroupedBackground.ignoresSafeArea())
            
-            /*
-             There is a bug when you add an hour: the newly created hour and sometimes some more hours cannot be edited immidiately after adding. So I decided to close the whole project list: onDismiss: cancel // swiftlint:disable:this line_length
-             */
+           
             .sheet(isPresented: $showingAddScreen, onDismiss: cancel) {
                 AddHourView(project: project).environment(\.managedObjectContext, self.viewContext)
                 
