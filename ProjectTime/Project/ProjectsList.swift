@@ -9,25 +9,28 @@ import SwiftUI
 
 struct ProjectsList: View {
     @Environment(\.managedObjectContext) private var viewContext
-
+    @EnvironmentObject var dataController: DataController
+    
     var fetchRequest: FetchRequest<Project>
-    // var showAllProjects = true
-
+    @State private var showingEditScreen = false
+    @State private var selectedProject : Project?
+    
     init (client: Client) {
         fetchRequest = FetchRequest<Project>(entity: Project.entity(),
-                sortDescriptors: [NSSortDescriptor(keyPath: \Project.timestamp, ascending: false)],
-                predicate: NSPredicate(format: "client == %@", client))
+                                             sortDescriptors: [NSSortDescriptor(keyPath: \Project.timestamp, ascending: false)],
+                                             predicate: NSPredicate(format: "client == %@", client))
     }
-
+    
     init () {
         fetchRequest = FetchRequest<Project>(entity: Project.entity(),
-                        sortDescriptors: [NSSortDescriptor(keyPath: \Project.timestamp, ascending: false)])
+                                             sortDescriptors: [NSSortDescriptor(keyPath: \Project.timestamp, ascending: false)])
     }
-
+    
+    
     private func deleteProjects(offsets: IndexSet) {
         withAnimation {
             offsets.map { fetchRequest.wrappedValue[$0] }.forEach(viewContext.delete)
-
+            
             do {
                 try viewContext.save()
             } catch {
@@ -36,30 +39,50 @@ struct ProjectsList: View {
                 // You should not use this function in a shipping application,
                 // although it may be useful during development.
                 let nsError = error as NSError
-
-               fatalError("Unresolved error \(nsError), \(nsError.userInfo)")
+                
+                fatalError("Unresolved error \(nsError), \(nsError.userInfo)")
             }
         }
     }
+    
+    
     var body: some View {
         List {
-
+            
             ForEach(fetchRequest.wrappedValue) { project in
                 NavigationLink(
                     destination: ProjectHoursView(project: project)) {
-                    HStack {
-                        Text(project.projectTitle)
-                        Spacer()
-                        Text(project.clientName)
+                        HStack {
+                            Text(project.projectTitle)
+                            Spacer()
+                            Text(project.clientName)
+                        }
                     }
-                }
-
+                    .swipeActions {
+                        Button("edit") {
+                            self.selectedProject = project
+                        }
+                        .tint(.green)
+                        
+                        Button("delete") {
+                            dataController.delete(project)
+                            dataController.save()
+                        }
+                        .tint(.red)
+                       
+                    }
+                
             }
             .onDelete(perform: deleteProjects)
-
+            
         }
         .listStyle(InsetGroupedListStyle())
-
+        
+        .sheet(item: $selectedProject) {
+            project in
+            EditProjectView(project: project)
+                .environment(\.managedObjectContext, viewContext)
+        }
     }
 }
 
@@ -68,6 +91,6 @@ struct ProjectsList_Previews: PreviewProvider {
     static var previews: some View {
         ProjectsList()
             .environment(\.managedObjectContext, dataController.container.viewContext)
-                        .environmentObject(dataController)
+            .environmentObject(dataController)
     }
 }
