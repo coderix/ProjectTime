@@ -14,6 +14,7 @@ struct ProjectsList: View {
     var fetchRequest: FetchRequest<Project>
     @State private var showingEditScreen = false
     @State private var selectedProject : Project?
+    @State private var selectedProjectForHoursList : Project?
     
     init (client: Client) {
         fetchRequest = FetchRequest<Project>(entity: Project.entity(),
@@ -59,11 +60,18 @@ struct ProjectsList: View {
                         }
                     }
                     .swipeActions {
+                        
                         Button("edit") {
                             self.selectedProject = project
                         }
                         .tint(.green)
                         
+                        Button("hours") {
+                            self.selectedProjectForHoursList = project
+                        }
+                        .tint(.green)
+                        
+                        // TODO: move to a function triggering an alert
                         Button("delete") {
                             dataController.delete(project)
                             dataController.save()
@@ -73,14 +81,22 @@ struct ProjectsList: View {
                     }
                 
             }
-            .onDelete(perform: deleteProjects)
+        //    .onDelete(perform: deleteProjects)
             
         }
         .listStyle(InsetGroupedListStyle())
         
         .sheet(item: $selectedProject) {
             project in
-            EditProjectView(project: project)
+            NavigationView {
+                EditProjectView(project: project)
+            }
+           
+        }
+        
+        .sheet(item: $selectedProjectForHoursList) {
+            project in
+            ProjectHoursView(project: project)
                 .environment(\.managedObjectContext, viewContext)
         }
     }

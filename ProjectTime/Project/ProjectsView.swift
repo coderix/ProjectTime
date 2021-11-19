@@ -49,10 +49,11 @@ struct ProjectsView: View {
             .toolbar {
 
                 #if os(iOS)
-
+/*
                 ToolbarItem(placement: .navigationBarTrailing) {
                     EditButton()
                 }
+ */
                 ToolbarItem(placement: .navigationBarTrailing) {
                     Button("Add a Project") {
                         showingAddProjectView.toggle()
