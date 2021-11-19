@@ -88,9 +88,14 @@ struct ProjectsList: View {
         
         .sheet(item: $selectedProject) {
             project in
+            EditProjectView(project: project)
+            
+            /*
             NavigationView {
                 EditProjectView(project: project)
             }
+             */
+           
            
         }
         
