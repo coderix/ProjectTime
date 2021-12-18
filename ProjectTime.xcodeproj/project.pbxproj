@@ -34,6 +34,7 @@
 		434D9A28273D2C270009C72C /* EditProjectView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 434D9A12273D2C270009C72C /* EditProjectView.swift */; };
 		434D9A29273D2C270009C72C /* ProjectsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 434D9A13273D2C270009C72C /* ProjectsView.swift */; };
 		434D9A2A273D2C270009C72C /* AddProjectView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 434D9A14273D2C270009C72C /* AddProjectView.swift */; };
+		435D4AAD276E3689009F4B96 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 435D4AAC276E3689009F4B96 /* README.md */; };
 		439FC8B1273D272F004B15DB /* ProjectTimeApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 439FC8B0273D272F004B15DB /* ProjectTimeApp.swift */; };
 		439FC8B3273D272F004B15DB /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 439FC8B2273D272F004B15DB /* ContentView.swift */; };
 		439FC8B5273D2730004B15DB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 439FC8B4273D2730004B15DB /* Assets.xcassets */; };
@@ -91,6 +92,7 @@
 		434D9A12273D2C270009C72C /* EditProjectView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditProjectView.swift; sourceTree = "<group>"; };
 		434D9A13273D2C270009C72C /* ProjectsView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProjectsView.swift; sourceTree = "<group>"; };
 		434D9A14273D2C270009C72C /* AddProjectView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddProjectView.swift; sourceTree = "<group>"; };
+		435D4AAC276E3689009F4B96 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		439FC8AD273D272F004B15DB /* ProjectTime.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ProjectTime.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		439FC8B0273D272F004B15DB /* ProjectTimeApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectTimeApp.swift; sourceTree = "<group>"; };
 		439FC8B2273D272F004B15DB /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -205,6 +207,7 @@
 		439FC8A4273D272F004B15DB = {
 			isa = PBXGroup;
 			children = (
+				435D4AAC276E3689009F4B96 /* README.md */,
 				439FC8AF273D272F004B15DB /* ProjectTime */,
 				439FC8C5273D2731004B15DB /* ProjectTimeTests */,
 				439FC8CF273D2731004B15DB /* ProjectTimeUITests */,
@@ -379,6 +382,7 @@
 			files = (
 				43C379AC27569122004CF510 /* README.md in Resources */,
 				439FC8B8273D2730004B15DB /* Preview Assets.xcassets in Resources */,
+				435D4AAD276E3689009F4B96 /* README.md in Resources */,
 				439FC8B5273D2730004B15DB /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
