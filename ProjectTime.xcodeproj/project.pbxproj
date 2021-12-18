@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		4313904127428E1F00DE8DFE /* ColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4313904027428E1F00DE8DFE /* ColorExtension.swift */; };
+		433B6DEA276C7A660069DE17 /* DevelopmentTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 433B6DE7276C7A650069DE17 /* DevelopmentTests.swift */; };
+		433B6DEB276C7A660069DE17 /* ExtensionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 433B6DE8276C7A650069DE17 /* ExtensionTests.swift */; };
+		433B6DEC276C7A660069DE17 /* ProjectTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 433B6DE9276C7A650069DE17 /* ProjectTests.swift */; };
 		433BB398273D7105006200AA /* CloudKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 433BB397273D7105006200AA /* CloudKit.framework */; };
 		434D9A15273D2C270009C72C /* SequenceSort.swift in Sources */ = {isa = PBXBuildFile; fileRef = 434D99FA273D2C270009C72C /* SequenceSort.swift */; };
 		434D9A16273D2C270009C72C /* TimeIntervalExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 434D99FB273D2C270009C72C /* TimeIntervalExtension.swift */; };
@@ -61,6 +64,9 @@
 
 /* Begin PBXFileReference section */
 		4313904027428E1F00DE8DFE /* ColorExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorExtension.swift; sourceTree = "<group>"; };
+		433B6DE7276C7A650069DE17 /* DevelopmentTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DevelopmentTests.swift; sourceTree = "<group>"; };
+		433B6DE8276C7A650069DE17 /* ExtensionTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExtensionTests.swift; sourceTree = "<group>"; };
+		433B6DE9276C7A650069DE17 /* ProjectTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProjectTests.swift; sourceTree = "<group>"; };
 		433BB395273D702D006200AA /* ProjectTime.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = ProjectTime.entitlements; sourceTree = "<group>"; };
 		433BB397273D7105006200AA /* CloudKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CloudKit.framework; path = System/Library/Frameworks/CloudKit.framework; sourceTree = SDKROOT; };
 		434D99FA273D2C270009C72C /* SequenceSort.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SequenceSort.swift; sourceTree = "<group>"; };
@@ -250,6 +256,9 @@
 		439FC8C5273D2731004B15DB /* ProjectTimeTests */ = {
 			isa = PBXGroup;
 			children = (
+				433B6DE7276C7A650069DE17 /* DevelopmentTests.swift */,
+				433B6DE8276C7A650069DE17 /* ExtensionTests.swift */,
+				433B6DE9276C7A650069DE17 /* ProjectTests.swift */,
 				439FC8C6273D2731004B15DB /* ProjectTimeTests.swift */,
 			);
 			path = ProjectTimeTests;
@@ -428,7 +437,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				433B6DEB276C7A660069DE17 /* ExtensionTests.swift in Sources */,
 				439FC8C7273D2731004B15DB /* ProjectTimeTests.swift in Sources */,
+				433B6DEA276C7A660069DE17 /* DevelopmentTests.swift in Sources */,
+				433B6DEC276C7A660069DE17 /* ProjectTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

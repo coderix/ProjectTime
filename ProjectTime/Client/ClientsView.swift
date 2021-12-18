@@ -73,7 +73,8 @@ struct ClientsView: View {
                                     Text(client.clientName)
                                 })
                         }
-                        .onDelete(perform: deleteClients)
+                        // too dangerous without an alert
+                       // .onDelete(perform: deleteClients)
                     }
                     .listStyle(InsetGroupedListStyle())
                 }
