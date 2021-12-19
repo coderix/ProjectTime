@@ -43,6 +43,7 @@
 		439FC8C7273D2731004B15DB /* ProjectTimeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 439FC8C6273D2731004B15DB /* ProjectTimeTests.swift */; };
 		439FC8D1273D2731004B15DB /* ProjectTimeUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 439FC8D0273D2731004B15DB /* ProjectTimeUITests.swift */; };
 		439FC8D3273D2731004B15DB /* ProjectTimeUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 439FC8D2273D2731004B15DB /* ProjectTimeUITestsLaunchTests.swift */; };
+		43B2DF6D276F6426002AFDB4 /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = 43B2DF6C276F6426002AFDB4 /* .gitignore */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -103,6 +104,7 @@
 		439FC8CC273D2731004B15DB /* ProjectTimeUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ProjectTimeUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		439FC8D0273D2731004B15DB /* ProjectTimeUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectTimeUITests.swift; sourceTree = "<group>"; };
 		439FC8D2273D2731004B15DB /* ProjectTimeUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectTimeUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		43B2DF6C276F6426002AFDB4 /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -205,6 +207,7 @@
 		439FC8A4273D272F004B15DB = {
 			isa = PBXGroup;
 			children = (
+				43B2DF6C276F6426002AFDB4 /* .gitignore */,
 				435D4AAC276E3689009F4B96 /* README.md */,
 				439FC8AF273D272F004B15DB /* ProjectTime */,
 				439FC8C5273D2731004B15DB /* ProjectTimeTests */,
@@ -377,6 +380,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				43B2DF6D276F6426002AFDB4 /* .gitignore in Resources */,
 				439FC8B8273D2730004B15DB /* Preview Assets.xcassets in Resources */,
 				435D4AAD276E3689009F4B96 /* README.md in Resources */,
 				439FC8B5273D2730004B15DB /* Assets.xcassets in Resources */,
