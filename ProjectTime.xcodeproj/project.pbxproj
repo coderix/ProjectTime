@@ -44,6 +44,7 @@
 		439FC8D1273D2731004B15DB /* ProjectTimeUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 439FC8D0273D2731004B15DB /* ProjectTimeUITests.swift */; };
 		439FC8D3273D2731004B15DB /* ProjectTimeUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 439FC8D2273D2731004B15DB /* ProjectTimeUITestsLaunchTests.swift */; };
 		43B2DF6D276F6426002AFDB4 /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = 43B2DF6C276F6426002AFDB4 /* .gitignore */; };
+		43BD2A1F2773274B0086726E /* TimeTrackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43BD2A1E2773274B0086726E /* TimeTrackView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -105,6 +106,7 @@
 		439FC8D0273D2731004B15DB /* ProjectTimeUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectTimeUITests.swift; sourceTree = "<group>"; };
 		439FC8D2273D2731004B15DB /* ProjectTimeUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectTimeUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		43B2DF6C276F6426002AFDB4 /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
+		43BD2A1E2773274B0086726E /* TimeTrackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeTrackView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -244,6 +246,7 @@
 				439FC8B4273D2730004B15DB /* Assets.xcassets */,
 				439FC8BB273D2730004B15DB /* ProjectTime.xcdatamodeld */,
 				439FC8B6273D2730004B15DB /* Preview Content */,
+				43BD2A20277327520086726E /* TimeTrack */,
 			);
 			path = ProjectTime;
 			sourceTree = "<group>";
@@ -274,6 +277,14 @@
 				439FC8D2273D2731004B15DB /* ProjectTimeUITestsLaunchTests.swift */,
 			);
 			path = ProjectTimeUITests;
+			sourceTree = "<group>";
+		};
+		43BD2A20277327520086726E /* TimeTrack */ = {
+			isa = PBXGroup;
+			children = (
+				43BD2A1E2773274B0086726E /* TimeTrackView.swift */,
+			);
+			path = TimeTrack;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -432,6 +443,7 @@
 				434D9A24273D2C270009C72C /* Client-CoreDataHelpers.swift in Sources */,
 				434D9A1D273D2C270009C72C /* AddHourView.swift in Sources */,
 				434D9A1B273D2C270009C72C /* EditHour.swift in Sources */,
+				43BD2A1F2773274B0086726E /* TimeTrackView.swift in Sources */,
 				434D9A23273D2C270009C72C /* ClientsView.swift in Sources */,
 				4313904127428E1F00DE8DFE /* ColorExtension.swift in Sources */,
 			);

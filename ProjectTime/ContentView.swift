@@ -19,6 +19,13 @@ struct ContentView: View {
                     Text("Home")
                 }
                 .tag(HomeView.tag)
+            
+            TimeTrackView()
+                .tabItem {
+                    Image(systemName: "stopwatch.fill")
+                    Text("Time Tracker")
+                }
+                .tag(TimeTrackView.tag)
 
             ProjectsView()
                 .tabItem {
