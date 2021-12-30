@@ -16,14 +16,14 @@ extension Client {
         timestamp ?? Date()
     }
 
-   /* var clientProjects: [Project] {
+    var clientProjects: [Project] {
         let projectsArray = projects?.allObjects as? [Project] ?? []
         
         return projectsArray.sorted { first, second in
             
             return first.projectTitle > second.projectTitle
         }
-    }*/
+    }
 
     static var example: Client {
         let controller = DataController.preview
