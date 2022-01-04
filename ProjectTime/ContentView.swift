@@ -14,14 +14,21 @@ struct ContentView: View {
     @Environment(\.managedObjectContext) private var viewContext
     
     @FetchRequest var clients: FetchedResults<Client>
+    @FetchRequest var projects: FetchedResults<Project>
+    
     
     init(){
         let clientRequest: NSFetchRequest<Client> = Client.fetchRequest()
         clientRequest.sortDescriptors = [
             NSSortDescriptor(keyPath: \Client.name, ascending: true)
-            ]
+        ]
         clientRequest.fetchLimit = 1
         _clients = FetchRequest(fetchRequest: clientRequest)
+        
+        let projectRequest: NSFetchRequest<Project> = Project.fetchRequest()
+        projectRequest.sortDescriptors = [NSSortDescriptor(keyPath: \Project.title, ascending: true)]
+        projectRequest.fetchLimit = 1
+        _projects = FetchRequest(fetchRequest: projectRequest)
     }
     
     var show = true
@@ -34,16 +41,18 @@ struct ContentView: View {
                 }
                 .tag(HomeView.tag)
             
-            TimeTrackView()
-                .tabItem {
-                    Image(systemName: "stopwatch.fill")
-                    Text("Time Tracker")
-                }
-                .tag(TimeTrackView.tag)
+            if projects.count > 0 {
+                
+                
+                TimeTrackView()
+                    .tabItem {
+                        Image(systemName: "stopwatch.fill")
+                        Text("Time Tracker")
+                    }
+                    .tag(TimeTrackView.tag)
+            }
             
             if clients.count > 0 {
-                
-                
                 ProjectsView()
                     .tabItem {
                         Image(systemName: "list.bullet")
@@ -51,6 +60,7 @@ struct ContentView: View {
                     }
                     .tag(ProjectsView.tag)
             }
+            
             ClientsView()
             
                 .tabItem {
