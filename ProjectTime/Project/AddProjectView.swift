@@ -15,7 +15,6 @@ struct AddProjectView: View {
     
     @FetchRequest var clients: FetchedResults<Client>
     
-    //  @State private var selection: Client = Client()
     @State private var selection: Client?
     
     @State private var title: String = ""

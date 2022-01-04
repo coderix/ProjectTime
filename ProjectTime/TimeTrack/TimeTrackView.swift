@@ -6,22 +6,24 @@
 //
 
 import SwiftUI
+import CoreData
 
 struct TimeTrackView: View {
     @EnvironmentObject var dataController: DataController
     @Environment(\.managedObjectContext) private var viewContext
     static let tag: String? = "TimeTrack"
     
-    @FetchRequest(
-        sortDescriptors: [NSSortDescriptor(keyPath: \Client.name, ascending: true)],
-        animation: .default)
-    private var clients: FetchedResults<Client>
-
-    @State private var selectedClient: Client = Client()
-    @State private var firstRun = true
+    @FetchRequest var clients: FetchedResults<Client>
+    
+    @State private var selectedClient: Client?
     
     init() {
-    //    _selectedClient = State(wrappedValue: clients.first ?? Client())
+        let fetchRequest: NSFetchRequest<Client> = Client.fetchRequest()
+        fetchRequest.sortDescriptors = [
+            NSSortDescriptor(keyPath: \Client.name, ascending: true)
+        ]
+        //   clientRequest.fetchLimit = 1
+        self._clients = FetchRequest(fetchRequest: fetchRequest)
     }
     var body: some View {
         NavigationView {
@@ -30,23 +32,13 @@ struct TimeTrackView: View {
                     Text("Client:")
                     Picker("client", selection: $selectedClient) {
                         ForEach(clients) { (client: Client) in
-                            Text(client.clientName).tag(client.self)
+                            Text(client.clientName).tag(client as Client?)
                         }
                     }
                 }
-              //  Text($selectedClient.wrappedValue.clientName)
             }
             .navigationTitle("Track your time")
             .navigationBarTitleDisplayMode(.inline)
-            .onAppear {
-
-                if firstRun {
-                    selectedClient = clients.first!
-                    firstRun.toggle()
-                }
-               
-
-            }
         }
     }
 }
