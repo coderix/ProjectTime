@@ -32,9 +32,7 @@ struct AddProjectView: View {
         fetchRequest.sortDescriptors = [
             NSSortDescriptor(keyPath: \Client.name, ascending: true)
         ]
-        //   clientRequest.fetchLimit = 1
         self._clients = FetchRequest(fetchRequest: fetchRequest)
-       // _selection = State(initialValue: clients.first!)
        
     }
     

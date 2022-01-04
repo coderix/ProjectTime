@@ -17,28 +17,38 @@ struct TimeTrackView: View {
     
     @State private var selectedClient: Client?
     
+    @State private var firstRun = true
+    
     init() {
         let fetchRequest: NSFetchRequest<Client> = Client.fetchRequest()
         fetchRequest.sortDescriptors = [
             NSSortDescriptor(keyPath: \Client.name, ascending: true)
         ]
-        //   clientRequest.fetchLimit = 1
         self._clients = FetchRequest(fetchRequest: fetchRequest)
     }
+    
     var body: some View {
         NavigationView {
             VStack {
-                HStack {
-                    Text("Client:")
-                    Picker("client", selection: $selectedClient) {
-                        ForEach(clients) { (client: Client) in
-                            Text(client.clientName).tag(client as Client?)
+                Form {
+                    Section {
+                        Picker("client", selection: $selectedClient) {
+                            ForEach(clients) { (client: Client) in
+                                Text(client.clientName).tag(client as Client?)
+                            }
                         }
                     }
                 }
             }
             .navigationTitle("Track your time")
             .navigationBarTitleDisplayMode(.inline)
+        }
+        .onAppear {
+            if firstRun == true {
+                self.selectedClient = clients.first
+                firstRun = false
+            }
+           
         }
     }
 }
