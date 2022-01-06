@@ -16,6 +16,7 @@ struct TimeTrackView: View {
     @FetchRequest var clients: FetchedResults<Client>
     
     @State private var selectedClient: Client?
+    @State var selectedProject: Project?
     
     @State private var firstRun = true
     
@@ -37,6 +38,15 @@ struct TimeTrackView: View {
                                 Text(client.clientName).tag(client as Client?)
                             }
                         }
+                        
+                        if selectedClient != nil {
+                            Picker("project", selection: $selectedProject) {
+                                ForEach(selectedClient!.clientProjects) { (project: Project) in
+                                    Text(project.projectTitle).tag(project as Project?)
+                                }
+                            }
+                        }
+                        
                     }
                 }
             }
@@ -48,7 +58,7 @@ struct TimeTrackView: View {
                 self.selectedClient = clients.first
                 firstRun = false
             }
-           
+            
         }
     }
 }
