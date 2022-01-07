@@ -29,37 +29,9 @@ struct TimeTrackView: View {
     }
     
     var body: some View {
-        NavigationView {
-            VStack {
-                Form {
-                    Section {
-                        Picker("client", selection: $selectedClient) {
-                            ForEach(clients) { (client: Client) in
-                                Text(client.clientName).tag(client as Client?)
-                            }
-                        }
-                        
-                        if selectedClient != nil {
-                            Picker("project", selection: $selectedProject) {
-                                ForEach(selectedClient!.clientProjects) { (project: Project) in
-                                    Text(project.projectTitle).tag(project as Project?)
-                                }
-                            }
-                        }
-                        
-                    }
-                }
-            }
-            .navigationTitle("Track your time")
-            .navigationBarTitleDisplayMode(.inline)
-        }
-        .onAppear {
-            if firstRun == true {
-                self.selectedClient = clients.first
-                firstRun = false
-            }
-            
-        }
+       AddTrackerView()
+            .environment(\.managedObjectContext, dataController.container.viewContext)
+            .environmentObject(dataController)
     }
 }
 

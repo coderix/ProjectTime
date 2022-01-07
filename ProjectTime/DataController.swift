@@ -86,7 +86,22 @@ class DataController: ObservableObject {
     func delete(_ object: NSManagedObject) {
         container.viewContext.delete(object)
     }
-
+    
+    /// Get the current running hour
+    /// - Returns: running hour or nil
+    func getRunningHour () -> Hour? {
+        let context = container.viewContext
+        let fetchRequest: NSFetchRequest<Hour> = Hour.fetchRequest()
+        fetchRequest.sortDescriptors = [
+            NSSortDescriptor(keyPath: \Hour.id, ascending: true)
+        ]
+        fetchRequest.fetchLimit = 1
+        fetchRequest.predicate = NSPredicate(format: "running = true")
+      
+        return try? context.fetch(fetchRequest).first
+       
+    }
+     
     func deleteAll() {
         let fetchRequest1: NSFetchRequest<NSFetchRequestResult> = Task.fetchRequest()
         let batchDeleteRequest1 = NSBatchDeleteRequest(fetchRequest: fetchRequest1)
