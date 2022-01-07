@@ -12,6 +12,7 @@ struct ProjectsList: View {
     @EnvironmentObject var dataController: DataController
     
     var fetchRequest: FetchRequest<Project>
+    
     @State private var showingEditScreen = false
     @State private var selectedProject : Project?
     @State private var selectedProjectForHoursList : Project?
