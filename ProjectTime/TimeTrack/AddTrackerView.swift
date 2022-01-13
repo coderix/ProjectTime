@@ -55,6 +55,7 @@ struct AddTrackerView: View {
         .onAppear {
             if firstRun == true {
                 self.selectedClient = clients.first
+                self.selectedProject = self.selectedClient?.clientProjects.first
                 firstRun = false
             }
             
