@@ -21,7 +21,7 @@ extension Client {
         
         return projectsArray.sorted { first, second in
             
-            return first.projectTitle > second.projectTitle
+            return first.projectTimestamp > second.projectTimestamp
         }
     }
 
