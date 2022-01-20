@@ -23,7 +23,7 @@ struct AddTrackerView: View {
     init() {
         let fetchRequest: NSFetchRequest<Client> = Client.fetchRequest()
         fetchRequest.sortDescriptors = [
-            NSSortDescriptor(keyPath: \Client.name, ascending: true)
+            NSSortDescriptor(keyPath: \Client.timestamp, ascending: false)
         ]
         self._clients = FetchRequest(fetchRequest: fetchRequest)
     }
