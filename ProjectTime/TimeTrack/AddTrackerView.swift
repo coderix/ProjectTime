@@ -15,7 +15,8 @@ struct AddTrackerView: View {
     @FetchRequest var clients: FetchedResults<Client>
     
     @State private var selectedClient: Client?
-    @State var selectedProject: Project?
+    
+    @State  private var selectedProject: Project?
     
     @State private var firstRun = true
     
@@ -37,6 +38,10 @@ struct AddTrackerView: View {
                                 Text(client.clientName).tag(client as Client?)
                             }
                         }
+                        .onChange(of: selectedClient, perform: {(value) in
+                            self.selectedProject = self.selectedClient?.clientProjects.first
+                        })
+                        
                         
                         if selectedClient != nil {
                             Picker("project", selection: $selectedProject) {
