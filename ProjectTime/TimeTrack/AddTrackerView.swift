@@ -18,6 +18,10 @@ struct AddTrackerView: View {
     
     @State  private var selectedProject: Project?
     
+    @State private var selectedTask : Task?
+    
+    @FetchRequest var tasks: FetchedResults<Task>
+    
     @State private var firstRun = true
     
     init() {
@@ -26,6 +30,10 @@ struct AddTrackerView: View {
             NSSortDescriptor(keyPath: \Client.timestamp, ascending: false)
         ]
         self._clients = FetchRequest(fetchRequest: fetchRequest)
+        
+        let fetchRequestTasks: NSFetchRequest<Task> = Task.fetchRequest()
+        fetchRequestTasks.sortDescriptors = [NSSortDescriptor(keyPath:\Task.title, ascending: true)]
+        self._tasks = FetchRequest(fetchRequest: fetchRequestTasks)
     }
     
     var body: some View {
@@ -33,7 +41,7 @@ struct AddTrackerView: View {
             VStack {
                 Form {
                     Section {
-                        Picker("client", selection: $selectedClient) {
+                        Picker("Client", selection: $selectedClient) {
                             ForEach(clients) { (client: Client) in
                                 Text(client.clientName).tag(client as Client?)
                             }
@@ -44,10 +52,18 @@ struct AddTrackerView: View {
                         
                         
                         if selectedClient != nil {
-                            Picker("project", selection: $selectedProject) {
+                            Picker("Project", selection: $selectedProject) {
                                 ForEach(selectedClient!.clientProjects) { (project: Project) in
                                     Text(project.projectTitle).tag(project as Project?)
                                 }
+                            }
+                        }
+                        
+                    }
+                    Section(header: Text("Tasks")){
+                        Picker("Task", selection: $selectedTask) {
+                            ForEach(tasks) { (task: Task) in
+                                Text(task.taskTitle).tag(task as Task?)
                             }
                         }
                         
@@ -67,6 +83,7 @@ struct AddTrackerView: View {
         }
     }
 }
+
 
 struct AddTrackerView_Previews: PreviewProvider {
     static var dataController = DataController.preview
