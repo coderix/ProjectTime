@@ -47,6 +47,7 @@
 		439FC8D3273D2731004B15DB /* ProjectTimeUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 439FC8D2273D2731004B15DB /* ProjectTimeUITestsLaunchTests.swift */; };
 		43B2DF6D276F6426002AFDB4 /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = 43B2DF6C276F6426002AFDB4 /* .gitignore */; };
 		43BD2A1F2773274B0086726E /* TimeTrackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43BD2A1E2773274B0086726E /* TimeTrackView.swift */; };
+		43E9564C279F0B21005D7727 /* BindigExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43E9564B279F0B21005D7727 /* BindigExtension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -111,6 +112,7 @@
 		439FC8D2273D2731004B15DB /* ProjectTimeUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectTimeUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		43B2DF6C276F6426002AFDB4 /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
 		43BD2A1E2773274B0086726E /* TimeTrackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeTrackView.swift; sourceTree = "<group>"; };
+		43E9564B279F0B21005D7727 /* BindigExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BindigExtension.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -154,6 +156,7 @@
 				434D99FB273D2C270009C72C /* TimeIntervalExtension.swift */,
 				434D99FC273D2C270009C72C /* DateExtension.swift */,
 				4313904027428E1F00DE8DFE /* ColorExtension.swift */,
+				43E9564B279F0B21005D7727 /* BindigExtension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -442,6 +445,7 @@
 				434D9A20273D2C270009C72C /* EditTaskView.swift in Sources */,
 				434D9A19273D2C270009C72C /* SelectSomethingView.swift in Sources */,
 				434D9A15273D2C270009C72C /* SequenceSort.swift in Sources */,
+				43E9564C279F0B21005D7727 /* BindigExtension.swift in Sources */,
 				439FC8B1273D272F004B15DB /* ProjectTimeApp.swift in Sources */,
 				434D9A28273D2C270009C72C /* EditProjectView.swift in Sources */,
 				43739B7727882B9B00E82F4B /* AddTrackerView.swift in Sources */,

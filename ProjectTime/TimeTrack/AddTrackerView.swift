@@ -20,6 +20,8 @@ struct AddTrackerView: View {
     
     @State private var selectedTask : Task?
     
+    @State private var runningHour : Hour?
+    
     @FetchRequest var tasks: FetchedResults<Task>
     
     @State private var firstRun = true
@@ -36,6 +38,18 @@ struct AddTrackerView: View {
         self._tasks = FetchRequest(fetchRequest: fetchRequestTasks)
     }
     
+    func startTracking() {
+        /*
+        if let task = t {
+            print(task.taskTitle)
+        }
+         */
+        print("start")
+    }
+    
+    func taskChanged(to value: Task){
+        
+    }
     var body: some View {
         NavigationView {
             VStack {
@@ -60,14 +74,42 @@ struct AddTrackerView: View {
                         }
                         
                     }
-                    Section(header: Text("Tasks")){
-                        Picker("Task", selection: $selectedTask) {
-                            ForEach(tasks) { (task: Task) in
-                                Text(task.taskTitle).tag(task as Task?)
+                    Section(header: Text("Select a task")){
+                        HStack {
+                            Picker("Task", selection: $selectedTask) {
+                                ForEach(tasks) { (task: Task) in
+                                    Text(task.taskTitle).tag(task as Task?)
+                                }
                             }
+                            
+                           // onChange(of: selectedTask, perform: {value in startTracking(value)})
+                        }
+                    }
+                    
+                    Section(header: Text("Tracking")) {
+                        VStack {
+                            HStack {
+                                Button("Start"){}
+                                Button("Stop"){}
+                                Button("Edit"){}
+                            }
+                           
+                        }
+                      
+                        if selectedTask != nil {
+                            Button("Null", action:  {selectedTask = nil})
                         }
                         
                     }
+                    
+                    Section(header: Text("Running Task")){
+                        if let hour = runningHour {
+                            
+                        } else {
+                            Text("Currently no running task ")
+                        }
+                    }
+                     
                 }
             }
             .navigationTitle("Track your time")
