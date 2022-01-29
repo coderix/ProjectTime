@@ -38,13 +38,57 @@ struct AddTrackerView: View {
         self._tasks = FetchRequest(fetchRequest: fetchRequestTasks)
     }
     
+    var trackingNotValid: Bool {
+        if (selectedClient == nil) || (selectedProject == nil) || (selectedTask == nil){
+            return true
+        } else {return false}
+    }
+    var startButtonNotValid: Bool {
+        if let hour = runningHour {
+            if hour.running == true {
+                return true
+            } else { return false}
+        } else {return false}
+       
+    }
+    
+   
+    @State private var stopButtonNotValid = true
+    @State private var editButtonNotValid = true
+    @State private var deleteButtonNotValid = true
+    
     func startTracking() {
-        /*
-        if let task = t {
-            print(task.taskTitle)
+       
+        selectedProject!.objectWillChange.send()
+        let hour = Hour(context: viewContext)
+
+        hour.id = UUID()
+        hour.start = Date()
+        hour.end = Date()
+        hour.details = ""
+        hour.project = selectedProject
+        hour.task = selectedTask!
+        hour.running = true
+        selectedProject!.timestamp = Date()
+
+        dataController.save()
+        runningHour = hour
+        stopButtonNotValid = false
+    }
+    
+    func stopTracking() {
+       
+        print("stop")
+        if runningHour != nil {
+            runningHour!.end = Date()
+            runningHour!.running = false
+            selectedProject!.timestamp = Date()
+            dataController.save()
+            stopButtonNotValid = true
+            deleteButtonNotValid = false
+            editButtonNotValid = false
         }
-         */
-        print("start")
+        
     }
     
     func taskChanged(to value: Task){
@@ -89,12 +133,22 @@ struct AddTrackerView: View {
                     Section(header: Text("Tracking")) {
                         VStack {
                             HStack {
-                                Button("Start"){}
-                                Button("Stop"){}
-                                Button("Edit"){}
+                                Button("Start"){
+                                    startTracking()
+                                }
+                                .disabled(startButtonNotValid)
+                                Button("Stop"){
+                                    stopTracking()
+                                }
+                                .disabled(stopButtonNotValid)
+                                Button("Edit"){
+                                    
+                                }
+                                .disabled(editButtonNotValid)
                             }
                            
                         }
+                        .disabled(trackingNotValid)
                       
                         if selectedTask != nil {
                             Button("Null", action:  {selectedTask = nil})
@@ -104,6 +158,21 @@ struct AddTrackerView: View {
                     
                     Section(header: Text("Running Task")){
                         if let hour = runningHour {
+                            if hour.running {
+                                HStack {
+                                    Text(hour.task!.taskTitle)
+                                    Text("activ since")
+                                    Text (hour.formattedStartTime)
+                                }
+                            } else {
+                                HStack {
+                                    Text(hour.task!.taskTitle)
+                                    Text(":")
+                                    Text (hour.formattedStartTime)
+                                    Text("-")
+                                    Text (hour.formattedEndTime)
+                                }
+                            }
                             
                         } else {
                             Text("Currently no running task ")
