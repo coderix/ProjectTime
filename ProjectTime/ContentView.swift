@@ -40,6 +40,8 @@ struct ContentView: View {
                     Text("Home")
                 }
                 .tag(HomeView.tag)
+                
+                .accessibilityIdentifier("Home")
             
             if projects.count > 0 {
                 
@@ -50,6 +52,7 @@ struct ContentView: View {
                         Text("Time Tracker")
                     }
                     .tag(TimeTrackView.tag)
+                    .accessibilityIdentifier("TimeTracker")
             }
             
             if clients.count > 0 {
@@ -59,6 +62,8 @@ struct ContentView: View {
                         Text("Projects")
                     }
                     .tag(ProjectsView.tag)
+                    .accessibilityIdentifier("Projects")
+                    
             }
             
             ClientsView()
@@ -66,9 +71,10 @@ struct ContentView: View {
                 .tabItem {
                     Image(systemName: "person.3")
                     Text("Clients")
-                        .accessibilityIdentifier("Clients")
+                        
                 }
                 .tag(ClientsView.tag)
+                .accessibilityIdentifier("Clients")
             
             
         }

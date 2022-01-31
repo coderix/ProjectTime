@@ -23,10 +23,10 @@ class ProjectTimeUITests: XCTestCase {
         // - required for your tests before they run. The setUp method is a good place to do this.
     }
 
-    func testAppHas3Tabs() throws {
+    func testAppHas2Tabs() throws {
         // UI tests must launch the application that they test.
 
-        XCTAssertEqual(app.tabBars.buttons.count, 3, "There should be 3 tabs in the app")
+        XCTAssertEqual(app.tabBars.buttons.count, 2, "There should be 2 tabs in the app")
         // Use recording to get started writing UI tests.
         // Use XCTAssert and related functions to verify your tests produce the correct results.
     }
@@ -105,21 +105,7 @@ class ProjectTimeUITests: XCTestCase {
         XCTAssertEqual(app.tables.cells.count, 0, "There should be no client list rows initially")
 
     }
-
-    func testCreateProjectWithoutClient() {
-
-        let tabBar = app.tabBars["Tab Bar"]
-
-        // Open ClientsView
-        tabBar.buttons["Projects"].tap()
-        XCTAssertEqual(app.tables.cells.count, 0, "There should be no project list rows initially")
-
-        // try to create new client which should not work because there are no clients
-        app.buttons["Add a Project"].tap()
-        XCTAssertEqual(app.tables.cells.count, 0, "There should be 0 list row after adding a project.")
-
-    }
-
+ 
     func testCreateProject() {
         let tabBar = app.tabBars["Tab Bar"]
 
