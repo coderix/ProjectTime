@@ -111,7 +111,11 @@ struct ProjectsList: View {
 struct ProjectsList_Previews: PreviewProvider {
     static var dataController = DataController.preview
     static var previews: some View {
+        NavigationView {
+            
+        
         ProjectsList()
+        }
             .environment(\.managedObjectContext, dataController.container.viewContext)
             .environmentObject(dataController)
     }

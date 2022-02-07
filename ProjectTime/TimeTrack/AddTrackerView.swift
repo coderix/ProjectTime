@@ -43,19 +43,13 @@ struct AddTrackerView: View {
             return true
         } else {return false}
     }
-    var startButtonNotValid: Bool {
-        if let hour = runningHour {
-            if hour.running == true {
-                return true
-            } else { return false}
-        } else {return false}
-       
-    }
+   
     
    
     @State private var stopButtonNotValid = true
     @State private var editButtonNotValid = true
     @State private var deleteButtonNotValid = true
+    @State private var startButtonNotValid = true
     
     func startTracking() {
        
@@ -84,10 +78,12 @@ struct AddTrackerView: View {
             runningHour!.running = false
             selectedProject!.timestamp = Date()
             dataController.save()
-            stopButtonNotValid = true
-            deleteButtonNotValid = false
-            editButtonNotValid = false
+            
         }
+        stopButtonNotValid = true
+        deleteButtonNotValid = false
+        editButtonNotValid = false
+        startButtonNotValid = false
         
     }
     
@@ -131,29 +127,33 @@ struct AddTrackerView: View {
                     }
                     
                     Section(header: Text("Tracking")) {
-                        VStack {
+                       
                             HStack {
+                                
                                 Button("Start"){
                                     startTracking()
                                 }
+                                // without the BorderlessButtonStyle all actions are fired
+                                // when you tap somewhere in the hstack
+                                .buttonStyle(BorderlessButtonStyle())
                                 .disabled(startButtonNotValid)
+                                 
                                 Button("Stop"){
                                     stopTracking()
                                 }
+                                .buttonStyle(BorderlessButtonStyle())
                                 .disabled(stopButtonNotValid)
+                                
                                 Button("Edit"){
-                                    
+                                    print("Edit Button")
                                 }
+                                .buttonStyle(BorderlessButtonStyle())
                                 .disabled(editButtonNotValid)
+                                 
                             }
                            
-                        }
-                        .disabled(trackingNotValid)
-                      
-                        if selectedTask != nil {
-                            Button("Null", action:  {selectedTask = nil})
-                        }
                         
+                   
                     }
                     
                     Section(header: Text("Running Task")){
@@ -188,6 +188,9 @@ struct AddTrackerView: View {
             if firstRun == true {
                 self.selectedClient = clients.first
                 self.selectedProject = self.selectedClient?.clientProjects.first
+                self.selectedTask = tasks.first
+                self.stopButtonNotValid = true
+                self.startButtonNotValid = false
                 firstRun = false
             }
             

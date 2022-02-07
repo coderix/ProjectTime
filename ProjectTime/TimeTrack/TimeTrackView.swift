@@ -13,19 +13,10 @@ struct TimeTrackView: View {
     @Environment(\.managedObjectContext) private var viewContext
     static let tag: String? = "TimeTrack"
     
-    @FetchRequest var clients: FetchedResults<Client>
     
-    @State private var selectedClient: Client?
-    @State var selectedProject: Project?
-    
-    @State private var firstRun = true
     
     init() {
-        let fetchRequest: NSFetchRequest<Client> = Client.fetchRequest()
-        fetchRequest.sortDescriptors = [
-            NSSortDescriptor(keyPath: \Client.name, ascending: true)
-        ]
-        self._clients = FetchRequest(fetchRequest: fetchRequest)
+       
     }
     
     var body: some View {
