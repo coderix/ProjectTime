@@ -99,6 +99,7 @@ struct AddTrackerView: View {
                             ForEach(clients) { (client: Client) in
                                 Text(client.clientName).tag(client as Client?)
                             }
+                            .accessibility(identifier: "clientPicker")
                         }
                         .onChange(of: selectedClient, perform: {(value) in
                             self.selectedProject = self.selectedClient?.clientProjects.first
@@ -111,6 +112,7 @@ struct AddTrackerView: View {
                                     Text(project.projectTitle).tag(project as Project?)
                                 }
                             }
+                            .accessibility(identifier: "projectPicker")
                         }
                         
                     }
@@ -185,6 +187,7 @@ struct AddTrackerView: View {
             .navigationBarTitleDisplayMode(.inline)
         }
         .onAppear {
+            print("onAppear")
             if firstRun == true {
                 self.selectedClient = clients.first
                 self.selectedProject = self.selectedClient?.clientProjects.first

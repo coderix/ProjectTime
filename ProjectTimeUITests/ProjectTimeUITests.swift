@@ -6,6 +6,7 @@
 //
 
 import XCTest
+import SwiftUI
 
 class ProjectTimeUITests: XCTestCase {
     var app = XCUIApplication()
@@ -48,7 +49,7 @@ class ProjectTimeUITests: XCTestCase {
 
     }
     func testCreateClient() {
-
+        testCreateTask()
         let tabBar = app.tabBars["Tab Bar"]
 
         // Open ClientsView
@@ -109,7 +110,10 @@ class ProjectTimeUITests: XCTestCase {
     func testCreateProject() {
         let tabBar = app.tabBars["Tab Bar"]
 
+      //  testCreateTask()
         // Create a client
+        let exp = expectation(description: "Test after 1 seconds")
+           let result = XCTWaiter.wait(for: [exp], timeout: 1.0)
         testCreateClient()
 
         // Add a project
@@ -137,5 +141,18 @@ class ProjectTimeUITests: XCTestCase {
 
     }
      */
+    
+    
+    func testTimeTrack() {
+        let tabBar = app.tabBars["Tab Bar"]
+        testCreateProject()
+        tabBar.buttons["Time Tracker"].tap()
+        let clientPicker = app.buttons["clientPicker"]
+        let projectPicker = app.buttons["projectPicker"]
+        XCTAssert(clientPicker.exists)
+        XCTAssertEqual(clientPicker.value as! String, "client")
+        XCTAssert(projectPicker.exists)
+        XCTAssertEqual(projectPicker.value as! String, "Project 1")
+    }
 
 }
