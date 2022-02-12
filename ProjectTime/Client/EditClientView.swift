@@ -43,7 +43,7 @@ struct EditClientView: View {
             Form {
                 Section(header: Text("Name")) {
                     TextField("Client name", text: $name)
-                        .accessibilityIdentifier("clientsname")
+                        .accessibilityIdentifier("clientName")
 
                 }
             }

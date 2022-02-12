@@ -24,10 +24,10 @@ class ProjectTimeUITests: XCTestCase {
         // - required for your tests before they run. The setUp method is a good place to do this.
     }
 
-    func testAppHas2Tabs() throws {
+    func testAppHas4Tabs() throws {
         // UI tests must launch the application that they test.
 
-        XCTAssertEqual(app.tabBars.buttons.count, 2, "There should be 2 tabs in the app")
+        XCTAssertEqual(app.tabBars.buttons.count, 4, "There should be 4 tabs in the app")
         // Use recording to get started writing UI tests.
         // Use XCTAssert and related functions to verify your tests produce the correct results.
     }
@@ -35,39 +35,38 @@ class ProjectTimeUITests: XCTestCase {
     func testCreateTask() {
         app.buttons["Home"].tap()
         app.buttons["Tasks"].tap()
-        XCTAssertEqual(app.tables.cells.count, 1, "There should be 1 list row initially")
+        XCTAssertEqual(app.tables.cells.count, 2, "There should be 2 list rows initially")
 
         // you must enter a title for the activity before you can create one
         app.buttons["Add this Task"].tap()
-        XCTAssertEqual(app.tables.cells.count, 1, "There should be 1 list row initially")
+        XCTAssertEqual(app.tables.cells.count, 2, "There should be 2 list rows initially")
 
         // create new activity with a title
         app.textFields["New Task"].tap()
         app.textFields["New Task"].typeText("Development")
         app.buttons["Add this Task"].tap()
-        XCTAssertEqual(app.tables.cells.count, 2, "There should be 2 list rows after adding a project.")
+        XCTAssertEqual(app.tables.cells.count, 3, "There should be 3 list rows after adding a project.")
 
     }
     func testCreateClient() {
-        testCreateTask()
         let tabBar = app.tabBars["Tab Bar"]
 
         // Open ClientsView
         tabBar.buttons["Clients"].tap()
-        XCTAssertEqual(app.tables.cells.count, 0, "There should be no client list rows initially")
+        XCTAssertEqual(app.tables.cells.count, 1, "There should be 1 client list row initially")
 
         // create new client
         app.buttons["Add new client"].tap()
-        XCTAssertEqual(app.tables.cells.count, 1, "There should be 1 list row after adding a project.")
+        XCTAssertEqual(app.tables.cells.count, 2, "There should be 2 list rows after adding a project.")
 
     }
 
     func testEditClient() {
 
-        testCreateClient()
+       // testCreateClient()
         let tabBar = app.tabBars["Tab Bar"]
         // Opent editView
-        app.buttons["client"].tap()
+        app.buttons["Clients"].tap()
 
         // change the client name
         app.textFields["client"].tap()
