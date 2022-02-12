@@ -125,30 +125,15 @@ class ProjectTimeUITests: XCTestCase {
         XCTAssertEqual(app.tables.cells.count, 2, "There should be 2 list rows after adding a project.")
     }
 
-    /* Doesn't work
-    func testAddAnHour() {
-        let tabBar = app.tabBars["Tab Bar"]
-        // Create a client
-        testCreateProject()
-
-        tabBar.buttons["Home"].tap()
-        testCreateTask()
-        tabBar.buttons["Projects"].tap()
-
-    }
-     */
-    
-    
     func testTimeTrack() {
         let tabBar = app.tabBars["Tab Bar"]
-        testCreateProject()
         tabBar.buttons["Time Tracker"].tap()
         let clientPicker = app.buttons["clientPicker"]
         let projectPicker = app.buttons["projectPicker"]
         XCTAssert(clientPicker.exists)
-        XCTAssertEqual(clientPicker.value as! String, "client")
+        XCTAssertEqual(clientPicker.value as! String, "Example Client")
         XCTAssert(projectPicker.exists)
-        XCTAssertEqual(projectPicker.value as! String, "Project 1")
+        XCTAssertEqual(projectPicker.value as! String, "Example Project")
     }
 
 }
