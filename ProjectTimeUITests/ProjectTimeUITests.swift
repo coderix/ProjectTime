@@ -98,6 +98,7 @@ class ProjectTimeUITests: XCTestCase {
 
     }
 
+    /*
     func testSwipeAndDeleteClient() {
         testCreateClient()
 
@@ -107,19 +108,13 @@ class ProjectTimeUITests: XCTestCase {
         XCTAssertEqual(app.tables.cells.count, 0, "There should be no client list rows initially")
 
     }
+     */
  
     func testCreateProject() {
         let tabBar = app.tabBars["Tab Bar"]
-
-      //  testCreateTask()
-        // Create a client
-        let exp = expectation(description: "Test after 1 seconds")
-           let result = XCTWaiter.wait(for: [exp], timeout: 1.0)
-        testCreateClient()
-
-        // Add a project
+         // Add a project
         tabBar.buttons["Projects"].tap()
-        XCTAssertEqual(app.tables.cells.count, 0, "There should be no project list rows initially")
+        XCTAssertEqual(app.tables.cells.count, 1, "There should be 1 project list row initially")
         app.buttons["Add a Project"].tap()
         app.textFields["Title"].tap()
         app.textFields["Title"].typeText("Project 1")
@@ -127,7 +122,7 @@ class ProjectTimeUITests: XCTestCase {
 
         // If i don't tap "Add" I end up with 4 rows somehow
         tabBar.buttons["Projects"].tap()
-        XCTAssertEqual(app.tables.cells.count, 1, "There should be 1 list row after adding a project.")
+        XCTAssertEqual(app.tables.cells.count, 2, "There should be 2 list rows after adding a project.")
     }
 
     /* Doesn't work
