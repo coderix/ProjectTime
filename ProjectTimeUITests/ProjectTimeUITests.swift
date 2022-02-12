@@ -81,9 +81,11 @@ class ProjectTimeUITests: XCTestCase {
     
 
     func testDeleteClient() {
-        testCreateClient()
+        
         // Opent editView
-        app.buttons["client"].tap()
+        app.tabBars["Tab Bar"].buttons["Clients"].tap()
+        app/*@START_MENU_TOKEN@*/.tables/*[[".otherElements[\"Clients\"].tables",".tables"],[[[-1,1],[-1,0]]],[0]]@END_MENU_TOKEN@*/.cells["Example Client"].children(matching: .other).element(boundBy: 0).children(matching: .other).element.tap()
+        
         app.buttons["Delete"].tap()
         XCTAssert(app.alerts.element.waitForExistence(timeout: 0.5))
         XCTAssertTrue(app.alerts["Delete the client?"].exists, "There should be an alert after clicking delete.")
