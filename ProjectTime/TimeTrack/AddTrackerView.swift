@@ -51,6 +51,24 @@ struct AddTrackerView: View {
     @State private var deleteButtonNotValid = true
     @State private var startButtonNotValid = true
     
+    func initializeForm() {
+        print("onAppear")
+        if let hour = dataController.getRunningHour() {
+            
+        } else {
+            
+        }
+        if firstRun == true {
+            print("firstRun")
+            self.selectedClient = clients.first
+            self.selectedProject = self.selectedClient?.clientProjects.first
+            self.selectedTask = tasks.first
+            self.stopButtonNotValid = true
+            self.startButtonNotValid = false
+            firstRun = false
+        }
+    }
+    
     func startTracking() {
        
         selectedProject!.objectWillChange.send()
@@ -186,18 +204,8 @@ struct AddTrackerView: View {
             .navigationTitle("Track your time")
             .navigationBarTitleDisplayMode(.inline)
         }
-        .onAppear {
-            print("onAppear")
-            if firstRun == true {
-                self.selectedClient = clients.first
-                self.selectedProject = self.selectedClient?.clientProjects.first
-                self.selectedTask = tasks.first
-                self.stopButtonNotValid = true
-                self.startButtonNotValid = false
-                firstRun = false
-            }
-            
-        }
+        .onAppear(perform: initializeForm)
+       
     }
 }
 
