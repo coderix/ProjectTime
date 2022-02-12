@@ -61,24 +61,24 @@ class ProjectTimeUITests: XCTestCase {
 
     }
 
-    func testEditClient() {
-
-       // testCreateClient()
-        let tabBar = app.tabBars["Tab Bar"]
-        // Opent editView
-        app.buttons["Clients"].tap()
-
-        // change the client name
-        app.textFields["client"].tap()
-
-        app.textFields["client"].typeText("2")
-        app.buttons["Return"].tap()
-
+    func testEditClient () throws{
+        
+        let app = XCUIApplication()
+        app.tabBars["Tab Bar"].buttons["Clients"].tap()
+        app/*@START_MENU_TOKEN@*/.tables/*[[".otherElements[\"Clients\"].tables",".tables"],[[[-1,1],[-1,0]]],[0]]@END_MENU_TOKEN@*/.cells["Example Client"].children(matching: .other).element(boundBy: 0).children(matching: .other).element.tap()
+        let textField = app/*@START_MENU_TOKEN@*/.tables.textFields["clientName"]/*[[".otherElements[\"Clients\"].tables",".cells",".textFields[\"Client name\"]",".textFields[\"clientName\"]",".tables"],[[[-1,4,1],[-1,0,1]],[[-1,3],[-1,2],[-1,1,2]],[[-1,3],[-1,2]]],[0,0]]@END_MENU_TOKEN@*/
+        textField.tap()
+        textField.typeText("2")
+        app/*@START_MENU_TOKEN@*/.navigationBars["client bearbeiten"]/*[[".otherElements[\"Clients\"].navigationBars[\"client bearbeiten\"]",".navigationBars[\"client bearbeiten\"]"],[[[-1,1],[-1,0]]],[0]]@END_MENU_TOKEN@*/.buttons["clients"].tap()
+        
         // Is the new name visible in the clients list
         app.buttons["Home"].tap()
-        tabBar.buttons["Clients"].tap()
-        XCTAssertTrue(app.textFields["client2"].exists, "The new client name should be visible in the list.")
+        app.buttons["Clients"].tap()
+        XCTAssertTrue(app/*@START_MENU_TOKEN@*/.tables/*[[".otherElements[\"Clients\"].tables",".tables"],[[[-1,1],[-1,0]]],[0]]@END_MENU_TOKEN@*/.cells["Example Client2"].exists, "The new client name should be visible in the list.")
+      
+        
     }
+    
 
     func testDeleteClient() {
         testCreateClient()
