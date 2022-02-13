@@ -130,10 +130,12 @@ class ProjectTimeUITests: XCTestCase {
         tabBar.buttons["Time Tracker"].tap()
         let clientPicker = app.buttons["clientPicker"]
         let projectPicker = app.buttons["projectPicker"]
+        let taskPicker = app.buttons["taskPicker"]
         XCTAssert(clientPicker.exists)
         XCTAssertEqual(clientPicker.value as! String, "Example Client")
         XCTAssert(projectPicker.exists)
         XCTAssertEqual(projectPicker.value as! String, "Example Project")
+        XCTAssertEqual(taskPicker.value as! String, "Example Task", "Message")
     }
 
 }

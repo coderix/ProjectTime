@@ -43,9 +43,9 @@ struct AddTrackerView: View {
             return true
         } else {return false}
     }
-   
     
-   
+    
+    
     @State private var stopButtonNotValid = true
     @State private var editButtonNotValid = true
     @State private var deleteButtonNotValid = true
@@ -54,26 +54,30 @@ struct AddTrackerView: View {
     func initializeForm() {
         print("onAppear")
         if let hour = dataController.getRunningHour() {
-            
+           startButtonNotValid = false
+           stopButtonNotValid = true
+            deleteButtonNotValid = false
+            editButtonNotValid = true
+            selectedClient = hour.project?.client
+            selectedProject = hour.project
+            selectedTask = hour.task
         } else {
-            
-        }
-        if firstRun == true {
-            print("firstRun")
             self.selectedClient = clients.first
             self.selectedProject = self.selectedClient?.clientProjects.first
             self.selectedTask = tasks.first
             self.stopButtonNotValid = true
+            self.editButtonNotValid = true
             self.startButtonNotValid = false
-            firstRun = false
+            deleteButtonNotValid = true
         }
+       
     }
     
     func startTracking() {
-       
+        
         selectedProject!.objectWillChange.send()
         let hour = Hour(context: viewContext)
-
+        
         hour.id = UUID()
         hour.start = Date()
         hour.end = Date()
@@ -82,14 +86,17 @@ struct AddTrackerView: View {
         hour.task = selectedTask!
         hour.running = true
         selectedProject!.timestamp = Date()
-
+        
         dataController.save()
         runningHour = hour
         stopButtonNotValid = false
+        startButtonNotValid = true
+        editButtonNotValid = true
+        deleteButtonNotValid = false
     }
     
     func stopTracking() {
-       
+        
         print("stop")
         if runningHour != nil {
             runningHour!.end = Date()
@@ -105,9 +112,7 @@ struct AddTrackerView: View {
         
     }
     
-    func taskChanged(to value: Task){
-        
-    }
+    
     var body: some View {
         NavigationView {
             VStack {
@@ -141,50 +146,51 @@ struct AddTrackerView: View {
                                     Text(task.taskTitle).tag(task as Task?)
                                 }
                             }
-                            
-                           // onChange(of: selectedTask, perform: {value in startTracking(value)})
+                            .accessibility(identifier: "taskPicker")
+                            // onChange(of: selectedTask, perform: {value in startTracking(value)})
                         }
                     }
                     
                     Section(header: Text("Tracking")) {
-                       
-                            HStack {
-                                
-                                Button("Start"){
-                                    startTracking()
-                                }
-                                // without the BorderlessButtonStyle all actions are fired
-                                // when you tap somewhere in the hstack
-                                .buttonStyle(BorderlessButtonStyle())
-                                .disabled(startButtonNotValid)
-                                 
-                                Button("Stop"){
-                                    stopTracking()
-                                }
-                                .buttonStyle(BorderlessButtonStyle())
-                                .disabled(stopButtonNotValid)
-                                
-                                Button("Edit"){
-                                    print("Edit Button")
-                                }
-                                .buttonStyle(BorderlessButtonStyle())
-                                .disabled(editButtonNotValid)
-                                 
-                            }
-                           
                         
-                   
+                        HStack {
+                            
+                            Button("Start"){
+                                startTracking()
+                            }
+                            // without the BorderlessButtonStyle all actions are fired
+                            // when you tap somewhere in the hstack
+                            .buttonStyle(BorderlessButtonStyle())
+                            .disabled(startButtonNotValid)
+                            
+                            Button("Stop"){
+                                stopTracking()
+                            }
+                            .buttonStyle(BorderlessButtonStyle())
+                            .disabled(stopButtonNotValid)
+                            
+                            Button("Edit"){
+                                print("Edit Button")
+                            }
+                            .buttonStyle(BorderlessButtonStyle())
+                            .disabled(editButtonNotValid)
+                            
+                        }
+                        
+                        
+                        
                     }
-                    
-                    Section(header: Text("Running Task")){
-                        if let hour = runningHour {
-                            if hour.running {
+                    if let hour = runningHour {
+                        if hour.running {
+                            Section(header: Text("Running Task")){
                                 HStack {
                                     Text(hour.task!.taskTitle)
                                     Text("activ since")
                                     Text (hour.formattedStartTime)
                                 }
-                            } else {
+                            }
+                        } else {
+                            Section(header: Text("Finished Task")){
                                 HStack {
                                     Text(hour.task!.taskTitle)
                                     Text(":")
@@ -193,19 +199,18 @@ struct AddTrackerView: View {
                                     Text (hour.formattedEndTime)
                                 }
                             }
-                            
-                        } else {
-                            Text("Currently no running task ")
                         }
+                        
                     }
-                     
+                    
+                    
                 }
             }
             .navigationTitle("Track your time")
             .navigationBarTitleDisplayMode(.inline)
         }
         .onAppear(perform: initializeForm)
-       
+        
     }
 }
 
