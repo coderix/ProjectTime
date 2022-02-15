@@ -162,6 +162,7 @@ struct AddTrackerView: View {
                             // when you tap somewhere in the hstack
                             .buttonStyle(BorderlessButtonStyle())
                             .disabled(startButtonNotValid)
+                            .accessibility(identifier: "buttonStart")
                             
                             Button("Stop"){
                                 stopTracking()
@@ -185,7 +186,8 @@ struct AddTrackerView: View {
                             Section(header: Text("Running Task")){
                                 HStack {
                                     Text(hour.task!.taskTitle)
-                                    Text("activ since")
+                                    Text("active since")
+                                        .accessibility(identifier: "labelActive")
                                     Text (hour.formattedStartTime)
                                 }
                             }

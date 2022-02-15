@@ -131,11 +131,17 @@ class ProjectTimeUITests: XCTestCase {
         let clientPicker = app.buttons["clientPicker"]
         let projectPicker = app.buttons["projectPicker"]
         let taskPicker = app.buttons["taskPicker"]
+        let labelActive = app.staticTexts["labelActive"]
         XCTAssert(clientPicker.exists)
         XCTAssertEqual(clientPicker.value as! String, "Example Client")
         XCTAssert(projectPicker.exists)
         XCTAssertEqual(projectPicker.value as! String, "Example Project")
         XCTAssertEqual(taskPicker.value as! String, "Example Task", "Message")
+        XCTAssertFalse(labelActive.exists,"Label should not be here")
+        app.buttons["Start"].tap()
+        XCTAssertTrue(labelActive.exists,"Label should be here")
+        app.buttons["Stop"].tap()
+        XCTAssertFalse(labelActive.exists,"Label should not be here")
     }
 
 }
