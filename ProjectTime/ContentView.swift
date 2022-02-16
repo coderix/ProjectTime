@@ -43,17 +43,6 @@ struct ContentView: View {
                 
                 .accessibilityIdentifier("Home")
             
-            if projects.count > 0 {
-                
-                
-                TimeTrackView()
-                    .tabItem {
-                        Image(systemName: "stopwatch.fill")
-                        Text("Time Tracker")
-                    }
-                    .tag(TimeTrackView.tag)
-                    .accessibilityIdentifier("TimeTracker")
-            }
             
             if clients.count > 0 {
                 ProjectsView()

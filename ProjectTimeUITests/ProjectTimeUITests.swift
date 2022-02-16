@@ -24,10 +24,10 @@ class ProjectTimeUITests: XCTestCase {
         // - required for your tests before they run. The setUp method is a good place to do this.
     }
 
-    func testAppHas4Tabs() throws {
+    func testAppHas3Tabs() throws {
         // UI tests must launch the application that they test.
 
-        XCTAssertEqual(app.tabBars.buttons.count, 4, "There should be 4 tabs in the app")
+        XCTAssertEqual(app.tabBars.buttons.count, 3, "There should be 4 tabs in the app")
         // Use recording to get started writing UI tests.
         // Use XCTAssert and related functions to verify your tests produce the correct results.
     }
@@ -125,6 +125,7 @@ class ProjectTimeUITests: XCTestCase {
         XCTAssertEqual(app.tables.cells.count, 2, "There should be 2 list rows after adding a project.")
     }
 
+    /*
     func testTimeTrack() {
         let tabBar = app.tabBars["Tab Bar"]
         tabBar.buttons["Time Tracker"].tap()
@@ -143,5 +144,6 @@ class ProjectTimeUITests: XCTestCase {
         app.buttons["Stop"].tap()
         XCTAssertFalse(labelActive.exists,"Label should not be here")
     }
+     */
 
 }

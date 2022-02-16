@@ -36,7 +36,6 @@
 		434D9A2A273D2C270009C72C /* AddProjectView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 434D9A14273D2C270009C72C /* AddProjectView.swift */; };
 		435D4AAD276E3689009F4B96 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 435D4AAC276E3689009F4B96 /* README.md */; };
 		43739B752788281900E82F4B /* DataControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43739B742788281900E82F4B /* DataControllerTests.swift */; };
-		43739B7727882B9B00E82F4B /* AddTrackerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43739B7627882B9B00E82F4B /* AddTrackerView.swift */; };
 		439FC8B1273D272F004B15DB /* ProjectTimeApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 439FC8B0273D272F004B15DB /* ProjectTimeApp.swift */; };
 		439FC8B3273D272F004B15DB /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 439FC8B2273D272F004B15DB /* ContentView.swift */; };
 		439FC8B5273D2730004B15DB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 439FC8B4273D2730004B15DB /* Assets.xcassets */; };
@@ -46,7 +45,6 @@
 		439FC8D1273D2731004B15DB /* ProjectTimeUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 439FC8D0273D2731004B15DB /* ProjectTimeUITests.swift */; };
 		439FC8D3273D2731004B15DB /* ProjectTimeUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 439FC8D2273D2731004B15DB /* ProjectTimeUITestsLaunchTests.swift */; };
 		43B2DF6D276F6426002AFDB4 /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = 43B2DF6C276F6426002AFDB4 /* .gitignore */; };
-		43BD2A1F2773274B0086726E /* TimeTrackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43BD2A1E2773274B0086726E /* TimeTrackView.swift */; };
 		43E9564C279F0B21005D7727 /* BindigExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43E9564B279F0B21005D7727 /* BindigExtension.swift */; };
 /* End PBXBuildFile section */
 
@@ -98,7 +96,6 @@
 		434D9A14273D2C270009C72C /* AddProjectView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddProjectView.swift; sourceTree = "<group>"; };
 		435D4AAC276E3689009F4B96 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		43739B742788281900E82F4B /* DataControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataControllerTests.swift; sourceTree = "<group>"; };
-		43739B7627882B9B00E82F4B /* AddTrackerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddTrackerView.swift; sourceTree = "<group>"; };
 		439FC8AD273D272F004B15DB /* ProjectTime.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ProjectTime.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		439FC8B0273D272F004B15DB /* ProjectTimeApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectTimeApp.swift; sourceTree = "<group>"; };
 		439FC8B2273D272F004B15DB /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -111,7 +108,6 @@
 		439FC8D0273D2731004B15DB /* ProjectTimeUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectTimeUITests.swift; sourceTree = "<group>"; };
 		439FC8D2273D2731004B15DB /* ProjectTimeUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectTimeUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		43B2DF6C276F6426002AFDB4 /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
-		43BD2A1E2773274B0086726E /* TimeTrackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeTrackView.swift; sourceTree = "<group>"; };
 		43E9564B279F0B21005D7727 /* BindigExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BindigExtension.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -253,7 +249,6 @@
 				439FC8B4273D2730004B15DB /* Assets.xcassets */,
 				439FC8BB273D2730004B15DB /* ProjectTime.xcdatamodeld */,
 				439FC8B6273D2730004B15DB /* Preview Content */,
-				43BD2A20277327520086726E /* TimeTrack */,
 			);
 			path = ProjectTime;
 			sourceTree = "<group>";
@@ -285,15 +280,6 @@
 				439FC8D2273D2731004B15DB /* ProjectTimeUITestsLaunchTests.swift */,
 			);
 			path = ProjectTimeUITests;
-			sourceTree = "<group>";
-		};
-		43BD2A20277327520086726E /* TimeTrack */ = {
-			isa = PBXGroup;
-			children = (
-				43BD2A1E2773274B0086726E /* TimeTrackView.swift */,
-				43739B7627882B9B00E82F4B /* AddTrackerView.swift */,
-			);
-			path = TimeTrack;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -448,13 +434,11 @@
 				43E9564C279F0B21005D7727 /* BindigExtension.swift in Sources */,
 				439FC8B1273D272F004B15DB /* ProjectTimeApp.swift in Sources */,
 				434D9A28273D2C270009C72C /* EditProjectView.swift in Sources */,
-				43739B7727882B9B00E82F4B /* AddTrackerView.swift in Sources */,
 				434D9A29273D2C270009C72C /* ProjectsView.swift in Sources */,
 				434D9A21273D2C270009C72C /* DataController.swift in Sources */,
 				434D9A24273D2C270009C72C /* Client-CoreDataHelpers.swift in Sources */,
 				434D9A1D273D2C270009C72C /* AddHourView.swift in Sources */,
 				434D9A1B273D2C270009C72C /* EditHour.swift in Sources */,
-				43BD2A1F2773274B0086726E /* TimeTrackView.swift in Sources */,
 				434D9A23273D2C270009C72C /* ClientsView.swift in Sources */,
 				4313904127428E1F00DE8DFE /* ColorExtension.swift in Sources */,
 			);
