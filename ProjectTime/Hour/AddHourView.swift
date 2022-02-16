@@ -33,12 +33,10 @@ struct AddHourView: View {
 
     init(project: Project) {
         self.project = project
-    //    _selection = State(wrappedValue: tasks.first ?? Task())
-
+   
         tasks = FetchRequest<Task>(entity: Task.entity(),
                      sortDescriptors: [NSSortDescriptor(keyPath: \Task.title, ascending: true)])
-  //      _selection = State(wrappedValue: tasks.first ?? Task())
-
+  
     }
 
     var taskTitleNotValid: Bool {
@@ -51,6 +49,11 @@ struct AddHourView: View {
         }
 
         return false
+    }
+    
+    private func stopNow() {
+        end = Date()
+        save()
     }
     private func save () {
         project.objectWillChange.send()
@@ -104,6 +107,9 @@ struct AddHourView: View {
                     Section(header: Text("Time")) {
                         DatePicker("Start", selection: $start, displayedComponents: [.date, .hourAndMinute])
                         DatePicker("End", selection: $end, in: start..., displayedComponents: [.date, .hourAndMinute])
+                        Button("Stop now"){
+                            stopNow()
+                        }
                     }
                     Section(header: Text("Details")) {
                         TextEditor(text: $details)
