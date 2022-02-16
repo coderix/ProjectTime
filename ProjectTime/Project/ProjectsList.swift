@@ -52,14 +52,15 @@ struct ProjectsList: View {
         List {
             
             ForEach(fetchRequest.wrappedValue) { project in
-                NavigationLink(
-                    destination: ProjectHoursView(project: project)) {
-                        HStack {
-                            Text(project.projectTitle)
-                            Spacer()
-                            Text(project.clientName)
-                        }
-                    }
+               
+                Button(action:
+                        {self.selectedProjectForHoursList = project})
+                 {HStack {
+                    Text(project.projectTitle)
+                    Spacer()
+                    Text(project.clientName)
+                 }}
+                
                     .swipeActions {
                         
                         Button("edit") {
@@ -78,11 +79,12 @@ struct ProjectsList: View {
                             dataController.save()
                         }
                         .tint(.red)
-                       
+                        
                     }
                 
             }
-        //    .onDelete(perform: deleteProjects)
+            
+            //    .onDelete(perform: deleteProjects)
             
         }
         .listStyle(InsetGroupedListStyle())
@@ -90,20 +92,13 @@ struct ProjectsList: View {
         .sheet(item: $selectedProject) {
             project in
             EditProjectView(project: project)
-            
-            /*
-            NavigationView {
-                EditProjectView(project: project)
-            }
-             */
-           
-           
+          
         }
         
         .sheet(item: $selectedProjectForHoursList) {
             project in
             ProjectHoursView(project: project)
-                .environment(\.managedObjectContext, viewContext)
+              //  .environment(\.managedObjectContext, viewContext)
         }
     }
 }
@@ -113,10 +108,10 @@ struct ProjectsList_Previews: PreviewProvider {
     static var previews: some View {
         NavigationView {
             
-        
-        ProjectsList()
+            
+            ProjectsList()
         }
-            .environment(\.managedObjectContext, dataController.container.viewContext)
-            .environmentObject(dataController)
+        .environment(\.managedObjectContext, dataController.container.viewContext)
+        .environmentObject(dataController)
     }
 }

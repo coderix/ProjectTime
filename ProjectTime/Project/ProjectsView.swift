@@ -42,10 +42,11 @@ struct ProjectsView: View {
                         .foregroundColor(.secondary)
                         .accessibilityLabel(/*@START_MENU_TOKEN@*/"Label"/*@END_MENU_TOKEN@*/)
                 } else {
-                    ProjectsList()
+                    ExtractedView()
                 }
             }
             .navigationBarTitle("Projects")
+            
             .toolbar {
 
                 #if os(iOS)
@@ -82,5 +83,11 @@ struct ProjectsView_Previews: PreviewProvider {
                 .environment(\.managedObjectContext, dataController.container.viewContext)
                             .environmentObject(dataController)
         }
+    }
+}
+
+struct ExtractedView: View {
+    var body: some View {
+        ProjectsList()
     }
 }
