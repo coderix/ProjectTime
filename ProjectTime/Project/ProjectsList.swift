@@ -12,6 +12,7 @@ struct ProjectsList: View {
     @EnvironmentObject var dataController: DataController
     
     var fetchRequest: FetchRequest<Project>
+    
     @State private var showingEditScreen = false
     @State private var selectedProject : Project?
     @State private var selectedProjectForHoursList : Project?
@@ -110,7 +111,11 @@ struct ProjectsList: View {
 struct ProjectsList_Previews: PreviewProvider {
     static var dataController = DataController.preview
     static var previews: some View {
+        NavigationView {
+            
+        
         ProjectsList()
+        }
             .environment(\.managedObjectContext, dataController.container.viewContext)
             .environmentObject(dataController)
     }

@@ -36,7 +36,7 @@ class DataController: ObservableObject {
         
         #if DEBUG
         if CommandLine.arguments.contains("enable-testing") {
-            self.deleteAll()
+            self.initializeDatabase()
        //     UIView.setAnimationsEnabled(false)
         }
         #endif
@@ -86,8 +86,24 @@ class DataController: ObservableObject {
     func delete(_ object: NSManagedObject) {
         container.viewContext.delete(object)
     }
-
-    func deleteAll() {
+    
+    /// Get the current running hour
+    /// - Returns: running hour or nil
+    func getRunningHour () -> Hour? {
+        let context = container.viewContext
+        let fetchRequest: NSFetchRequest<Hour> = Hour.fetchRequest()
+        fetchRequest.sortDescriptors = [
+            NSSortDescriptor(keyPath: \Hour.id, ascending: true)
+        ]
+        fetchRequest.fetchLimit = 1
+        fetchRequest.predicate = NSPredicate(format: "running = true")
+      
+        return try? context.fetch(fetchRequest).first
+       
+    }
+     
+    func initializeDatabase() {
+        let viewContext = container.viewContext
         let fetchRequest1: NSFetchRequest<NSFetchRequestResult> = Task.fetchRequest()
         let batchDeleteRequest1 = NSBatchDeleteRequest(fetchRequest: fetchRequest1)
         _ = try? container.viewContext.execute(batchDeleteRequest1)
@@ -103,6 +119,36 @@ class DataController: ObservableObject {
         let fetchRequest4: NSFetchRequest<NSFetchRequestResult> = Client.fetchRequest()
         let batchDeleteRequest4 = NSBatchDeleteRequest(fetchRequest: fetchRequest4)
         _ = try? container.viewContext.execute(batchDeleteRequest4)
+        
+        let client = Client(context: viewContext)
+        client.id = UUID()
+        client.timestamp = Date()
+        client.name = "Example Client"
+        
+        let project = Project(context: viewContext)
+        project.id = UUID()
+        project.title = "Example Project"
+        project.details = "Project information"
+        project.rate = 76.50
+        project.timestamp = Date()
+        project.client = client
+        
+        let task = Task(context: viewContext)
+        task.id = UUID()
+        task.title = "Example Task"
+        
+        let hour = Hour(context: viewContext)
+        hour.id = UUID()
+        hour.start = Date()
+        var dateComponents = DateComponents()
+        dateComponents.hour = 1
+        hour.end = Calendar.current.date(byAdding: dateComponents, to: hour.start ?? Date())
+        hour.details = "Besonderheiten dieser Aufgabe"
+        hour.running = false
+        hour.project = project
+        hour.task = task
+        
+      save()
 
     }
 

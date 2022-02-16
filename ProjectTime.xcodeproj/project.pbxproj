@@ -35,6 +35,7 @@
 		434D9A29273D2C270009C72C /* ProjectsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 434D9A13273D2C270009C72C /* ProjectsView.swift */; };
 		434D9A2A273D2C270009C72C /* AddProjectView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 434D9A14273D2C270009C72C /* AddProjectView.swift */; };
 		435D4AAD276E3689009F4B96 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 435D4AAC276E3689009F4B96 /* README.md */; };
+		43739B752788281900E82F4B /* DataControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43739B742788281900E82F4B /* DataControllerTests.swift */; };
 		439FC8B1273D272F004B15DB /* ProjectTimeApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 439FC8B0273D272F004B15DB /* ProjectTimeApp.swift */; };
 		439FC8B3273D272F004B15DB /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 439FC8B2273D272F004B15DB /* ContentView.swift */; };
 		439FC8B5273D2730004B15DB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 439FC8B4273D2730004B15DB /* Assets.xcassets */; };
@@ -44,6 +45,7 @@
 		439FC8D1273D2731004B15DB /* ProjectTimeUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 439FC8D0273D2731004B15DB /* ProjectTimeUITests.swift */; };
 		439FC8D3273D2731004B15DB /* ProjectTimeUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 439FC8D2273D2731004B15DB /* ProjectTimeUITestsLaunchTests.swift */; };
 		43B2DF6D276F6426002AFDB4 /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = 43B2DF6C276F6426002AFDB4 /* .gitignore */; };
+		43E9564C279F0B21005D7727 /* BindigExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43E9564B279F0B21005D7727 /* BindigExtension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -93,6 +95,7 @@
 		434D9A13273D2C270009C72C /* ProjectsView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProjectsView.swift; sourceTree = "<group>"; };
 		434D9A14273D2C270009C72C /* AddProjectView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddProjectView.swift; sourceTree = "<group>"; };
 		435D4AAC276E3689009F4B96 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		43739B742788281900E82F4B /* DataControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataControllerTests.swift; sourceTree = "<group>"; };
 		439FC8AD273D272F004B15DB /* ProjectTime.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ProjectTime.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		439FC8B0273D272F004B15DB /* ProjectTimeApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectTimeApp.swift; sourceTree = "<group>"; };
 		439FC8B2273D272F004B15DB /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -105,6 +108,7 @@
 		439FC8D0273D2731004B15DB /* ProjectTimeUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectTimeUITests.swift; sourceTree = "<group>"; };
 		439FC8D2273D2731004B15DB /* ProjectTimeUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectTimeUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		43B2DF6C276F6426002AFDB4 /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
+		43E9564B279F0B21005D7727 /* BindigExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BindigExtension.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -148,6 +152,7 @@
 				434D99FB273D2C270009C72C /* TimeIntervalExtension.swift */,
 				434D99FC273D2C270009C72C /* DateExtension.swift */,
 				4313904027428E1F00DE8DFE /* ColorExtension.swift */,
+				43E9564B279F0B21005D7727 /* BindigExtension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -263,6 +268,7 @@
 				433B6DE8276C7A650069DE17 /* ExtensionTests.swift */,
 				433B6DE9276C7A650069DE17 /* ProjectTests.swift */,
 				439FC8C6273D2731004B15DB /* ProjectTimeTests.swift */,
+				43739B742788281900E82F4B /* DataControllerTests.swift */,
 			);
 			path = ProjectTimeTests;
 			sourceTree = "<group>";
@@ -425,6 +431,7 @@
 				434D9A20273D2C270009C72C /* EditTaskView.swift in Sources */,
 				434D9A19273D2C270009C72C /* SelectSomethingView.swift in Sources */,
 				434D9A15273D2C270009C72C /* SequenceSort.swift in Sources */,
+				43E9564C279F0B21005D7727 /* BindigExtension.swift in Sources */,
 				439FC8B1273D272F004B15DB /* ProjectTimeApp.swift in Sources */,
 				434D9A28273D2C270009C72C /* EditProjectView.swift in Sources */,
 				434D9A29273D2C270009C72C /* ProjectsView.swift in Sources */,
@@ -442,6 +449,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				433B6DEB276C7A660069DE17 /* ExtensionTests.swift in Sources */,
+				43739B752788281900E82F4B /* DataControllerTests.swift in Sources */,
 				439FC8C7273D2731004B15DB /* ProjectTimeTests.swift in Sources */,
 				433B6DEA276C7A660069DE17 /* DevelopmentTests.swift in Sources */,
 				433B6DEC276C7A660069DE17 /* ProjectTests.swift in Sources */,

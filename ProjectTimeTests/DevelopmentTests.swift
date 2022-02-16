@@ -13,7 +13,7 @@ class DevelopmentTests: BaseTestCase {
 
     func testDeleteAllClearsEverything() throws {
         try dataController.createSampleData()
-        dataController.deleteAll()
+        dataController.initializeDatabase()
 
         XCTAssertEqual(dataController.count(for: Project.fetchRequest()), 0, "deleteAll() should leave 0 projects.")
         XCTAssertEqual(dataController.count(for: Client.fetchRequest()), 0, "deleteAll() should leave 0 clients.")
