@@ -124,6 +124,21 @@ class ProjectTimeUITests: XCTestCase {
         tabBar.buttons["Projects"].tap()
         XCTAssertEqual(app.tables.cells.count, 2, "There should be 2 list rows after adding a project.")
     }
+    
+    func testCreateHour()  {
+       
+        app.tabBars["Tab Bar"].buttons["Projects"].tap()
+        app.tables.buttons["Example Project, Example Client"].tap()
+        XCTAssertEqual(app.tables.cells.count, 2, "There should be 2 hours initially")
+        app.buttons["New Time"].tap()
+        app.navigationBars["Example Project - New Time"].buttons["Add"].tap()
+        app.buttons["Close"].tap()
+        app.tabBars["Tab Bar"].buttons["Projects"].tap()
+        app.tables.buttons["Example Project, Example Client"].tap()
+        
+        XCTAssertEqual(app.tables.cells.count, 3, "There should be 3 hours now")
+        
+    }
 
     /*
     func testTimeTrack() {

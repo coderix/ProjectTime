@@ -26,6 +26,8 @@ struct ProjectHoursView: View {
     
     @State private var showDeleteDialog = false
     
+    // showing the confirmation dialog crashes in preview
+    
     private func deleteHours(offsets: IndexSet) {
         
         let hours = project.projectHours
