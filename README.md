@@ -5,11 +5,10 @@ For time recording customers, projects and tasks must be defined. Only then you 
 
 # Installation
 
+You’ll need Xcode 13.2 or later to build
+
 After cloning, you must customize the projectTime.xcodeproj project file. Go to Signing&Capabilities and add a team account.
 
 If necessary, you can activate iCloud:
 Go to capabilities, add iCloud, then select Cloudkit for Services and create a container. (https://developer.apple.com/documentation/cloudkit).
 
-# License
-
-ProjectTime  is licensed under the [MIT License](https://vmanot.mit-license.org/).
