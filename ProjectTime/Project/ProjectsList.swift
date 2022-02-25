@@ -16,6 +16,7 @@ struct ProjectsList: View {
     @State private var showingEditScreen = false
     @State private var selectedProject : Project?
     @State private var selectedProjectForHoursList : Project?
+    @State private var showDeleteDialog = false
     
     init (client: Client) {
         fetchRequest = FetchRequest<Project>(entity: Project.entity(),
@@ -47,6 +48,15 @@ struct ProjectsList: View {
         }
     }
     
+    @State private var projectToDelete : Project?
+    
+    private func deleteProject() {
+        if let p = projectToDelete {
+            dataController.delete(p)
+            dataController.save()
+        }
+    }
+    
     
     var body: some View {
         List {
@@ -75,10 +85,11 @@ struct ProjectsList: View {
                         
                         // TODO: move to a function triggering an alert
                         Button("delete") {
-                            dataController.delete(project)
-                            dataController.save()
+                            self.projectToDelete = project
+                            showDeleteDialog = true
                         }
                         .tint(.red)
+                        
                         
                     }
                 
@@ -99,6 +110,15 @@ struct ProjectsList: View {
             project in
             ProjectHoursView(project: project)
               //  .environment(\.managedObjectContext, viewContext)
+        }
+        .alert("Delete a Project", isPresented: $showDeleteDialog) {
+            Button ("OK") {
+                deleteProject()
+            }
+            Button("Cancel", role: .cancel){}
+            
+        } message: {
+            Text("Do you really want to delete the project?")
         }
     }
 }
