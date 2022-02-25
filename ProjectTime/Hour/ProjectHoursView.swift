@@ -22,18 +22,21 @@ struct ProjectHoursView: View {
     private var tasks: FetchedResults<Task>
     
     @State private var selectedHour: Hour?
+    @State private var hourToDelete: Hour?
+    
+    @State private var showDeleteDialog = false
     
     private func deleteHours(offsets: IndexSet) {
         
         let hours = project.projectHours
         for index in offsets {
-            let h = hours[index]
-            dataController.delete(h)
+            hourToDelete = hours[index]
+            showDeleteDialog = true
         }
         dataController.save()
     }
     
-   
+  
     private func add() {
         showingAddScreen.toggle()
     }
@@ -129,6 +132,23 @@ struct ProjectHoursView: View {
                     EditProjectView(project: project)
                         .environment(\.managedObjectContext, viewContext)
                 }
+                
+                .alert(isPresented: $showDeleteDialog) {
+                        Alert(
+                            title: Text("Titel"),
+                            message: Text("Are you sure you want to delete this ? This can't be undone..."),
+                            primaryButton: .cancel(),
+                            secondaryButton: .destructive(
+                                Text("Delete"),
+                                action: {
+                                       dataController.delete(hourToDelete!)
+                                    dataController.save()
+                                    showDeleteDialog = false
+                                }
+                            )
+                        )
+                }
+                                
                 
                 .navigationTitle(Text(project.projectTitle))
                 .navigationBarTitleDisplayMode(.inline)

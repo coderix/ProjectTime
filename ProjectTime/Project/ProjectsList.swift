@@ -83,7 +83,6 @@ struct ProjectsList: View {
                         }
                         .tint(.green)
                         
-                        // TODO: move to a function triggering an alert
                         Button("delete") {
                             self.projectToDelete = project
                             showDeleteDialog = true
