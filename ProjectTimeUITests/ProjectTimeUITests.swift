@@ -139,6 +139,11 @@ class ProjectTimeUITests: XCTestCase {
         XCTAssertEqual(app.tables.cells.count, 3, "There should be 3 hours now")
         
     }
+    
+    func testDeleteHour()  {
+       // Recording of swipe action fails
+       
+    }
 
     /*
     func testTimeTrack() {
