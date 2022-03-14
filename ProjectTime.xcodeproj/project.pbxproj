@@ -46,6 +46,7 @@
 		439FC8D3273D2731004B15DB /* ProjectTimeUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 439FC8D2273D2731004B15DB /* ProjectTimeUITestsLaunchTests.swift */; };
 		43B2DF6D276F6426002AFDB4 /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = 43B2DF6C276F6426002AFDB4 /* .gitignore */; };
 		43E9564C279F0B21005D7727 /* BindigExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43E9564B279F0B21005D7727 /* BindigExtension.swift */; };
+		43ECC5C827DF88DF00A9527B /* AddClientView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43ECC5C727DF88DF00A9527B /* AddClientView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -109,6 +110,7 @@
 		439FC8D2273D2731004B15DB /* ProjectTimeUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectTimeUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		43B2DF6C276F6426002AFDB4 /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
 		43E9564B279F0B21005D7727 /* BindigExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BindigExtension.swift; sourceTree = "<group>"; };
+		43ECC5C727DF88DF00A9527B /* AddClientView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddClientView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -192,6 +194,7 @@
 				434D9A0B273D2C270009C72C /* EditClientView.swift */,
 				434D9A0C273D2C270009C72C /* ClientsView.swift */,
 				434D9A0D273D2C270009C72C /* Client-CoreDataHelpers.swift */,
+				43ECC5C727DF88DF00A9527B /* AddClientView.swift */,
 			);
 			path = Client;
 			sourceTree = "<group>";
@@ -435,6 +438,7 @@
 				439FC8B1273D272F004B15DB /* ProjectTimeApp.swift in Sources */,
 				434D9A28273D2C270009C72C /* EditProjectView.swift in Sources */,
 				434D9A29273D2C270009C72C /* ProjectsView.swift in Sources */,
+				43ECC5C827DF88DF00A9527B /* AddClientView.swift in Sources */,
 				434D9A21273D2C270009C72C /* DataController.swift in Sources */,
 				434D9A24273D2C270009C72C /* Client-CoreDataHelpers.swift in Sources */,
 				434D9A1D273D2C270009C72C /* AddHourView.swift in Sources */,

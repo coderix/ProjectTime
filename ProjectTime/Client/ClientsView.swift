@@ -17,6 +17,8 @@ struct ClientsView: View {
     private var clients: FetchedResults<Client>
     @State private var showError = false
     static let tag: String? = "clients"
+    
+    @State var showingAddClientView = false
 
     private func addClient() {
         withAnimation {
@@ -92,11 +94,14 @@ struct ClientsView: View {
                 #endif
 
                 ToolbarItem(placement: .navigationBarTrailing) {
-                    Button(action: addClient) {
-                        Label("Add new client", systemImage: "plus")
+                    Button("Add a Client") {
+                        showingAddClientView.toggle()
                     }
                 }
 
+            }
+            .sheet(isPresented: $showingAddClientView) {
+                AddClientView().environment(\.managedObjectContext, self.viewContext)
             }
             .alert(isPresented: $showError, content: {
                 Alert(title: Text("Error"),
@@ -117,8 +122,8 @@ struct ClientsView_Previews: PreviewProvider {
     static var dataController = DataController.preview
     static var previews: some View {
         ClientsView()
-            .environment(\.managedObjectContext, dataController.container.viewContext)
-                           .environmentObject(dataController)
+      //      .environment(\.managedObjectContext, dataController.container.viewContext)
+      //                     .environmentObject(dataController)
 
     }
 }
