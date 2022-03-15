@@ -12,6 +12,11 @@ struct AddClientView: View {
     @Environment(\.managedObjectContext) private var viewContext
     @EnvironmentObject var dataController: DataController
     @Environment(\.presentationMode) var presentationMode
+    
+    @FetchRequest(
+        sortDescriptors: [NSSortDescriptor(keyPath: \Client.name, ascending: true)],
+        animation: .default)
+    private var clients: FetchedResults<Client>
 
     @State private var timestamp = Date()
     @State private var rate = 0.0
@@ -28,6 +33,16 @@ struct AddClientView: View {
         presentationMode.wrappedValue.dismiss()
     }
     
+    var nameNotValid: Bool {
+        if name.isEmpty {
+            return true
+        }
+        if clients.contains(where: {$0.name == name}) {
+            return true
+        }
+        return false
+    }
+
     var body: some View {
         NavigationView {
             VStack {
@@ -60,7 +75,7 @@ struct AddClientView: View {
                     Button("Add") {
                         save()
                     }
-                    .disabled(name.isEmpty)
+                    .disabled(nameNotValid)
                     
                 }
             }
