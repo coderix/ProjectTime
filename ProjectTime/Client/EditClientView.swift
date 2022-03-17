@@ -75,20 +75,20 @@ struct EditClientView: View {
                         TextField("Project Rate", value: $rate, format: .number)
                                        // .textFieldStyle(.roundedBorder)
                                         .keyboardType(.decimalPad)
-                                        .padding()
-                    
+                    }
+                    Button(role: .destructive) {
+                        showingDeleteConfirm.toggle()
+                    } label: {
+                        Label("Delete the client", systemImage: "trash")
                     }
                     
                     
+                    
                 }
-                .frame(height: 300)
                 
-                Button {
-                    showingDeleteConfirm.toggle()
-                } label: {
-                    Label("Delete", systemImage: "trash")
-                }
-                // .padding(0)
+                Text("Projects")
+                    //.padding()
+                ProjectsList(client: client)
                 
               //  .onDisappear(perform: dataController.save)
                 .navigationTitle("Edit client")
@@ -112,18 +112,8 @@ struct EditClientView: View {
                 }
               //  .onChange(of: name) { _ in update() }
                 
-                NavigationLink(destination: ProjectsView(), isActive: $showingProjectsList) { EmptyView() }
-                Button("To the projects") {
-                    showingProjectsList = true
-                }
-                Spacer()
-                
-                //    Text("projects")
-                
-                //   ProjectsList(client: client)
-                
+               
             }
-     //   }
         
     }
 }
