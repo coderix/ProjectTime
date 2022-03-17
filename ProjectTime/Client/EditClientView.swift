@@ -81,21 +81,20 @@ struct EditClientView: View {
                     
                     
                 }
-              //  .frame(height: 100)
+                .frame(height: 300)
+                
+                Button {
+                    showingDeleteConfirm.toggle()
+                } label: {
+                    Label("Delete", systemImage: "trash")
+                }
                 // .padding(0)
                 
               //  .onDisappear(perform: dataController.save)
                 .navigationTitle("Edit client")
                 .navigationBarTitleDisplayMode(.inline)
                 .toolbar {
-                    ToolbarItem(placement: .navigationBarTrailing) {
-                        Button {
-                            showingDeleteConfirm.toggle()
-                        } label: {
-                            Label("Delete", systemImage: "trash")
-                        }
-                        
-                    }
+                    
                     ToolbarItem {
                         Button("OK") {
                             update()
