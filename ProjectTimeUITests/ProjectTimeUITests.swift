@@ -48,18 +48,6 @@ class ProjectTimeUITests: XCTestCase {
         XCTAssertEqual(app.tables.cells.count, 3, "There should be 3 list rows after adding a project.")
 
     }
-    func testCreateClient1() {
-        let tabBar = app.tabBars["Tab Bar"]
-
-        // Open ClientsView
-        tabBar.buttons["Clients"].tap()
-        XCTAssertEqual(app.tables.cells.count, 1, "There should be 1 client list row initially")
-
-        // create new client
-        app.buttons["Add a Client"].tap()
-        XCTAssertEqual(app.tables.cells.count, 2, "There should be 2 list rows after adding a project.")
-
-    }
     
     func testCreateClient() throws {
         
@@ -82,6 +70,8 @@ class ProjectTimeUITests: XCTestCase {
         XCTAssertEqual(app.tables.cells.count, 2, "There should be 2 clients now")
         
     }
+   
+    
     func testEditClient () throws{
         
         let app = XCUIApplication()
@@ -99,6 +89,7 @@ class ProjectTimeUITests: XCTestCase {
       
         
     }
+   
     
 
     func testDeleteClient() {
