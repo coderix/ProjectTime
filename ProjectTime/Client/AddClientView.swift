@@ -76,6 +76,7 @@ struct AddClientView: View {
                         save()
                     }
                     .disabled(nameNotValid)
+                    .accessibilityIdentifier("Add")
                     
                 }
             }

@@ -48,7 +48,7 @@ class ProjectTimeUITests: XCTestCase {
         XCTAssertEqual(app.tables.cells.count, 3, "There should be 3 list rows after adding a project.")
 
     }
-    func testCreateClient() {
+    func testCreateClient1() {
         let tabBar = app.tabBars["Tab Bar"]
 
         // Open ClientsView
@@ -56,11 +56,32 @@ class ProjectTimeUITests: XCTestCase {
         XCTAssertEqual(app.tables.cells.count, 1, "There should be 1 client list row initially")
 
         // create new client
-        app.buttons["Add new client"].tap()
+        app.buttons["Add a Client"].tap()
         XCTAssertEqual(app.tables.cells.count, 2, "There should be 2 list rows after adding a project.")
 
     }
-
+    
+    func testCreateClient() throws {
+        
+        let app = XCUIApplication()
+        app.tabBars["Tab Bar"].buttons["Clients"].tap()
+        
+        let app2 = app
+        app2/*@START_MENU_TOKEN@*/.navigationBars["clients"]/*[[".otherElements[\"Clients\"].navigationBars[\"clients\"]",".navigationBars[\"clients\"]"],[[[-1,1],[-1,0]]],[0]]@END_MENU_TOKEN@*/.buttons["Add a Client"].tap()
+        
+        let tablesQuery = app2.tables
+        let nameTextField = tablesQuery/*@START_MENU_TOKEN@*/.textFields["clientName"]/*[[".cells[\"Name\"]",".textFields[\"Name\"]",".textFields[\"clientName\"]"],[[[-1,2],[-1,1],[-1,0,1]],[[-1,2],[-1,1]]],[0]]@END_MENU_TOKEN@*/
+        nameTextField.tap()
+        nameTextField.typeText("H")
+        
+        let projectRateTextField = tablesQuery/*@START_MENU_TOKEN@*/.textFields["Project Rate"]/*[[".cells.textFields[\"Project Rate\"]",".textFields[\"Project Rate\"]"],[[[-1,1],[-1,0]]],[0]]@END_MENU_TOKEN@*/
+        projectRateTextField.tap()
+        projectRateTextField.typeText("10")
+        app.navigationBars["New Client"].buttons["Add"].tap()
+        app.tabBars["Tab Bar"].buttons["Clients"].tap()
+        XCTAssertEqual(app.tables.cells.count, 2, "There should be 2 clients now")
+        
+    }
     func testEditClient () throws{
         
         let app = XCUIApplication()
