@@ -6,15 +6,19 @@
 //
 
 import SwiftUI
+import CoreData
 
 struct EditProjectView: View {
     @Environment(\.managedObjectContext) private var viewContext
     @Environment(\.presentationMode) var presentationMode
     @EnvironmentObject var dataController: DataController
+    
+    @FetchRequest var projects: FetchedResults<Project>
 
     let project: Project
 
     @State private var title: String
+    @State private var originalTitle: String
     @State private var details: String
     @State private var clientName: String
     @State private var rate: Decimal
@@ -25,9 +29,14 @@ struct EditProjectView: View {
     init(project: Project) {
         self.project = project
         _title = State(wrappedValue: project.projectTitle)
+        _originalTitle = State(wrappedValue: project.projectTitle)
         _details = State(wrappedValue: project.projectDetails)
         _clientName = State(wrappedValue: project.clientName)
         _rate = State(wrappedValue: ((project.rate ?? 0.0) as Decimal))
+        
+        let projectFetchRequest: NSFetchRequest<Project> = Project.fetchRequest()
+        projectFetchRequest.sortDescriptors = [NSSortDescriptor(keyPath: \Project.title, ascending: true)]
+        self._projects = FetchRequest(fetchRequest: projectFetchRequest)
 
     }
 
@@ -49,6 +58,20 @@ struct EditProjectView: View {
     func cancel() {
         presentationMode.wrappedValue.dismiss()
     }
+    
+    var titleNotValid: Bool {
+        if title.isEmpty {
+            return true
+        }
+        if projects.contains(where: {$0.title == title}) {
+            if title != originalTitle {
+                return true
+            }
+            
+        }
+        return false
+    }
+    
     var body: some View {
 
         NavigationView {
@@ -98,6 +121,7 @@ struct EditProjectView: View {
                     Button("Done") {
                         update()
                     }
+                    .disabled(titleNotValid)
 
                 }
             }
