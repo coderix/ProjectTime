@@ -14,6 +14,7 @@ struct AddProjectView: View {
     @Environment(\.presentationMode) var presentationMode
     
     @FetchRequest var clients: FetchedResults<Client>
+    @FetchRequest var projects: FetchedResults<Project>
     
     @State private var selection: Client?
     
@@ -33,6 +34,10 @@ struct AddProjectView: View {
             NSSortDescriptor(keyPath: \Client.name, ascending: true)
         ]
         self._clients = FetchRequest(fetchRequest: fetchRequest)
+        
+        let projectFetchRequest: NSFetchRequest<Project> = Project.fetchRequest()
+        projectFetchRequest.sortDescriptors = [NSSortDescriptor(keyPath: \Project.title, ascending: true)]
+        self._projects = FetchRequest(fetchRequest: projectFetchRequest)
        
     }
     
@@ -54,6 +59,17 @@ struct AddProjectView: View {
     func cancel() {
         presentationMode.wrappedValue.dismiss()
     }
+    
+    var titleNotValid: Bool {
+        if title.isEmpty {
+            return true
+        }
+        if projects.contains(where: {$0.title == title}) {
+            return true
+        }
+        return false
+    }
+
     var body: some View {
         NavigationView {
             
@@ -88,6 +104,7 @@ struct AddProjectView: View {
                     Button("Add") {
                         save()
                     }
+                    .disabled(titleNotValid)
                     
                 }
             }
