@@ -65,6 +65,11 @@ struct EditHour: View {
         presentationMode.wrappedValue.dismiss()
     }
 
+    private func stopNow() {
+        end = Date()
+        save()
+    }
+    
     func cancel() {
         presentationMode.wrappedValue.dismiss()
     }
@@ -101,6 +106,11 @@ struct EditHour: View {
                     Section(header: Text("Time")) {
                         DatePicker("Start", selection: $start, in: ...end, displayedComponents: [.date, .hourAndMinute])
                         DatePicker("End", selection: $end, in: start..., displayedComponents: [.date, .hourAndMinute])
+                        Button("Stop now") {
+                            withAnimation {
+                                stopNow()
+                            }
+                        }
                         HStack {
                             Text("Duration:  \(tempDuration)")
                         }
