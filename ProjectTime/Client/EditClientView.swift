@@ -24,6 +24,7 @@ struct EditClientView: View {
     @Environment(\.presentationMode) var presentationMode
     @State private var showingDeleteConfirm = false
     @State private var showingProjectsList = false
+    @State private var showingAddProjectView = false
     
     init(client: Client) {
         
@@ -59,38 +60,49 @@ struct EditClientView: View {
     }
     
     var body: some View {
-       // NavigationView {
+        // NavigationView {
+        
+        VStack {
             
-            VStack {
-                
-                Form {
-                    Section(header: Text("Client")) {
-                        VStack {
-                            TextField("Name", text: $name)
-                                .accessibilityIdentifier("clientName")
-                        }
-                       
+            Form {
+                Section(header: Text("Client")) {
+                    VStack {
+                        TextField("Name", text: $name)
+                            .accessibilityIdentifier("clientName")
                     }
-                    Section(header: Text("Rate")) {
-                        TextField("Project Rate", value: $rate, format: .number)
-                                       // .textFieldStyle(.roundedBorder)
-                                        .keyboardType(.decimalPad)
-                    }
-                    Button(role: .destructive) {
-                        showingDeleteConfirm.toggle()
-                    } label: {
-                        Label("Delete the client", systemImage: "trash")
-                    }
-                    
-                    
                     
                 }
+                Section(header: Text("Rate")) {
+                    TextField("Project Rate", value: $rate, format: .number)
+                        .keyboardType(.decimalPad)
+                }
+                Button(role: .destructive) {
+                    showingDeleteConfirm.toggle()
+                } label: {
+                    Label("Delete the client", systemImage: "trash")
+                }
                 
+                
+                
+            }
+            
+            HStack {
                 Text("Projects")
-                    //.padding()
-                ProjectsList(client: client)
                 
-              //  .onDisappear(perform: dataController.save)
+                
+                Spacer()
+                Button("Add a Project") {
+                    showingAddProjectView.toggle()
+                }
+            }
+            .padding(.horizontal)
+            
+            
+            
+            //.padding()
+            ProjectsList(client: client)
+            
+            //  .onDisappear(perform: dataController.save)
                 .navigationTitle("Edit client")
                 .navigationBarTitleDisplayMode(.inline)
                 .toolbar {
@@ -99,10 +111,10 @@ struct EditClientView: View {
                         Button("OK") {
                             update()
                         }
-
+                        
                     }
                 }
-                
+            
                 .alert(isPresented: $showingDeleteConfirm) {
                     Alert(title: Text("Delete the client?"),
                           message: Text("Deleting the client also deletes all projects belonging to the client"), // swiftlint:disable:this line_length
@@ -110,10 +122,14 @@ struct EditClientView: View {
                                                   action: delete),
                           secondaryButton: .cancel())
                 }
-              //  .onChange(of: name) { _ in update() }
-                
-               
-            }
+            //  .onChange(of: name) { _ in update() }
+            
+            
+        }
+        
+        .sheet(isPresented: $showingAddProjectView) {
+            AddProjectView(client: client).environment(\.managedObjectContext, self.viewContext)
+        }
         
     }
 }

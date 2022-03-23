@@ -86,9 +86,7 @@ struct EditProjectView: View {
                         TextField("Project Rate", value: $rate, format: .number)
                                        // .textFieldStyle(.roundedBorder)
                                         .keyboardType(.decimalPad)
-                                        .padding()
-                    //    Text("Rate: \(String(rate))")
-
+                                       // .padding()
                     }
 
                     Section(header: Text("Details")) {

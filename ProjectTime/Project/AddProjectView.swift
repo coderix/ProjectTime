@@ -22,7 +22,7 @@ struct AddProjectView: View {
     @State private var details: String = ""
     @State private var closed = false
     @State private var timestamp = Date()
-    @State private var rate = 0.0
+    @State private var rate: Decimal = 0.0
     @State private var id = UUID()// swiftlint:disable:this identifier_name
     
     @State private var firstRun = true
@@ -38,7 +38,13 @@ struct AddProjectView: View {
         let projectFetchRequest: NSFetchRequest<Project> = Project.fetchRequest()
         projectFetchRequest.sortDescriptors = [NSSortDescriptor(keyPath: \Project.title, ascending: true)]
         self._projects = FetchRequest(fetchRequest: projectFetchRequest)
-       
+        
+    }
+    
+    init (client: Client){
+        self.init()
+        _selection = State(wrappedValue: client)
+        _rate = State(wrappedValue:((client.rate ?? 0.0) as Decimal))
     }
     
     
@@ -69,7 +75,7 @@ struct AddProjectView: View {
         }
         return false
     }
-
+    
     var body: some View {
         NavigationView {
             
@@ -87,6 +93,12 @@ struct AddProjectView: View {
                         }
                         //  .pickerStyle(MenuPickerStyle())
                         
+                    }
+                    
+                    Section(header: Text("Rate")) {
+                        TextField("Project Rate", value: $rate, format: .number)
+                        // .textFieldStyle(.roundedBorder)
+                            .keyboardType(.decimalPad)
                     }
                     Section(header: Text("Details")) {
                         TextEditor(text: $details)
