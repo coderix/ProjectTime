@@ -17,11 +17,13 @@ struct ProjectsList: View {
     @State private var selectedProject : Project?
     @State private var selectedProjectForHoursList : Project?
     @State private var showDeleteDialog = false
+    @State private var showClient = true
     
     init (client: Client) {
         fetchRequest = FetchRequest<Project>(entity: Project.entity(),
                                              sortDescriptors: [NSSortDescriptor(keyPath: \Project.timestamp, ascending: false)],
                                              predicate: NSPredicate(format: "client == %@", client))
+        _showClient = State(wrappedValue: false)
     }
     
     init () {
@@ -29,7 +31,7 @@ struct ProjectsList: View {
                                              sortDescriptors: [NSSortDescriptor(keyPath: \Project.timestamp, ascending: false)])
     }
     
-    
+   
     private func deleteProjects(offsets: IndexSet) {
         withAnimation {
             offsets.map { fetchRequest.wrappedValue[$0] }.forEach(viewContext.delete)
@@ -68,7 +70,10 @@ struct ProjectsList: View {
                  {HStack {
                     Text(project.projectTitle)
                     Spacer()
-                    Text(project.clientName)
+                     if showClient {
+                         Text(project.clientName)
+                     }
+                    
                  }}
                 
                     .swipeActions {
