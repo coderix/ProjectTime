@@ -49,7 +49,7 @@ extension Hour {
         let dateFormatter = DateFormatter()
         dateFormatter.dateStyle = .none
         dateFormatter.timeStyle = .short
-        dateFormatter.locale = Locale(identifier: "de_DE")
+       // dateFormatter.locale = Locale(identifier: "de_DE")
         return dateFormatter.string(from: date)
     }
     var duration: TimeInterval {
