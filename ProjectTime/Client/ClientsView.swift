@@ -19,6 +19,7 @@ struct ClientsView: View {
     static let tag: String? = "clients"
     
     @State var showingAddClientView = false
+    @State private var showingDeleteConfirmation = false
 
     private func addClient() {
         withAnimation {
@@ -76,7 +77,7 @@ struct ClientsView: View {
                                 })
                         }
                         // too dangerous without an alert
-                       // .onDelete(perform: deleteClients)
+                        .onDelete(perform: {_ in showingDeleteConfirmation.toggle()})
                     }
                     .listStyle(InsetGroupedListStyle())
                 }
@@ -111,6 +112,10 @@ struct ClientsView: View {
                 })
 
             })
+            
+            .alert("Delete the client(s)?", isPresented: $showingDeleteConfirmation) {
+                Button("Delete") {}
+            }
 
             SelectSomethingView()
 
@@ -122,8 +127,8 @@ struct ClientsView_Previews: PreviewProvider {
     static var dataController = DataController.preview
     static var previews: some View {
         ClientsView()
-      //      .environment(\.managedObjectContext, dataController.container.viewContext)
-      //                     .environmentObject(dataController)
+            .environment(\.managedObjectContext, dataController.container.viewContext)
+                           .environmentObject(dataController)
 
     }
 }
