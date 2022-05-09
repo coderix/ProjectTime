@@ -22,7 +22,7 @@ struct ContentView: View {
         clientRequest.sortDescriptors = [
             NSSortDescriptor(keyPath: \Client.name, ascending: true)
         ]
-        clientRequest.fetchLimit = 1
+       // clientRequest.fetchLimit = 1
         _clients = FetchRequest(fetchRequest: clientRequest)
         
         let projectRequest: NSFetchRequest<Project> = Project.fetchRequest()
