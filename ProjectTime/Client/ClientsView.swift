@@ -10,6 +10,7 @@ import CoreData
 
 struct ClientsView: View {
     @Environment(\.managedObjectContext) private var viewContext
+    @EnvironmentObject var dataController: DataController
 
     @FetchRequest(
         sortDescriptors: [NSSortDescriptor(keyPath: \Client.name, ascending: true)],
@@ -19,6 +20,8 @@ struct ClientsView: View {
     static let tag: String? = "clients"
     
     @State var showingAddClientView = false
+    @State private var showingDeleteConfirmation = false
+    @State private var clientToDelete: Client?
 
     private func addClient() {
         withAnimation {
@@ -40,21 +43,11 @@ struct ClientsView: View {
         }
     }
 
+ 
     private func deleteClients(offsets: IndexSet) {
-        withAnimation {
-            offsets.map { clients[$0] }.forEach(viewContext.delete)
-
-            do {
-                try viewContext.save()
-            } catch {
-                // Replace this implementation with code to handle the error appropriately.
-                // fatalError() causes the application to generate a crash log and terminate.
-                // You should not use this function in a shipping application,
-                // although it may be useful during development.
-                let nsError = error as NSError
-
-                fatalError("Unresolved error \(nsError), \(nsError.userInfo)")
-            }
+        for index in offsets {
+            clientToDelete = clients[index]
+            showingDeleteConfirmation.toggle()
         }
     }
 
@@ -76,7 +69,7 @@ struct ClientsView: View {
                                 })
                         }
                         // too dangerous without an alert
-                       // .onDelete(perform: deleteClients)
+                        .onDelete(perform: deleteClients)
                     }
                     .listStyle(InsetGroupedListStyle())
                 }
@@ -111,6 +104,15 @@ struct ClientsView: View {
                 })
 
             })
+            
+            .alert("Delete the client(s)?", isPresented: $showingDeleteConfirmation) {
+                Button("Delete", role: .destructive) {
+                    dataController.delete(clientToDelete!)
+                    dataController.save()
+                    
+                }
+                Button("Cancel", role: .cancel) {}
+            }
 
             SelectSomethingView()
 
@@ -122,8 +124,8 @@ struct ClientsView_Previews: PreviewProvider {
     static var dataController = DataController.preview
     static var previews: some View {
         ClientsView()
-      //      .environment(\.managedObjectContext, dataController.container.viewContext)
-      //                     .environmentObject(dataController)
+            .environment(\.managedObjectContext, dataController.container.viewContext)
+                           .environmentObject(dataController)
 
     }
 }
