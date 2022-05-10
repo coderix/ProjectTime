@@ -1,0 +1,294 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xliff xmlns="urn:oasis:names:tc:xliff:document:1.2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="1.2" xsi:schemaLocation="urn:oasis:names:tc:xliff:document:1.2 http://docs.oasis-open.org/xliff/v1.2/os/xliff-core-1.2-strict.xsd">
+  <file original="ProjectTime/en.lproj/Localizable.strings" datatype="plaintext" source-language="en" target-language="de">
+    <header>
+      <tool tool-id="com.apple.dt.xcode" tool-name="Xcode" tool-version="13.3.1" build-num="13E500a"/>
+    </header>
+    <body>
+      <trans-unit id="%@ - New Time" xml:space="preserve">
+        <source>%@ - New Time</source>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="-" xml:space="preserve">
+        <source>-</source>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="A client with that name already exists" xml:space="preserve">
+        <source>A client with that name already exists</source>
+        <target>Es existiert bereits ein Kunde mit diesem Namen</target>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="Add" xml:space="preserve">
+        <source>Add</source>
+        <target>Hinzufügen</target>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="Add a Client" xml:space="preserve">
+        <source>Add a Client</source>
+        <target>Kunde hinzufügen</target>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="Add a Project" xml:space="preserve">
+        <source>Add a Project</source>
+        <target>Projekt hinzu fügen</target>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="Add this Task" xml:space="preserve">
+        <source>Add this Task</source>
+        <target>Diese Aufgabe hinzufügen</target>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="All hours of the project will also be deleted" xml:space="preserve">
+        <source>All hours of the project will also be deleted</source>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="Are you sure you want to delete this ? This can't be undone..." xml:space="preserve">
+        <source>Are you sure you want to delete this ? This can't be undone...</source>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="Cancel" xml:space="preserve">
+        <source>Cancel</source>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="Client" xml:space="preserve">
+        <source>Client</source>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="Clients" xml:space="preserve">
+        <source>Clients</source>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="Close" xml:space="preserve">
+        <source>Close</source>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="Continue" xml:space="preserve">
+        <source>Continue</source>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="Delete" xml:space="preserve">
+        <source>Delete</source>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="Delete a Project" xml:space="preserve">
+        <source>Delete a Project</source>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="Delete the Project?" xml:space="preserve">
+        <source>Delete the Project?</source>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="Delete the Task ?" xml:space="preserve">
+        <source>Delete the Task ?</source>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="Delete the client" xml:space="preserve">
+        <source>Delete the client</source>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="Delete the client(s)?" xml:space="preserve">
+        <source>Delete the client(s)?</source>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="Delete the client?" xml:space="preserve">
+        <source>Delete the client?</source>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="Delete this Project" xml:space="preserve">
+        <source>Delete this Project</source>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="Delete this Task" xml:space="preserve">
+        <source>Delete this Task</source>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="Deleting the client also deletes all projects belonging to the client" xml:space="preserve">
+        <source>Deleting the client also deletes all projects belonging to the client</source>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="Details" xml:space="preserve">
+        <source>Details</source>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="Do you really want to delete the project?" xml:space="preserve">
+        <source>Do you really want to delete the project?</source>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="Done" xml:space="preserve">
+        <source>Done</source>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="Duration:  %@" xml:space="preserve">
+        <source>Duration:  %@</source>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="Edit" xml:space="preserve">
+        <source>Edit</source>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="Edit client" xml:space="preserve">
+        <source>Edit client</source>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="End" xml:space="preserve">
+        <source>End</source>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="Error" xml:space="preserve">
+        <source>Error</source>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="Home" xml:space="preserve">
+        <source>Home</source>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="Invoice:" xml:space="preserve">
+        <source>Invoice:</source>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="Label" xml:space="preserve">
+        <source>Label</source>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="Name" xml:space="preserve">
+        <source>Name</source>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="New Client" xml:space="preserve">
+        <source>New Client</source>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="New Project" xml:space="preserve">
+        <source>New Project</source>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="New Task" xml:space="preserve">
+        <source>New Task</source>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="New Time" xml:space="preserve">
+        <source>New Time</source>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="New task" xml:space="preserve">
+        <source>New task</source>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="No clients" xml:space="preserve">
+        <source>No clients</source>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="No projects found" xml:space="preserve">
+        <source>No projects found</source>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="OK" xml:space="preserve">
+        <source>OK</source>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="Please select something from the menu (arrow left)" xml:space="preserve">
+        <source>Please select something from the menu (arrow left)</source>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="Project Rate" xml:space="preserve">
+        <source>Project Rate</source>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="Project Times" xml:space="preserve">
+        <source>Project Times</source>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="Project Title" xml:space="preserve">
+        <source>Project Title</source>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="Projects" xml:space="preserve">
+        <source>Projects</source>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="Rate" xml:space="preserve">
+        <source>Rate</source>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="Running" xml:space="preserve">
+        <source>Running</source>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="Start" xml:space="preserve">
+        <source>Start</source>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="Stop now" xml:space="preserve">
+        <source>Stop now</source>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="Stundensatz: " xml:space="preserve">
+        <source>Stundensatz: </source>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="Task" xml:space="preserve">
+        <source>Task</source>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="Tasks" xml:space="preserve">
+        <source>Tasks</source>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="Time" xml:space="preserve">
+        <source>Time</source>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="Titel" xml:space="preserve">
+        <source>Titel</source>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="Title" xml:space="preserve">
+        <source>Title</source>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="Total: " xml:space="preserve">
+        <source>Total: </source>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="client" xml:space="preserve">
+        <source>client</source>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="clients" xml:space="preserve">
+        <source>clients</source>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="delete" xml:space="preserve">
+        <source>delete</source>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="edit" xml:space="preserve">
+        <source>edit</source>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="hours" xml:space="preserve">
+        <source>hours</source>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="task" xml:space="preserve">
+        <source>task</source>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="tasks" xml:space="preserve">
+        <source>tasks</source>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+    </body>
+  </file>
+  <file original="ProjectTime/en.lproj/ProjectTime-InfoPlist.strings" datatype="plaintext" source-language="en" target-language="de">
+    <header>
+      <tool tool-id="com.apple.dt.xcode" tool-name="Xcode" tool-version="13.3.1" build-num="13E500a"/>
+    </header>
+    <body>
+      <trans-unit id="CFBundleName" xml:space="preserve">
+        <source>ProjectTime</source>
+        <note>Bundle name</note>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>

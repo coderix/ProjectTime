@@ -35,6 +35,8 @@
 		434D9A29273D2C270009C72C /* ProjectsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 434D9A13273D2C270009C72C /* ProjectsView.swift */; };
 		434D9A2A273D2C270009C72C /* AddProjectView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 434D9A14273D2C270009C72C /* AddProjectView.swift */; };
 		435D4AAD276E3689009F4B96 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 435D4AAC276E3689009F4B96 /* README.md */; };
+		436D8921282A42170001DF1A /* ProjectTime Localizations in Resources */ = {isa = PBXBuildFile; fileRef = 436D8920282A42170001DF1A /* ProjectTime Localizations */; };
+		436D8924282A432E0001DF1A /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 436D8922282A432E0001DF1A /* Localizable.strings */; };
 		43739B752788281900E82F4B /* DataControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43739B742788281900E82F4B /* DataControllerTests.swift */; };
 		439FC8B1273D272F004B15DB /* ProjectTimeApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 439FC8B0273D272F004B15DB /* ProjectTimeApp.swift */; };
 		439FC8B3273D272F004B15DB /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 439FC8B2273D272F004B15DB /* ContentView.swift */; };
@@ -96,6 +98,8 @@
 		434D9A13273D2C270009C72C /* ProjectsView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProjectsView.swift; sourceTree = "<group>"; };
 		434D9A14273D2C270009C72C /* AddProjectView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddProjectView.swift; sourceTree = "<group>"; };
 		435D4AAC276E3689009F4B96 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		436D8920282A42170001DF1A /* ProjectTime Localizations */ = {isa = PBXFileReference; lastKnownFileType = folder; name = "ProjectTime Localizations"; path = "ProjectTime/ProjectTime Localizations"; sourceTree = "<group>"; };
+		436D8923282A432E0001DF1A /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/Localizable.strings; sourceTree = "<group>"; };
 		43739B742788281900E82F4B /* DataControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataControllerTests.swift; sourceTree = "<group>"; };
 		439FC8AD273D272F004B15DB /* ProjectTime.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ProjectTime.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		439FC8B0273D272F004B15DB /* ProjectTimeApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectTimeApp.swift; sourceTree = "<group>"; };
@@ -215,6 +219,7 @@
 		439FC8A4273D272F004B15DB = {
 			isa = PBXGroup;
 			children = (
+				436D8920282A42170001DF1A /* ProjectTime Localizations */,
 				43B2DF6C276F6426002AFDB4 /* .gitignore */,
 				435D4AAC276E3689009F4B96 /* README.md */,
 				439FC8AF273D272F004B15DB /* ProjectTime */,
@@ -238,6 +243,7 @@
 		439FC8AF273D272F004B15DB /* ProjectTime */ = {
 			isa = PBXGroup;
 			children = (
+				436D8922282A432E0001DF1A /* Localizable.strings */,
 				433BB395273D702D006200AA /* ProjectTime.entitlements */,
 				434D9A0A273D2C270009C72C /* Client */,
 				434D9A09273D2C270009C72C /* DataController.swift */,
@@ -391,7 +397,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				43B2DF6D276F6426002AFDB4 /* .gitignore in Resources */,
+				436D8924282A432E0001DF1A /* Localizable.strings in Resources */,
 				439FC8B8273D2730004B15DB /* Preview Assets.xcassets in Resources */,
+				436D8921282A42170001DF1A /* ProjectTime Localizations in Resources */,
 				435D4AAD276E3689009F4B96 /* README.md in Resources */,
 				439FC8B5273D2730004B15DB /* Assets.xcassets in Resources */,
 			);
@@ -484,6 +492,17 @@
 			targetProxy = 439FC8CD273D2731004B15DB /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		436D8922282A432E0001DF1A /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				436D8923282A432E0001DF1A /* de */,
+			);
+			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		439FC8D4273D2731004B15DB /* Debug */ = {
