@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <xliff xmlns="urn:oasis:names:tc:xliff:document:1.2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="1.2" xsi:schemaLocation="urn:oasis:names:tc:xliff:document:1.2 http://docs.oasis-open.org/xliff/v1.2/os/xliff-core-1.2-strict.xsd">
-  <file original="ProjectTime/en.lproj/Localizable.strings" datatype="plaintext" source-language="en" target-language="de">
+  <file original="ProjectTime/en.lproj/Localizable.strings" source-language="en" target-language="de" datatype="plaintext">
     <header>
       <tool tool-id="com.apple.dt.xcode" tool-name="Xcode" tool-version="13.3.1" build-num="13E500a"/>
     </header>
@@ -30,7 +30,7 @@
       </trans-unit>
       <trans-unit id="Add a Project" xml:space="preserve">
         <source>Add a Project</source>
-        <target>Projekt hinzufügen</target>
+        <target>Projekt hinzu fügen</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
       <trans-unit id="Add this Task" xml:space="preserve">
@@ -253,6 +253,10 @@
         <target>Stundensatz</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
+      <trans-unit id="Rate: " xml:space="preserve">
+        <source>Rate: </source>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
       <trans-unit id="Running" xml:space="preserve">
         <source>Running</source>
         <target>Läuft</target>
@@ -268,10 +272,6 @@
         <target>Jetzt beenden</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
-      <trans-unit id="Stundensatz: " xml:space="preserve">
-        <source>Stundensatz: </source>
-        <note>No comment provided by engineer.</note>
-      </trans-unit>
       <trans-unit id="Task" xml:space="preserve">
         <source>Task</source>
         <target>Aufgabe</target>
@@ -284,7 +284,6 @@
       </trans-unit>
       <trans-unit id="Time" xml:space="preserve">
         <source>Time</source>
-        <target>Zeit</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
       <trans-unit id="Titel" xml:space="preserve">
@@ -293,12 +292,10 @@
       </trans-unit>
       <trans-unit id="Title" xml:space="preserve">
         <source>Title</source>
-        <target>Titel</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
       <trans-unit id="Total: " xml:space="preserve">
         <source>Total: </source>
-        <target>Gesamtsumme:</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
       <trans-unit id="client" xml:space="preserve">
