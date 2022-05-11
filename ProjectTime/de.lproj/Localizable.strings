@@ -8,7 +8,7 @@
 "Add a Client" = "Kunde hinzufügen";
 
 /* No comment provided by engineer. */
-"Add a Project" = "Projekt hinzu fügen";
+"Add a Project" = "Projekt hinzufügen";
 
 /* No comment provided by engineer. */
 "Add this Task" = "Diese Aufgabe hinzufügen";
@@ -107,7 +107,7 @@
 "hours" = "Stunden";
 
 /* No comment provided by engineer. */
-"Invoice:" = "Rechnungsbetrag:";
+"Invoice:" = "Rechnung:";
 
 /* No comment provided by engineer. */
 "Label" = "Label";
@@ -185,5 +185,5 @@
 "Title" = "Titel";
 
 /* No comment provided by engineer. */
-"Total: " = "Gesamtsumme:";
+"Total: " = "Summe:";
 
