@@ -284,6 +284,7 @@
       </trans-unit>
       <trans-unit id="Time" xml:space="preserve">
         <source>Time</source>
+        <target>Zeit</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
       <trans-unit id="Titel" xml:space="preserve">
@@ -292,10 +293,12 @@
       </trans-unit>
       <trans-unit id="Title" xml:space="preserve">
         <source>Title</source>
+        <target>Titel</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
       <trans-unit id="Total: " xml:space="preserve">
         <source>Total: </source>
+        <target>Gesamtsumme:</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
       <trans-unit id="client" xml:space="preserve">

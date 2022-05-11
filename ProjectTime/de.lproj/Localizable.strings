@@ -1,0 +1,189 @@
+/* No comment provided by engineer. */
+"A client with that name already exists" = "Es existiert bereits ein Kunde mit diesem Namen";
+
+/* No comment provided by engineer. */
+"Add" = "Hinzufügen";
+
+/* No comment provided by engineer. */
+"Add a Client" = "Kunde hinzufügen";
+
+/* No comment provided by engineer. */
+"Add a Project" = "Projekt hinzufügen";
+
+/* No comment provided by engineer. */
+"Add this Task" = "Diese Aufgabe hinzufügen";
+
+/* No comment provided by engineer. */
+"All hours of the project will also be deleted" = "Die Projektzeiten werden ebenfalls gelöscht";
+
+/* No comment provided by engineer. */
+"Are you sure you want to delete this ? This can't be undone..." = "Bist Du da ganz sicher? Es gibt kein zurück";
+
+/* No comment provided by engineer. */
+"Cancel" = "Abbruch";
+
+/* No comment provided by engineer. */
+"client" = "Kunde";
+
+/* No comment provided by engineer. */
+"Client" = "Kunde";
+
+/* No comment provided by engineer. */
+"clients" = "Kunden";
+
+/* No comment provided by engineer. */
+"Clients" = "Kunden";
+
+/* No comment provided by engineer. */
+"Close" = "Schließen";
+
+/* No comment provided by engineer. */
+"Continue" = "Weiter";
+
+/* No comment provided by engineer. */
+"delete" = "löschen";
+
+/* No comment provided by engineer. */
+"Delete" = "Löschen";
+
+/* No comment provided by engineer. */
+"Delete a Project" = "Ein Projekt löschen";
+
+/* No comment provided by engineer. */
+"Delete the client" = "Den Kunden löschen";
+
+/* No comment provided by engineer. */
+"Delete the client?" = "Den Kunden löschen?";
+
+/* No comment provided by engineer. */
+"Delete the client(s)?" = "Kunden löschen?";
+
+/* No comment provided by engineer. */
+"Delete the Project?" = "Projekt löschen?";
+
+/* No comment provided by engineer. */
+"Delete the Task ?" = "Aufgabe löschen?";
+
+/* No comment provided by engineer. */
+"Delete this Project" = "Projekt löschen";
+
+/* No comment provided by engineer. */
+"Delete this Task" = "Aufgabe löschen";
+
+/* No comment provided by engineer. */
+"Deleting the client also deletes all projects belonging to the client" = "Dabei werden auch alle Projekte des Kunden gelöscht";
+
+/* No comment provided by engineer. */
+"Details" = "Details";
+
+/* No comment provided by engineer. */
+"Do you really want to delete the project?" = "Willst du das Projekt wirklich löschen?";
+
+/* No comment provided by engineer. */
+"Done" = "Fertig";
+
+/* No comment provided by engineer. */
+"Duration:  %@" = "Dauer: %@";
+
+/* No comment provided by engineer. */
+"edit" = "bearbeiten";
+
+/* No comment provided by engineer. */
+"Edit" = "Bearbeiten";
+
+/* No comment provided by engineer. */
+"Edit client" = "Kunde bearbeiten";
+
+/* No comment provided by engineer. */
+"End" = "Ende";
+
+/* No comment provided by engineer. */
+"Error" = "Fehler";
+
+/* No comment provided by engineer. */
+"Home" = "Home";
+
+/* No comment provided by engineer. */
+"hours" = "Stunden";
+
+/* No comment provided by engineer. */
+"Invoice:" = "Rechnung:";
+
+/* No comment provided by engineer. */
+"Label" = "Label";
+
+/* No comment provided by engineer. */
+"Name" = "Name";
+
+/* No comment provided by engineer. */
+"New Client" = "Neuer Kunde";
+
+/* No comment provided by engineer. */
+"New Project" = "Neues Projekt";
+
+/* No comment provided by engineer. */
+"New task" = "Neue Aufgabe";
+
+/* No comment provided by engineer. */
+"New Task" = "Neue Aufgabe";
+
+/* No comment provided by engineer. */
+"New Time" = "Neue Zeit";
+
+/* No comment provided by engineer. */
+"No clients" = "Keine Kunden";
+
+/* No comment provided by engineer. */
+"No projects found" = "Keine Projekte gefunden";
+
+/* No comment provided by engineer. */
+"OK" = "OK";
+
+/* No comment provided by engineer. */
+"Please select something from the menu (arrow left)" = "Bitte wähle etwas aus dem Menu links aus (Pfeil nach links)";
+
+/* No comment provided by engineer. */
+"Project Rate" = "Stundensatz";
+
+/* No comment provided by engineer. */
+"Project Times" = "Projektzeiten";
+
+/* No comment provided by engineer. */
+"Project Title" = "Projekttitel";
+
+/* No comment provided by engineer. */
+"Projects" = "Projekte";
+
+/* No comment provided by engineer. */
+"Rate" = "Stundensatz";
+
+/* No comment provided by engineer. */
+"Running" = "Läuft";
+
+/* No comment provided by engineer. */
+"Start" = "Start";
+
+/* No comment provided by engineer. */
+"Stop now" = "Jetzt beenden";
+
+/* No comment provided by engineer. */
+"task" = "Aufgabe";
+
+/* No comment provided by engineer. */
+"Task" = "Aufgabe";
+
+/* No comment provided by engineer. */
+"tasks" = "Aufgaben";
+
+/* No comment provided by engineer. */
+"Tasks" = "Aufgaben";
+
+/* No comment provided by engineer. */
+"Time" = "Zeit";
+
+/* No comment provided by engineer. */
+"Title" = "Titel";
+
+/* No comment provided by engineer. */
+"Total: " = "Summe:";
+

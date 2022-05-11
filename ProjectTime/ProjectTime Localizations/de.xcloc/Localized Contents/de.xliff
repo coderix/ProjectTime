@@ -170,7 +170,7 @@
       </trans-unit>
       <trans-unit id="Invoice:" xml:space="preserve">
         <source>Invoice:</source>
-        <target>Rechnungsbetrag:</target>
+        <target>Rechnung:</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
       <trans-unit id="Label" xml:space="preserve">
@@ -298,7 +298,7 @@
       </trans-unit>
       <trans-unit id="Total: " xml:space="preserve">
         <source>Total: </source>
-        <target>Gesamtsumme:</target>
+        <target>Summe:</target>
         <note>No comment provided by engineer.</note>
       </trans-unit>
       <trans-unit id="client" xml:space="preserve">

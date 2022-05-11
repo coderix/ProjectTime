@@ -32,7 +32,7 @@ struct ProjectInfoView: View {
             VStack {
                 Text(project.clientName)
                 HStack {
-                    Text("Stundensatz: ")
+                    Text("Rate: ")
                     Text(rateString)
                //     TextField("Price", value: project.projectRate, formatter: currencyFormatter)
                    // Text(project.projectRate)
