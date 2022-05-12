@@ -12,3 +12,5 @@ After cloning, you must customize the projectTime.xcodeproj project file. Go to 
 If necessary, you can activate iCloud:
 Go to capabilities, add iCloud, then select Cloudkit for Services and create a container. (https://developer.apple.com/documentation/cloudkit).
 
+# License
+The source code is licensed under the GNU General Public License v3.0. Details in license.md

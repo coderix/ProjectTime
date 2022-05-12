@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		4313904127428E1F00DE8DFE /* ColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4313904027428E1F00DE8DFE /* ColorExtension.swift */; };
+		433A76F3282CE62B007D230D /* License.md in Resources */ = {isa = PBXBuildFile; fileRef = 433A76F2282CE62B007D230D /* License.md */; };
 		433B6DEA276C7A660069DE17 /* DevelopmentTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 433B6DE7276C7A650069DE17 /* DevelopmentTests.swift */; };
 		433B6DEB276C7A660069DE17 /* ExtensionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 433B6DE8276C7A650069DE17 /* ExtensionTests.swift */; };
 		433B6DEC276C7A660069DE17 /* ProjectTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 433B6DE9276C7A650069DE17 /* ProjectTests.swift */; };
@@ -70,6 +71,7 @@
 
 /* Begin PBXFileReference section */
 		4313904027428E1F00DE8DFE /* ColorExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorExtension.swift; sourceTree = "<group>"; };
+		433A76F2282CE62B007D230D /* License.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = License.md; sourceTree = "<group>"; };
 		433B6DE7276C7A650069DE17 /* DevelopmentTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DevelopmentTests.swift; sourceTree = "<group>"; };
 		433B6DE8276C7A650069DE17 /* ExtensionTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExtensionTests.swift; sourceTree = "<group>"; };
 		433B6DE9276C7A650069DE17 /* ProjectTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProjectTests.swift; sourceTree = "<group>"; };
@@ -219,6 +221,7 @@
 		439FC8A4273D272F004B15DB = {
 			isa = PBXGroup;
 			children = (
+				433A76F2282CE62B007D230D /* License.md */,
 				436D8920282A42170001DF1A /* ProjectTime Localizations */,
 				43B2DF6C276F6426002AFDB4 /* .gitignore */,
 				435D4AAC276E3689009F4B96 /* README.md */,
@@ -398,6 +401,7 @@
 			files = (
 				43B2DF6D276F6426002AFDB4 /* .gitignore in Resources */,
 				436D8924282A432E0001DF1A /* Localizable.strings in Resources */,
+				433A76F3282CE62B007D230D /* License.md in Resources */,
 				439FC8B8273D2730004B15DB /* Preview Assets.xcassets in Resources */,
 				436D8921282A42170001DF1A /* ProjectTime Localizations in Resources */,
 				435D4AAD276E3689009F4B96 /* README.md in Resources */,
