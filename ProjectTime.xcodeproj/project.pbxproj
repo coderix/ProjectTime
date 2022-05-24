@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		4313904127428E1F00DE8DFE /* ColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4313904027428E1F00DE8DFE /* ColorExtension.swift */; };
+		43389447283D0F070023049F /* ExportDocument.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43389446283D0F070023049F /* ExportDocument.swift */; };
 		433A76F3282CE62B007D230D /* License.md in Resources */ = {isa = PBXBuildFile; fileRef = 433A76F2282CE62B007D230D /* License.md */; };
 		433B6DEA276C7A660069DE17 /* DevelopmentTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 433B6DE7276C7A650069DE17 /* DevelopmentTests.swift */; };
 		433B6DEB276C7A660069DE17 /* ExtensionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 433B6DE8276C7A650069DE17 /* ExtensionTests.swift */; };
@@ -71,6 +72,7 @@
 
 /* Begin PBXFileReference section */
 		4313904027428E1F00DE8DFE /* ColorExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorExtension.swift; sourceTree = "<group>"; };
+		43389446283D0F070023049F /* ExportDocument.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExportDocument.swift; sourceTree = "<group>"; };
 		433A76F2282CE62B007D230D /* License.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = License.md; sourceTree = "<group>"; };
 		433B6DE7276C7A650069DE17 /* DevelopmentTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DevelopmentTests.swift; sourceTree = "<group>"; };
 		433B6DE8276C7A650069DE17 /* ExtensionTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExtensionTests.swift; sourceTree = "<group>"; };
@@ -246,6 +248,7 @@
 		439FC8AF273D272F004B15DB /* ProjectTime */ = {
 			isa = PBXGroup;
 			children = (
+				43389446283D0F070023049F /* ExportDocument.swift */,
 				436D8922282A432E0001DF1A /* Localizable.strings */,
 				433BB395273D702D006200AA /* ProjectTime.entitlements */,
 				434D9A0A273D2C270009C72C /* Client */,
@@ -439,6 +442,7 @@
 				434D9A17273D2C270009C72C /* DateExtension.swift in Sources */,
 				434D9A16273D2C270009C72C /* TimeIntervalExtension.swift in Sources */,
 				434D9A25273D2C270009C72C /* ProjectsList.swift in Sources */,
+				43389447283D0F070023049F /* ExportDocument.swift in Sources */,
 				434D9A1A273D2C270009C72C /* ProjectHoursView.swift in Sources */,
 				434D9A2A273D2C270009C72C /* AddProjectView.swift in Sources */,
 				434D9A26273D2C270009C72C /* Project-CoreDataHelpers.swift in Sources */,
