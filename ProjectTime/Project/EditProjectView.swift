@@ -25,6 +25,9 @@ struct EditProjectView: View {
  //   @State private var rate =
 
     @State private var showingDeleteConfirm = false
+    
+    @State private var document: ExportDocument = ExportDocument(message: "Hello, World!")
+        @State private var isExporting: Bool = false
 
     init(project: Project) {
         self.project = project
@@ -92,11 +95,22 @@ struct EditProjectView: View {
                     Section(header: Text("Details")) {
                         TextEditor(text: $details)
                     }
+                    
+                    Button(action: { isExporting = true }, label: {
+                        Text("Export")
+                    })
 
                     Button("Delete this Project") {
                         showingDeleteConfirm.toggle()
                     }
 
+                }
+                .fileExporter(isPresented: $isExporting, document: document, contentType: .plainText, defaultFilename: "ProjectTimeExport") { result in
+                    if case .success = result {
+                        // Handle success
+                    } else {
+                        // Handle failure
+                    }
                 }
             }
 
