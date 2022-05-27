@@ -47,11 +47,11 @@ struct EditProjectView: View {
 
      func export() {
          var csvString = "\("Date"),\("Task"),\("From"),\("To"),\("Time")\n\n"
-       //  var csvString = "Date,"From"),\("To"),\("Time")\n\n"
          for hour in project.projectHours {
              csvString.append("\(hour.formattedStartDay),\(hour.task!.taskTitle),\(hour.formattedStartTime),\(hour.formattedEndTime),\(hour.durationString)\n")
          }
-         print (csvString)
+         csvString.append("Total Time: \(project.projectDurationString), Invoice: \(project.projectSalaryString)")
+         //print (csvString)
          self.document = ExportDocument(message: csvString)
         
         isExporting = true
