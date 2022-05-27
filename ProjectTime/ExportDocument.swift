@@ -10,7 +10,7 @@ import UniformTypeIdentifiers
 
 struct ExportDocument: FileDocument {
     
-    static var readableContentTypes: [UTType] { [.plainText] }
+    static var readableContentTypes: [UTType] { [.plainText, .commaSeparatedText] }
 
     var message: String
 

@@ -26,9 +26,10 @@ struct EditProjectView: View {
 
     @State private var showingDeleteConfirm = false
     
-    @State private var document: ExportDocument = ExportDocument(message: "Hello, World!")
+    
         @State private var isExporting: Bool = false
-
+    @State private var document: ExportDocument?
+    
     init(project: Project) {
         self.project = project
         _title = State(wrappedValue: project.projectTitle)
@@ -40,9 +41,22 @@ struct EditProjectView: View {
         let projectFetchRequest: NSFetchRequest<Project> = Project.fetchRequest()
         projectFetchRequest.sortDescriptors = [NSSortDescriptor(keyPath: \Project.title, ascending: true)]
         self._projects = FetchRequest(fetchRequest: projectFetchRequest)
-
+        
+       
     }
 
+     func export() {
+         var csvString = "\("Date"),\("Task"),\("From"),\("To"),\("Time")\n\n"
+       //  var csvString = "Date,"From"),\("To"),\("Time")\n\n"
+         for hour in project.projectHours {
+             csvString.append("\(hour.formattedStartDay),\(hour.task!.taskTitle),\(hour.formattedStartTime),\(hour.formattedEndTime),\(hour.durationString)\n")
+         }
+         print (csvString)
+         self.document = ExportDocument(message: csvString)
+        
+        isExporting = true
+        
+    }
     func update() {
      //   project.client?.objectWillChange.send()
         project.title = title
@@ -96,7 +110,7 @@ struct EditProjectView: View {
                         TextEditor(text: $details)
                     }
                     
-                    Button(action: { isExporting = true }, label: {
+                    Button(action: { export() }, label: {
                         Text("Export")
                     })
 
@@ -105,7 +119,7 @@ struct EditProjectView: View {
                     }
 
                 }
-                .fileExporter(isPresented: $isExporting, document: document, contentType: .plainText, defaultFilename: "ProjectTimeExport") { result in
+                .fileExporter(isPresented: $isExporting, document: document, contentType: .commaSeparatedText, defaultFilename: "ProjectTimeExport-\(project.projectTitle).csv") { result in
                     if case .success = result {
                         // Handle success
                     } else {
