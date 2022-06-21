@@ -91,8 +91,8 @@ struct EditProjectView: View {
     
     var body: some View {
         
-        NavigationView {
             VStack {
+                Text(project.clientName)
                 
                 Form {
                     Section(header: Text("Title")) {
@@ -135,7 +135,7 @@ struct EditProjectView: View {
                 }
             }
             
-            .navigationTitle(project.projectTitle + " - " + project.clientName)
+            .navigationTitle(project.projectTitle)
             .navigationBarTitleDisplayMode(.inline)
             .onDisappear(perform: dataController.save)
             .alert(isPresented: $showingDeleteConfirm) {
@@ -157,7 +157,7 @@ struct EditProjectView: View {
                     .disabled(titleNotValid)
                     
                 }
-            }
+         
             //     .onChange(of: title) { _ in update() }
             //     .onChange(of: details) { _ in update() }
         }

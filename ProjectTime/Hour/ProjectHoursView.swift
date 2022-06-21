@@ -38,20 +38,21 @@ struct ProjectHoursView: View {
         dataController.save()
     }
     
-  
+    
     private func add() {
         showingAddScreen.toggle()
     }
     
     var body: some View {
         
+        NavigationView {
             VStack {
                 HStack {
-                    Text(project.projectTitle)
+                   // Text(project.projectTitle)
                     Text("Project Times")
                 }
                 
-                    .padding(.top)
+              //  .padding(.top)
                 HStack {
                     EditButton()
                     Spacer()
@@ -62,7 +63,7 @@ struct ProjectHoursView: View {
                     Button(action: {presentationMode.wrappedValue.dismiss()}) {
                         Text("Close")
                     }
-                   
+                    
                 }
                 .padding()
                 
@@ -117,7 +118,7 @@ struct ProjectHoursView: View {
                     .onDelete(perform: deleteHours)
                     
                 }
-                .padding()
+             //   .padding()
                 .background(Color.systemGroupedBackground.ignoresSafeArea())
                 
                 
@@ -136,31 +137,44 @@ struct ProjectHoursView: View {
                 }
                 
                 .alert(isPresented: $showDeleteDialog) {
-                        Alert(
-                            title: Text("Titel"),
-                            message: Text("Are you sure you want to delete this ? This can't be undone..."),
-                            primaryButton: .cancel(),
-                            secondaryButton: .destructive(
-                                Text("Delete"),
-                                action: {
-                                       dataController.delete(hourToDelete!)
-                                    dataController.save()
-                                    showDeleteDialog = false
-                                }
-                            )
+                    Alert(
+                        title: Text("Titel"),
+                        message: Text("Are you sure you want to delete this ? This can't be undone..."),
+                        primaryButton: .cancel(),
+                        secondaryButton: .destructive(
+                            Text("Delete"),
+                            action: {
+                                dataController.delete(hourToDelete!)
+                                dataController.save()
+                                showDeleteDialog = false
+                            }
                         )
+                    )
                 }
-                                
                 
-                .navigationTitle(Text(project.projectTitle))
-                .navigationBarTitleDisplayMode(.inline)
                 
-                .navigationBarItems(trailing: Button {
-                    self.showingEditScreen.toggle()
-                } label: {
-                    Text("Edit")
-                })
+                //   .navigationTitle(Text(project.projectTitle))
+             //   .navigationBarTitleDisplayMode(.inline)
+                .toolbar {
+                    ToolbarItemGroup(placement: .navigationBarTrailing) {
+                        Text(project.projectTitle)
+                        Button("Edit"){
+                            self.showingEditScreen.toggle()
+                        }
+                        
+                        
+                    }
+                }
+                
+                .toolbar {
+                    ToolbarItem(placement: .bottomBar) {
+                        Button("Pressme") {
+                            print("pressed")
+                        }
+                    }
+                }
             }
+        }
         
     }
     

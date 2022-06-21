@@ -18,7 +18,6 @@ struct ProjectsList: View {
     @State private var selectedProjectForHoursList : Project?
     @State private var showDeleteDialog = false
     @State private var showClient = true
-    @State private var selectedAction : String? = nil
     
     init (client: Client) {
         fetchRequest = FetchRequest<Project>(entity: Project.entity(),
@@ -67,19 +66,13 @@ struct ProjectsList: View {
             ForEach(fetchRequest.wrappedValue) { project in
                 HStack {
                     Text(project.projectTitle)
-                    NavigationLink(destination: ProjectHoursView(project: project), tag: "hours", selection: $selectedAction) {
-                        Button("h") {
-                            selectedAction = "hours"
-                        }
-                        .buttonStyle(.borderless)
+                    NavigationLink(destination: ProjectHoursView(project: project)) {
+                          //  Image(systemName: "clock")
+                        Text("HHH")
                     }
-                    NavigationLink(destination: EditProjectView(project: project), tag: "edit", selection: $selectedAction) {
-                        Button("e") {
-                            selectedAction = "edit"
+                    NavigationLink(destination: Text("Second View")) {
+                            Text("Hello, World!")
                         }
-                        .buttonStyle(.borderless)
-                    }
-                  
                 }
                 /*
                 Button(action:
@@ -128,9 +121,27 @@ struct ProjectsList: View {
         }
         .listStyle(InsetGroupedListStyle())
     
-       
-       
-       
+        .sheet(item: $selectedProject) {
+            project in
+            EditProjectView(project: project)
+          
+        }
+        
+        .sheet(item: $selectedProjectForHoursList) {
+            project in
+            ProjectHoursView(project: project)
+              //  .environment(\.managedObjectContext, viewContext)
+        }
+        .alert("Delete a Project", isPresented: $showDeleteDialog) {
+            Button ("OK") {
+                deleteProject()
+            }
+            Button("Cancel", role: .cancel){}
+            
+        } message: {
+            Text("Do you really want to delete the project?")
+        }
+        
     }
          
 }

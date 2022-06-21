@@ -135,7 +135,7 @@ struct EditHour: View {
 
                 }
             }
-            .navigationBarTitle(Text(hour.project?.projectTitle ?? ""))
+            .navigationTitle(Text(hour.project?.projectTitle ?? ""))
             .navigationBarTitleDisplayMode(.inline)
      //   }
     }
