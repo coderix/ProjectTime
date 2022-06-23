@@ -67,66 +67,53 @@ struct ProjectsList: View {
             ForEach(fetchRequest.wrappedValue) { project in
                 HStack {
                     Text(project.projectTitle)
+                   
                     NavigationLink(destination: ProjectHoursView(project: project), tag: "hours", selection: $selectedAction) {
-                        Button("h") {
+                        Button{
                             selectedAction = "hours"
                         }
+                    label: {
+                        Image(systemName: "stopwatch")
+                    }
                         .buttonStyle(.borderless)
                     }
                     NavigationLink(destination: EditProjectView(project: project), tag: "edit", selection: $selectedAction) {
-                        Button("e") {
+                        Button {
                             selectedAction = "edit"
+                        } label: {
+                            Image(systemName: "pencil")
                         }
                         .buttonStyle(.borderless)
+                        .accessibilityLabel(/*@START_MENU_TOKEN@*/"Label"/*@END_MENU_TOKEN@*/)
+                        .accessibilityHint("Edit")
                     }
+                    Button {
+                        self.projectToDelete = project
+                        showDeleteDialog = true
+                    } label: {
+                        Text("delete")
+                        Image(systemName: "trash")
+                    }
+                    .tint(.red)
+                    .buttonStyle(.borderless)
                   
                 }
-                /*
-                Button(action:
-                        {self.selectedProjectForHoursList = project})
-                 {HStack {
-                    Text(project.projectTitle)
-                    Spacer()
-                     if showClient {
-                         Text(project.clientName)
-                     }
-                     
-                    
-                 }}
-                 */
-                /*
-                    .swipeActions {
-                        
-                        Button("edit") {
-                            self.selectedProject = project
-                        }
-                        .tint(.green)
-                        
-                        Button("hours") {
-                            self.selectedProjectForHoursList = project
-                        }
-                        .tint(.green)
-                        Button("Navigate") {
-                            self.selectedProjectForHoursList = project
-                        }
-                        .tint(.green)
-                        
-                        
-                        Button("delete") {
-                            self.projectToDelete = project
-                            showDeleteDialog = true
-                        }
-                        .tint(.red)
-                        
-                        
-                    }
-                */
+               
+                
             }
             
-            //    .onDelete(perform: deleteProjects)
+           
             
         }
         .listStyle(InsetGroupedListStyle())
+        .alert("Delete a Project", isPresented: $showDeleteDialog) {
+            Button("OK") {
+                deleteProject()
+            }
+            Button("Cancel", role: .cancel){}
+        } message: {
+            Text("Do you really want to delete the project?")
+        }
     
        
        
@@ -139,8 +126,6 @@ struct ProjectsList_Previews: PreviewProvider {
     static var dataController = DataController.preview
     static var previews: some View {
         NavigationView {
-            
-            
             ProjectsList()
         }
         .environment(\.managedObjectContext, dataController.container.viewContext)
