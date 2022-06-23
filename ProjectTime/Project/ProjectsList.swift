@@ -60,43 +60,46 @@ struct ProjectsList: View {
         }
     }
     
-    
     var body: some View {
         List {
             
             ForEach(fetchRequest.wrappedValue) { project in
                 HStack {
                     Text(project.projectTitle)
-                   
-                    NavigationLink(destination: ProjectHoursView(project: project), tag: "hours", selection: $selectedAction) {
-                        Button{
-                            selectedAction = "hours"
+                 
+                        .frame(maxWidth: .infinity, alignment: .leading)
+                       
+                    HStack{
+                        NavigationLink(destination: ProjectHoursView(project: project), tag: "hours", selection: $selectedAction) {
+                            Button{
+                                selectedAction = "hours"
+                            }
+                        label: {
+                            Image(systemName: "stopwatch")
                         }
-                    label: {
-                        Image(systemName: "stopwatch")
-                    }
-                        .buttonStyle(.borderless)
-                    }
-                    NavigationLink(destination: EditProjectView(project: project), tag: "edit", selection: $selectedAction) {
+                            .buttonStyle(.borderless)
+                        }
+                        NavigationLink(destination: EditProjectView(project: project), tag: "edit", selection: $selectedAction) {
+                            Button {
+                                selectedAction = "edit"
+                            } label: {
+                                Image(systemName: "pencil")
+                            }
+                            .buttonStyle(.borderless)
+                            .accessibilityLabel(/*@START_MENU_TOKEN@*/"Label"/*@END_MENU_TOKEN@*/)
+                            .accessibilityHint("Edit")
+                        }
                         Button {
-                            selectedAction = "edit"
+                            self.projectToDelete = project
+                            showDeleteDialog = true
                         } label: {
-                            Image(systemName: "pencil")
+                           // Text("delete")
+                            Image(systemName: "trash")
                         }
+                        .tint(.red)
                         .buttonStyle(.borderless)
-                        .accessibilityLabel(/*@START_MENU_TOKEN@*/"Label"/*@END_MENU_TOKEN@*/)
-                        .accessibilityHint("Edit")
                     }
-                    Button {
-                        self.projectToDelete = project
-                        showDeleteDialog = true
-                    } label: {
-                        Text("delete")
-                        Image(systemName: "trash")
-                    }
-                    .tint(.red)
-                    .buttonStyle(.borderless)
-                  
+               
                 }
                
                 
