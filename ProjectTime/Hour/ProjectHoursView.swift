@@ -45,136 +45,127 @@ struct ProjectHoursView: View {
     
     var body: some View {
         
-        NavigationView {
-            VStack {
-                HStack {
-                   // Text(project.projectTitle)
-                    Text("Project Times")
-                }
+        VStack {
+            HStack {
                 
-              //  .padding(.top)
-                HStack {
-                    EditButton()
-                    Spacer()
-                    Button(action: add) {
-                        Text("New Time")
-                    }
-                    .disabled(tasks.count == 0)
-                    Button(action: {presentationMode.wrappedValue.dismiss()}) {
-                        Text("Close")
-                    }
+                Button(action: add) {
+                    Text("New Time")
+                }
+                .disabled(tasks.count == 0)
+                
+                
+            }
+            .padding()
+            
+            HStack {
+                Text("Total: ")
+                Text(project.projectDurationString)
+                Text("Invoice:")
+                Text(project.projectSalaryString)
+                Spacer()
+            }
+            .padding(.leading, 15.0)
+            List{
+                ForEach(project.projectHours) { hour in
                     
-                }
-                .padding()
-                
-                HStack {
-                    Text("Total: ")
-                    Text(project.projectDurationString)
-                    Text("Invoice:")
-                    Text(project.projectSalaryString)
-                    Spacer()
-                }
-                .padding(.leading, 15.0)
-                List{
-                    ForEach(project.projectHours) { hour in
-                        
-                        HStack {
-                            VStack {
+                    HStack {
+                        VStack {
+                            
+                            HStack {
+                                Text(hour.formattedStartDay)
+                                    .font(.footnote)
+                                    .fontWeight(.medium)
                                 
-                                HStack {
-                                    Text(hour.formattedStartDay)
-                                        .font(.footnote)
-                                        .fontWeight(.medium)
-                                    
-                                    Text(hour.formattedStartTime)
-                                        .font(.footnote)
-                                    
-                                    Text("-")
-                                        .font(.footnote)
-                                    
-                                    Text(hour.formattedEndTime)
-                                        .font(.footnote)
-                                    
-                                    Spacer()
-                                    Text(hour.durationString)
-                                        .font(.footnote)
-                                }
+                                Text(hour.formattedStartTime)
+                                    .font(.footnote)
                                 
-                                HStack {
-                                    Text(hour.task?.taskTitle ?? "")
-                                        .font(.footnote)
-                                    Spacer()
-                                }
+                                Text("-")
+                                    .font(.footnote)
+                                
+                                Text(hour.formattedEndTime)
+                                    .font(.footnote)
+                                
+                                Spacer()
+                                Text(hour.durationString)
+                                    .font(.footnote)
+                            }
+                            
+                            HStack {
+                                Text(hour.task?.taskTitle ?? "")
+                                    .font(.footnote)
+                                Spacer()
                             }
                         }
-                        .padding()
-                        .background(Color.secondarySystemGroupedBackground)
-                        .cornerRadius(10)
-                        .shadow(color: Color.black.opacity(0.2), radius: 5)
-                        .onTapGesture {
-                            self.selectedHour = hour
+                    }
+                    .padding()
+                    .background(Color.secondarySystemGroupedBackground)
+                    .cornerRadius(10)
+                    .shadow(color: Color.black.opacity(0.2), radius: 5)
+                    .onTapGesture {
+                        self.selectedHour = hour
+                    }
+                }
+                .onDelete(perform: deleteHours)
+                
+            }
+            //   .padding()
+            .background(Color.systemGroupedBackground.ignoresSafeArea())
+            
+            
+            .sheet(isPresented: $showingAddScreen) {
+                AddHourView(project: project).environment(\.managedObjectContext, self.viewContext)
+                
+            }
+            .sheet(item: self.$selectedHour) { hour in
+                NavigationView {
+                    EditHour(hour: hour).environment(\.managedObjectContext, self.viewContext)
+                }
+            }
+            .sheet(isPresented: $showingEditScreen) {
+                EditProjectView(project: project)
+                    .environment(\.managedObjectContext, viewContext)
+            }
+            
+            .alert(isPresented: $showDeleteDialog) {
+                Alert(
+                    title: Text("Titel"),
+                    message: Text("Are you sure you want to delete this ? This can't be undone..."),
+                    primaryButton: .cancel(),
+                    secondaryButton: .destructive(
+                        Text("Delete"),
+                        action: {
+                            dataController.delete(hourToDelete!)
+                            dataController.save()
+                            showDeleteDialog = false
                         }
-                    }
-                    .onDelete(perform: deleteHours)
-                    
-                }
-             //   .padding()
-                .background(Color.systemGroupedBackground.ignoresSafeArea())
-                
-                
-                .sheet(isPresented: $showingAddScreen) {
-                    AddHourView(project: project).environment(\.managedObjectContext, self.viewContext)
-                    
-                }
-                .sheet(item: self.$selectedHour) { hour in
-                    NavigationView {
-                        EditHour(hour: hour).environment(\.managedObjectContext, self.viewContext)
-                    }
-                }
-                .sheet(isPresented: $showingEditScreen) {
-                    EditProjectView(project: project)
-                        .environment(\.managedObjectContext, viewContext)
-                }
-                
-                .alert(isPresented: $showDeleteDialog) {
-                    Alert(
-                        title: Text("Titel"),
-                        message: Text("Are you sure you want to delete this ? This can't be undone..."),
-                        primaryButton: .cancel(),
-                        secondaryButton: .destructive(
-                            Text("Delete"),
-                            action: {
-                                dataController.delete(hourToDelete!)
-                                dataController.save()
-                                showDeleteDialog = false
-                            }
-                        )
                     )
+                )
+            }
+            
+            
+            .navigationTitle(Text(project.projectTitle))
+            .navigationBarTitleDisplayMode(.inline)
+            
+            .toolbar {
+                ToolbarItemGroup(placement: .navigationBarTrailing) {
+                    //  Text(project.projectTitle)
+                    
+                    EditButton()
+                    
                 }
-                
-                
-                //   .navigationTitle(Text(project.projectTitle))
-             //   .navigationBarTitleDisplayMode(.inline)
-                .toolbar {
-                    ToolbarItemGroup(placement: .navigationBarTrailing) {
-                        Text(project.projectTitle)
-                        Button("Edit"){
-                            self.showingEditScreen.toggle()
-                        }
-                        
-                        
-                    }
-                }
-                
-                .toolbar {
-                    ToolbarItem(placement: .bottomBar) {
-                        Button("Pressme") {
-                            print("pressed")
-                        }
+            }
+            
+            /*
+            .toolbar {
+                ToolbarItem(placement: .bottomBar) {
+                    Button("Pressme") {
+                        print("pressed")
                     }
                 }
             }
+             */
         }
+        
         
     }
     
@@ -213,9 +204,11 @@ struct ProjectHoursView_Previews: PreviewProvider {
         hour.project = project
         hour.task = task
         
-        return ProjectHoursView(project: project)
+        return NavigationView {
+            ProjectHoursView(project: project)
             .environment(\.managedObjectContext, dataController.container.viewContext)
             .previewInterfaceOrientation(.portraitUpsideDown)
+        }
     }
     
 }
