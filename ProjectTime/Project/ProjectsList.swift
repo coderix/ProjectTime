@@ -14,7 +14,7 @@ struct ProjectsList: View {
     var fetchRequest: FetchRequest<Project>
     
     @State private var showingEditScreen = false
-    @State private var selectedProject : Project?
+   // @State private var selectedProject : Project?
     @State private var selectedProjectForHoursList : Project? = nil
     @State private var selectedProjectForEditProject : Project? = nil
     
@@ -23,7 +23,7 @@ struct ProjectsList: View {
     
     @State private var showDeleteDialog = false
     @State private var showClient = true
-    @State private var selectedAction : String? = nil
+ //   @State private var selectedAction : String? = nil
     
     init (client: Client) {
         fetchRequest = FetchRequest<Project>(entity: Project.entity(),
