@@ -11,10 +11,12 @@ import CoreData
 struct ContentView: View {
     
     @SceneStorage("selectedView") var selectedView: String?
+  //  @State var selectedView = ""
     @Environment(\.managedObjectContext) private var viewContext
     
     @FetchRequest var clients: FetchedResults<Client>
     @FetchRequest var projects: FetchedResults<Project>
+    @FetchRequest var tasks: FetchedResults<Task>
     
     
     init(){
@@ -29,11 +31,19 @@ struct ContentView: View {
         projectRequest.sortDescriptors = [NSSortDescriptor(keyPath: \Project.title, ascending: true)]
         projectRequest.fetchLimit = 1
         _projects = FetchRequest(fetchRequest: projectRequest)
+        
+        let taskRequest: NSFetchRequest<Task> = Task.fetchRequest()
+        taskRequest.sortDescriptors = [NSSortDescriptor(keyPath: \Task.title, ascending: true)]
+        projectRequest.fetchLimit = 1
+        _tasks = FetchRequest(fetchRequest: taskRequest)
+     
+        
     }
     
     var show = true
     var body: some View {
         TabView(selection: $selectedView) {
+           /*
             HomeView()
                 .tabItem {
                     Image(systemName: "house")
@@ -42,9 +52,9 @@ struct ContentView: View {
                 .tag(HomeView.tag)
                 
                 .accessibilityIdentifier("Home")
+            */
             
-            
-            if clients.count > 0 {
+            if (clients.count > 0  && tasks.count > 0){
                 ProjectsView()
                     .tabItem {
                         Image(systemName: "list.bullet")
@@ -55,19 +65,33 @@ struct ContentView: View {
                     
             }
             
-            ClientsView()
+            if tasks.count > 0 {
+                ClientsView()
+                
+                    .tabItem {
+                        Image(systemName: "person.3")
+                        Text("Clients")
+                            
+                    }
+                    .tag(ClientsView.tag)
+                    .accessibilityIdentifier("Clients")
+            }
+           
+            TasksView()
             
                 .tabItem {
-                    Image(systemName: "person.3")
-                    Text("Clients")
+                    Image(systemName: "circle.inset.filled")
+                    Text("Tasks")
                         
                 }
-                .tag(ClientsView.tag)
-                .accessibilityIdentifier("Clients")
-            
+                .tag(TasksView.tag)
+                .accessibilityIdentifier("Tasks")
             
         }
+        
     }
+    
+    
 }
 
 struct ContentView_Previews: PreviewProvider {

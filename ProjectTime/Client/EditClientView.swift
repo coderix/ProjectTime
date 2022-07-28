@@ -19,7 +19,7 @@ struct EditClientView: View {
     
     @State private var name: String
     @State private var timestamp: Date
-    @State private var rate: Decimal
+    @State private var rate: Decimal = 0
     
     @Environment(\.presentationMode) var presentationMode
     @State private var showingDeleteConfirm = false
@@ -32,7 +32,7 @@ struct EditClientView: View {
         
         _name = State(wrappedValue: client.clientName)
         _timestamp = State(wrappedValue: client.clientTimestamp)
-        _rate = State(wrappedValue: client.rate! as Decimal)
+     //   _rate = State(wrappedValue: client.rate! as Decimal)
         
     }
     
