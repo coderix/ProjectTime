@@ -34,8 +34,11 @@ struct TasksView: View {
     }
 
     var body: some View {
-
+        
         List {
+            if tasks.isEmpty {
+                Text("Bevor es losgeht, musst du zunächsts mindestens eine Aufgabe anlegen")
+            }
             HStack {
                 TextField("New Task", text: $title)
                 Button {
