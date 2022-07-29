@@ -16,6 +16,7 @@ struct TasksView: View {
         sortDescriptors: [NSSortDescriptor(keyPath: \Task.title, ascending: true)],
         animation: .default)
     private var tasks: FetchedResults<Task>
+    
     static let tag: String? = "tasks"
     @State private var title = ""
 

@@ -32,7 +32,7 @@ struct EditClientView: View {
         
         _name = State(wrappedValue: client.clientName)
         _timestamp = State(wrappedValue: client.clientTimestamp)
-     //   _rate = State(wrappedValue: client.rate! as Decimal)
+        _rate = State(wrappedValue: client.rate! as Decimal)
         
     }
     
@@ -60,7 +60,6 @@ struct EditClientView: View {
     }
     
     var body: some View {
-        // NavigationView {
         
         VStack {
             
@@ -98,8 +97,6 @@ struct EditClientView: View {
             .padding(.horizontal)
             
             
-            
-            //.padding()
             ProjectsList(client: client)
             
             //  .onDisappear(perform: dataController.save)
