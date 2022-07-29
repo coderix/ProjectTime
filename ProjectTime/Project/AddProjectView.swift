@@ -66,11 +66,14 @@ struct AddProjectView: View {
         presentationMode.wrappedValue.dismiss()
     }
     
-    var titleNotValid: Bool {
+    var formNotValid: Bool {
         if title.isEmpty {
             return true
         }
         if projects.contains(where: {$0.title == title}) {
+            return true
+        }
+        if selection == nil {
             return true
         }
         return false
@@ -91,7 +94,6 @@ struct AddProjectView: View {
                                 Text(client.clientName).tag(client as Client?)
                             }
                         }
-                        //  .pickerStyle(MenuPickerStyle())
                         
                     }
                     
@@ -116,7 +118,7 @@ struct AddProjectView: View {
                     Button("Add") {
                         save()
                     }
-                    .disabled(titleNotValid)
+                    .disabled(formNotValid)
                     
                 }
             }
