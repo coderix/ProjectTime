@@ -33,7 +33,7 @@ struct EditProjectView: View {
     
     @State private var document: ExportDocument?
     @State private var now = ""
-    private var exporter = Exporter()
+   // private var exporter = Exporter()
     
     init(project: Project) {
         self.project = project
@@ -123,7 +123,7 @@ struct EditProjectView: View {
                     }
                     
                 }
-                .fileExporter(isPresented: $isExporting, document: exporter.export(project: project), contentType: .commaSeparatedText, defaultFilename: "ProjectTimeExport-\(project.projectTitle)-\(now).csv") { result in
+                .fileExporter(isPresented: $isExporting, document: Exporter.export(project: project), contentType: .commaSeparatedText, defaultFilename: "ProjectTimeExport-\(project.projectTitle)-\(now).csv") { result in
                     if case .success = result {
                         // Handle success
                     } else {
