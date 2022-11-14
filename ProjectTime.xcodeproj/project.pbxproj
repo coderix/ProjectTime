@@ -176,6 +176,7 @@
 		434D99FE273D2C270009C72C /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
+				43389446283D0F070023049F /* ExportDocument.swift */,
 				434D99FF273D2C270009C72C /* SelectSomethingView.swift */,
 				4349C3D929226A3000CEBE5A /* Exporter.swift */,
 			);
@@ -256,7 +257,6 @@
 		439FC8AF273D272F004B15DB /* ProjectTime */ = {
 			isa = PBXGroup;
 			children = (
-				43389446283D0F070023049F /* ExportDocument.swift */,
 				436D8922282A432E0001DF1A /* Localizable.strings */,
 				433BB395273D702D006200AA /* ProjectTime.entitlements */,
 				439FC8B0273D272F004B15DB /* ProjectTimeApp.swift */,
