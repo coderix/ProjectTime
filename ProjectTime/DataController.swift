@@ -2,7 +2,8 @@ import CoreData
 import SwiftUI
 
 class DataController: ObservableObject {
-   // static let shared = Datacontroller()
+    
+    static let shared = DataController()
 
     let container: NSPersistentCloudKitContainer
 

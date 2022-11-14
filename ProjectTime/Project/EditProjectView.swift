@@ -9,8 +9,12 @@ import SwiftUI
 import CoreData
 
 struct EditProjectView: View {
-    @Environment(\.managedObjectContext) private var viewContext
+  //  @StateObject private var viewModel = EditProjectModel()
     @Environment(\.presentationMode) var presentationMode
+    @State private var isExporting: Bool = false
+    
+    @Environment(\.managedObjectContext) private var viewContext
+    
     @EnvironmentObject var dataController: DataController
     
     @FetchRequest var projects: FetchedResults<Project>
@@ -26,9 +30,10 @@ struct EditProjectView: View {
     @State private var showingDeleteConfirm = false
     
     
-    @State private var isExporting: Bool = false
+    
     @State private var document: ExportDocument?
     @State private var now = ""
+    private var exporter = Exporter()
     
     init(project: Project) {
         self.project = project
@@ -45,18 +50,6 @@ struct EditProjectView: View {
         
     }
     
-    func export() {
-        var csvString = "\("Date"),\("Task"),\("From"),\("To"),\("Time")\n\n"
-        for hour in project.projectHours {
-            csvString.append("\(hour.formattedStartDay),\(hour.task!.taskTitle),\(hour.formattedStartTime),\(hour.formattedEndTime),\(hour.durationString)\n")
-        }
-        csvString.append("Total Time: \(project.projectDurationString), Invoice: \(project.projectSalaryString)")
-        //print (csvString)
-        self.document = ExportDocument(message: csvString)
-        
-        isExporting = true
-        
-    }
     func update() {
         //   project.client?.objectWillChange.send()
         project.title = title
@@ -117,7 +110,11 @@ struct EditProjectView: View {
                         dateFormatter.timeStyle = .none
                         dateFormatter.dateFormat = "yyyy-MM-dd"
                         now = dateFormatter.string(from: Date())
-                        export() }, label: {
+                       
+                     //   exporter.export(project: project)
+                       // export()
+                        isExporting = true
+                    }, label: {
                             Text("Export")
                         })
                     
@@ -126,7 +123,7 @@ struct EditProjectView: View {
                     }
                     
                 }
-                .fileExporter(isPresented: $isExporting, document: document, contentType: .commaSeparatedText, defaultFilename: "ProjectTimeExport-\(project.projectTitle)-\(now).csv") { result in
+                .fileExporter(isPresented: $isExporting, document: exporter.export(project: project), contentType: .commaSeparatedText, defaultFilename: "ProjectTimeExport-\(project.projectTitle)-\(now).csv") { result in
                     if case .success = result {
                         // Handle success
                     } else {

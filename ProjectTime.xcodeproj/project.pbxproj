@@ -14,6 +14,8 @@
 		433B6DEB276C7A660069DE17 /* ExtensionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 433B6DE8276C7A650069DE17 /* ExtensionTests.swift */; };
 		433B6DEC276C7A660069DE17 /* ProjectTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 433B6DE9276C7A650069DE17 /* ProjectTests.swift */; };
 		433BB398273D7105006200AA /* CloudKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 433BB397273D7105006200AA /* CloudKit.framework */; };
+		4349C3DA29226A3000CEBE5A /* Exporter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4349C3D929226A3000CEBE5A /* Exporter.swift */; };
+		4349C3DB29226A3000CEBE5A /* Exporter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4349C3D929226A3000CEBE5A /* Exporter.swift */; };
 		434D9A15273D2C270009C72C /* SequenceSort.swift in Sources */ = {isa = PBXBuildFile; fileRef = 434D99FA273D2C270009C72C /* SequenceSort.swift */; };
 		434D9A16273D2C270009C72C /* TimeIntervalExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 434D99FB273D2C270009C72C /* TimeIntervalExtension.swift */; };
 		434D9A17273D2C270009C72C /* DateExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 434D99FC273D2C270009C72C /* DateExtension.swift */; };
@@ -37,6 +39,8 @@
 		434D9A29273D2C270009C72C /* ProjectsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 434D9A13273D2C270009C72C /* ProjectsView.swift */; };
 		434D9A2A273D2C270009C72C /* AddProjectView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 434D9A14273D2C270009C72C /* AddProjectView.swift */; };
 		435D4AAD276E3689009F4B96 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 435D4AAC276E3689009F4B96 /* README.md */; };
+		4363CD92291E785E008B7171 /* EditProjectModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4363CD91291E785E008B7171 /* EditProjectModel.swift */; };
+		4363CD93291E785E008B7171 /* EditProjectModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4363CD91291E785E008B7171 /* EditProjectModel.swift */; };
 		436D8921282A42170001DF1A /* ProjectTime Localizations in Resources */ = {isa = PBXBuildFile; fileRef = 436D8920282A42170001DF1A /* ProjectTime Localizations */; };
 		436D8924282A432E0001DF1A /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 436D8922282A432E0001DF1A /* Localizable.strings */; };
 		43739B752788281900E82F4B /* DataControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43739B742788281900E82F4B /* DataControllerTests.swift */; };
@@ -79,6 +83,7 @@
 		433B6DE9276C7A650069DE17 /* ProjectTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProjectTests.swift; sourceTree = "<group>"; };
 		433BB395273D702D006200AA /* ProjectTime.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = ProjectTime.entitlements; sourceTree = "<group>"; };
 		433BB397273D7105006200AA /* CloudKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CloudKit.framework; path = System/Library/Frameworks/CloudKit.framework; sourceTree = SDKROOT; };
+		4349C3D929226A3000CEBE5A /* Exporter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Exporter.swift; sourceTree = "<group>"; };
 		434D99FA273D2C270009C72C /* SequenceSort.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SequenceSort.swift; sourceTree = "<group>"; };
 		434D99FB273D2C270009C72C /* TimeIntervalExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimeIntervalExtension.swift; sourceTree = "<group>"; };
 		434D99FC273D2C270009C72C /* DateExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DateExtension.swift; sourceTree = "<group>"; };
@@ -102,6 +107,7 @@
 		434D9A13273D2C270009C72C /* ProjectsView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProjectsView.swift; sourceTree = "<group>"; };
 		434D9A14273D2C270009C72C /* AddProjectView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddProjectView.swift; sourceTree = "<group>"; };
 		435D4AAC276E3689009F4B96 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		4363CD91291E785E008B7171 /* EditProjectModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditProjectModel.swift; sourceTree = "<group>"; };
 		436D8920282A42170001DF1A /* ProjectTime Localizations */ = {isa = PBXFileReference; lastKnownFileType = folder; name = "ProjectTime Localizations"; path = "ProjectTime/ProjectTime Localizations"; sourceTree = "<group>"; };
 		436D8923282A432E0001DF1A /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/Localizable.strings; sourceTree = "<group>"; };
 		43739B742788281900E82F4B /* DataControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataControllerTests.swift; sourceTree = "<group>"; };
@@ -171,6 +177,7 @@
 			isa = PBXGroup;
 			children = (
 				434D99FF273D2C270009C72C /* SelectSomethingView.swift */,
+				4349C3D929226A3000CEBE5A /* Exporter.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -216,6 +223,7 @@
 				434D9A12273D2C270009C72C /* EditProjectView.swift */,
 				434D9A13273D2C270009C72C /* ProjectsView.swift */,
 				434D9A14273D2C270009C72C /* AddProjectView.swift */,
+				4363CD91291E785E008B7171 /* EditProjectModel.swift */,
 			);
 			path = Project;
 			sourceTree = "<group>";
@@ -433,6 +441,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4349C3DA29226A3000CEBE5A /* Exporter.swift in Sources */,
 				434D9A22273D2C270009C72C /* EditClientView.swift in Sources */,
 				439FC8B3273D272F004B15DB /* ContentView.swift in Sources */,
 				434D9A27273D2C270009C72C /* ProjectInfoView.swift in Sources */,
@@ -440,6 +449,7 @@
 				434D9A1C273D2C270009C72C /* Hour-CoreDataHelpers.swift in Sources */,
 				434D9A1F273D2C270009C72C /* TasksView.swift in Sources */,
 				434D9A17273D2C270009C72C /* DateExtension.swift in Sources */,
+				4363CD92291E785E008B7171 /* EditProjectModel.swift in Sources */,
 				434D9A16273D2C270009C72C /* TimeIntervalExtension.swift in Sources */,
 				434D9A25273D2C270009C72C /* ProjectsList.swift in Sources */,
 				43389447283D0F070023049F /* ExportDocument.swift in Sources */,
@@ -470,10 +480,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				433B6DEB276C7A660069DE17 /* ExtensionTests.swift in Sources */,
+				4363CD93291E785E008B7171 /* EditProjectModel.swift in Sources */,
 				43739B752788281900E82F4B /* DataControllerTests.swift in Sources */,
 				439FC8C7273D2731004B15DB /* ProjectTimeTests.swift in Sources */,
 				433B6DEA276C7A660069DE17 /* DevelopmentTests.swift in Sources */,
 				433B6DEC276C7A660069DE17 /* ProjectTests.swift in Sources */,
+				4349C3DB29226A3000CEBE5A /* Exporter.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
