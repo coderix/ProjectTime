@@ -6,9 +6,10 @@
 //
 
 import Foundation
+// import CoreData
 struct Exporter {
     
-     static func export(project: Project)-> ExportDocument {
+      func export(project: Project)-> ExportDocument {
         var csvString = "\("Date"),\("Task"),\("From"),\("To"),\("Time")\n\n"
         for hour in project.projectHours {
             csvString.append("\(hour.formattedStartDay),\(hour.task!.taskTitle),\(hour.formattedStartTime),\(hour.formattedEndTime),\(hour.durationString)\n")

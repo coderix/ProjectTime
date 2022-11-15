@@ -21,6 +21,8 @@ struct EditProjectView: View {
     
     let project: Project
     
+    
+    
     @State private var title: String
     @State private var originalTitle: String
     @State private var details: String
@@ -123,7 +125,7 @@ struct EditProjectView: View {
                     }
                     
                 }
-                .fileExporter(isPresented: $isExporting, document: Exporter.export(project: project), contentType: .commaSeparatedText, defaultFilename: "ProjectTimeExport-\(project.projectTitle)-\(now).csv") { result in
+                .fileExporter(isPresented: $isExporting, document: Exporter().export(project: project), contentType: .commaSeparatedText, defaultFilename: "ProjectTimeExport-\(project.projectTitleWithoutBackslash)-\(now).csv") { result in
                     if case .success = result {
                         // Handle success
                     } else {

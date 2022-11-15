@@ -38,9 +38,17 @@
 		434D9A28273D2C270009C72C /* EditProjectView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 434D9A12273D2C270009C72C /* EditProjectView.swift */; };
 		434D9A29273D2C270009C72C /* ProjectsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 434D9A13273D2C270009C72C /* ProjectsView.swift */; };
 		434D9A2A273D2C270009C72C /* AddProjectView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 434D9A14273D2C270009C72C /* AddProjectView.swift */; };
+		4359BC082923D54400B6FC72 /* Helpers in Resources */ = {isa = PBXBuildFile; fileRef = 4359BC072923D54400B6FC72 /* Helpers */; };
+		4359BC092923D54400B6FC72 /* Helpers in Resources */ = {isa = PBXBuildFile; fileRef = 4359BC072923D54400B6FC72 /* Helpers */; };
+		4359BC462923D91900B6FC72 /* ExportDocument.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43389446283D0F070023049F /* ExportDocument.swift */; };
+		4359BC472923DB4E00B6FC72 /* ProjectTime.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 439FC8BB273D2730004B15DB /* ProjectTime.xcdatamodeld */; };
+		4359BC482923DB8900B6FC72 /* Task-CoreDataHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 434D9A06273D2C270009C72C /* Task-CoreDataHelpers.swift */; };
+		4359BC492923DBA200B6FC72 /* DataController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 434D9A09273D2C270009C72C /* DataController.swift */; };
+		4359BC4A2923DBA800B6FC72 /* Project-CoreDataHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 434D9A10273D2C270009C72C /* Project-CoreDataHelpers.swift */; };
+		4359BC4B2923DC1200B6FC72 /* Client-CoreDataHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 434D9A0D273D2C270009C72C /* Client-CoreDataHelpers.swift */; };
+		4359BC4C2923DC2900B6FC72 /* Hour-CoreDataHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 434D9A03273D2C270009C72C /* Hour-CoreDataHelpers.swift */; };
+		4359BC4D2923DCB800B6FC72 /* TimeIntervalExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 434D99FB273D2C270009C72C /* TimeIntervalExtension.swift */; };
 		435D4AAD276E3689009F4B96 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 435D4AAC276E3689009F4B96 /* README.md */; };
-		4363CD92291E785E008B7171 /* EditProjectModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4363CD91291E785E008B7171 /* EditProjectModel.swift */; };
-		4363CD93291E785E008B7171 /* EditProjectModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4363CD91291E785E008B7171 /* EditProjectModel.swift */; };
 		436D8921282A42170001DF1A /* ProjectTime Localizations in Resources */ = {isa = PBXBuildFile; fileRef = 436D8920282A42170001DF1A /* ProjectTime Localizations */; };
 		436D8924282A432E0001DF1A /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 436D8922282A432E0001DF1A /* Localizable.strings */; };
 		43739B752788281900E82F4B /* DataControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43739B742788281900E82F4B /* DataControllerTests.swift */; };
@@ -106,8 +114,8 @@
 		434D9A12273D2C270009C72C /* EditProjectView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditProjectView.swift; sourceTree = "<group>"; };
 		434D9A13273D2C270009C72C /* ProjectsView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProjectsView.swift; sourceTree = "<group>"; };
 		434D9A14273D2C270009C72C /* AddProjectView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddProjectView.swift; sourceTree = "<group>"; };
+		4359BC072923D54400B6FC72 /* Helpers */ = {isa = PBXFileReference; lastKnownFileType = folder; name = Helpers; sourceTree = "<group>"; };
 		435D4AAC276E3689009F4B96 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
-		4363CD91291E785E008B7171 /* EditProjectModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditProjectModel.swift; sourceTree = "<group>"; };
 		436D8920282A42170001DF1A /* ProjectTime Localizations */ = {isa = PBXFileReference; lastKnownFileType = folder; name = "ProjectTime Localizations"; path = "ProjectTime/ProjectTime Localizations"; sourceTree = "<group>"; };
 		436D8923282A432E0001DF1A /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/Localizable.strings; sourceTree = "<group>"; };
 		43739B742788281900E82F4B /* DataControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataControllerTests.swift; sourceTree = "<group>"; };
@@ -179,6 +187,7 @@
 				43389446283D0F070023049F /* ExportDocument.swift */,
 				434D99FF273D2C270009C72C /* SelectSomethingView.swift */,
 				4349C3D929226A3000CEBE5A /* Exporter.swift */,
+				4359BC072923D54400B6FC72 /* Helpers */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -224,7 +233,6 @@
 				434D9A12273D2C270009C72C /* EditProjectView.swift */,
 				434D9A13273D2C270009C72C /* ProjectsView.swift */,
 				434D9A14273D2C270009C72C /* AddProjectView.swift */,
-				4363CD91291E785E008B7171 /* EditProjectModel.swift */,
 			);
 			path = Project;
 			sourceTree = "<group>";
@@ -412,6 +420,7 @@
 			files = (
 				43B2DF6D276F6426002AFDB4 /* .gitignore in Resources */,
 				436D8924282A432E0001DF1A /* Localizable.strings in Resources */,
+				4359BC082923D54400B6FC72 /* Helpers in Resources */,
 				433A76F3282CE62B007D230D /* License.md in Resources */,
 				439FC8B8273D2730004B15DB /* Preview Assets.xcassets in Resources */,
 				436D8921282A42170001DF1A /* ProjectTime Localizations in Resources */,
@@ -424,6 +433,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4359BC092923D54400B6FC72 /* Helpers in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -449,7 +459,6 @@
 				434D9A1C273D2C270009C72C /* Hour-CoreDataHelpers.swift in Sources */,
 				434D9A1F273D2C270009C72C /* TasksView.swift in Sources */,
 				434D9A17273D2C270009C72C /* DateExtension.swift in Sources */,
-				4363CD92291E785E008B7171 /* EditProjectModel.swift in Sources */,
 				434D9A16273D2C270009C72C /* TimeIntervalExtension.swift in Sources */,
 				434D9A25273D2C270009C72C /* ProjectsList.swift in Sources */,
 				43389447283D0F070023049F /* ExportDocument.swift in Sources */,
@@ -480,12 +489,19 @@
 			buildActionMask = 2147483647;
 			files = (
 				433B6DEB276C7A660069DE17 /* ExtensionTests.swift in Sources */,
-				4363CD93291E785E008B7171 /* EditProjectModel.swift in Sources */,
 				43739B752788281900E82F4B /* DataControllerTests.swift in Sources */,
 				439FC8C7273D2731004B15DB /* ProjectTimeTests.swift in Sources */,
+				4359BC4A2923DBA800B6FC72 /* Project-CoreDataHelpers.swift in Sources */,
 				433B6DEA276C7A660069DE17 /* DevelopmentTests.swift in Sources */,
 				433B6DEC276C7A660069DE17 /* ProjectTests.swift in Sources */,
+				4359BC492923DBA200B6FC72 /* DataController.swift in Sources */,
+				4359BC4D2923DCB800B6FC72 /* TimeIntervalExtension.swift in Sources */,
+				4359BC482923DB8900B6FC72 /* Task-CoreDataHelpers.swift in Sources */,
 				4349C3DB29226A3000CEBE5A /* Exporter.swift in Sources */,
+				4359BC4B2923DC1200B6FC72 /* Client-CoreDataHelpers.swift in Sources */,
+				4359BC472923DB4E00B6FC72 /* ProjectTime.xcdatamodeld in Sources */,
+				4359BC462923D91900B6FC72 /* ExportDocument.swift in Sources */,
+				4359BC4C2923DC2900B6FC72 /* Hour-CoreDataHelpers.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -577,7 +593,6 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -633,7 +648,6 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -714,7 +728,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = KE9E6T5ST4;
 				GENERATE_INFOPLIST_FILE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.4;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -739,7 +753,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = KE9E6T5ST4;
 				GENERATE_INFOPLIST_FILE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.4;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

@@ -36,7 +36,9 @@ extension Project {
         }
     }
  
-    
+    var projectTitleWithoutBackslash : String {
+        return projectTitle.replacingOccurrences(of:"\\", with: "-")
+    }
   
     var projectDuration: Double {
         let hou = projectHours.reduce(0, {$0 + $1.duration})

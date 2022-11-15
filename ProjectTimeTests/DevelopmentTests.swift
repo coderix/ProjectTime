@@ -26,8 +26,10 @@ class DevelopmentTests: BaseTestCase {
         XCTAssertEqual(task.title, "Example Task", "The title of example item should be Example Task.")
     }
 
+   /*
     func testExampleClientName() {
         let client = Client.example
         XCTAssertEqual(client.name, "Example Client", "The name example client should be Example Client.")
     }
+    */
 }
