@@ -6,6 +6,7 @@
 //
 
 import XCTest
+import CoreData
 @testable import ProjectTime
 
 class ExtensionTests: BaseTestCase {
@@ -40,5 +41,7 @@ class ExtensionTests: BaseTestCase {
         let endDate = Calendar.current.date(from: components) ?? Date()
         XCTAssertEqual(endDate.timeIntervalSince(startDate).hourMinute, "1:00", "Interval should be 01:00")
     }
+    
+    
 
 }

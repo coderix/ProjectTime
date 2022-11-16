@@ -37,5 +37,11 @@ class ProjectTests: BaseTestCase {
         XCTAssertEqual(dataController.count(for: Project.fetchRequest()), 5)
         XCTAssertEqual(dataController.count(for: Hour.fetchRequest()), 15)
     }
+    /*
+    func testSlashIsRemovedFromProjectTitle() {
+        let p = Project
+        p.title = "Hugo/Müller"
+    }
+     */
 
 }
