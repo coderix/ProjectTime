@@ -36,8 +36,8 @@ extension Project {
         }
     }
  
-    var projectTitleWithoutBackslash : String {
-        return projectTitle.replacingOccurrences(of:"\\", with: "-")
+    var projectTitleWithoutSlash : String {
+        return projectTitle.replacingOccurrences(of:"/", with: "-")
     }
   
     var projectDuration: Double {

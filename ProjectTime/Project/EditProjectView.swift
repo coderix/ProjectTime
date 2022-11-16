@@ -125,7 +125,7 @@ struct EditProjectView: View {
                     }
                     
                 }
-                .fileExporter(isPresented: $isExporting, document: Exporter().export(project: project), contentType: .commaSeparatedText, defaultFilename: "ProjectTimeExport-\(project.projectTitleWithoutBackslash)-\(now).csv") { result in
+                .fileExporter(isPresented: $isExporting, document: Exporter().export(project: project), contentType: .commaSeparatedText, defaultFilename: "ProjectTimeExport-\(project.projectTitleWithoutSlash)-\(now).csv") { result in
                     if case .success = result {
                         // Handle success
                     } else {
