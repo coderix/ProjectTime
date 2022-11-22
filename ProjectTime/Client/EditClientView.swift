@@ -51,7 +51,7 @@ struct EditClientView: View {
         client.timestamp = Date()
         client.rate = (rate) as NSDecimalNumber
         dataController.save()
-        presentationMode.wrappedValue.dismiss()
+      //  presentationMode.wrappedValue.dismiss()
     }
     
     func delete() {
@@ -99,18 +99,19 @@ struct EditClientView: View {
             
             ProjectsList(client: client)
             
-            //  .onDisappear(perform: dataController.save)
+              .onDisappear(perform: update)
                 .navigationTitle("Edit client")
                 .navigationBarTitleDisplayMode(.inline)
+            
+            /*
                 .toolbar {
-                    
                     ToolbarItem {
                         Button("OK") {
                             update()
                         }
-                        
                     }
                 }
+             */
             
                 .alert(isPresented: $showingDeleteConfirm) {
                     Alert(title: Text("Delete the client?"),
