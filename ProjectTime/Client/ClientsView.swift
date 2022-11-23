@@ -62,6 +62,7 @@ struct ClientsView: View {
                 .onDelete(perform: deleteClients)
             }
             
+            
             .toolbar {
                 
 #if os(iOS)
@@ -70,6 +71,11 @@ struct ClientsView: View {
                     EditButton()
                 }
 #endif
+                ToolbarItem(placement: .navigationBarTrailing) {
+                    Button("Add a Client") {
+                        showingAddClientView.toggle()
+                    }
+                }
             }
             
             
@@ -86,12 +92,15 @@ struct ClientsView: View {
         }
         
         
-        }
+    }
     .alert("Delete the client(s)?", isPresented: $showingDeleteConfirmation) {
         Button("Delete", role: .destructive) {
             dataController.delete(clientToDelete!)
             dataController.save()
         }
+    }
+    .sheet(isPresented: $showingAddClientView) {
+        AddClientView().environment(\.managedObjectContext, self.viewContext)
     }
     }
     
