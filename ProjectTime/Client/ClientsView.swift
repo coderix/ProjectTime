@@ -74,7 +74,9 @@ struct ClientsView: View {
             
             
             
+            
         }
+        
     detail: {
         if let client = selectedClient  {
             EditClientView(client: client)
@@ -84,6 +86,12 @@ struct ClientsView: View {
         }
         
         
+        }
+    .alert("Delete the client(s)?", isPresented: $showingDeleteConfirmation) {
+        Button("Delete", role: .destructive) {
+            dataController.delete(clientToDelete!)
+            dataController.save()
+        }
     }
     }
     
