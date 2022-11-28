@@ -63,12 +63,9 @@ struct ClientsView: View {
                         List {
                         
                             ForEach(clients) { client in
-                                NavigationLink(
-                                    destination: EditClientView(client: client),
-                                    // destination: EmptyView(),
-                                    label: {
-                                        Text(client.clientName)
-                                    })
+                                NavigationLink(value: client) {
+                                    Text(client.clientName)
+                                }
                             }
                
                             // too dangerous without an alert
@@ -80,6 +77,9 @@ struct ClientsView: View {
             }
 
             .navigationTitle("clients")
+            .navigationDestination(for: Client.self) { client in
+                EditClientView(client: client)
+            }
 
             .toolbar {
 
