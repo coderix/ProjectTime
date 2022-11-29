@@ -15,7 +15,6 @@
 		433B6DEC276C7A660069DE17 /* ProjectTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 433B6DE9276C7A650069DE17 /* ProjectTests.swift */; };
 		433BB398273D7105006200AA /* CloudKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 433BB397273D7105006200AA /* CloudKit.framework */; };
 		4349C3DA29226A3000CEBE5A /* Exporter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4349C3D929226A3000CEBE5A /* Exporter.swift */; };
-		4349C3DB29226A3000CEBE5A /* Exporter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4349C3D929226A3000CEBE5A /* Exporter.swift */; };
 		434D9A15273D2C270009C72C /* SequenceSort.swift in Sources */ = {isa = PBXBuildFile; fileRef = 434D99FA273D2C270009C72C /* SequenceSort.swift */; };
 		434D9A16273D2C270009C72C /* TimeIntervalExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 434D99FB273D2C270009C72C /* TimeIntervalExtension.swift */; };
 		434D9A17273D2C270009C72C /* DateExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 434D99FC273D2C270009C72C /* DateExtension.swift */; };
@@ -38,19 +37,10 @@
 		434D9A28273D2C270009C72C /* EditProjectView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 434D9A12273D2C270009C72C /* EditProjectView.swift */; };
 		434D9A29273D2C270009C72C /* ProjectsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 434D9A13273D2C270009C72C /* ProjectsView.swift */; };
 		434D9A2A273D2C270009C72C /* AddProjectView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 434D9A14273D2C270009C72C /* AddProjectView.swift */; };
-		4359BC462923D91900B6FC72 /* ExportDocument.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43389446283D0F070023049F /* ExportDocument.swift */; };
-		4359BC472923DB4E00B6FC72 /* ProjectTime.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 439FC8BB273D2730004B15DB /* ProjectTime.xcdatamodeld */; };
-		4359BC482923DB8900B6FC72 /* Task-CoreDataHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 434D9A06273D2C270009C72C /* Task-CoreDataHelpers.swift */; };
-		4359BC492923DBA200B6FC72 /* DataController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 434D9A09273D2C270009C72C /* DataController.swift */; };
-		4359BC4A2923DBA800B6FC72 /* Project-CoreDataHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 434D9A10273D2C270009C72C /* Project-CoreDataHelpers.swift */; };
-		4359BC4B2923DC1200B6FC72 /* Client-CoreDataHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 434D9A0D273D2C270009C72C /* Client-CoreDataHelpers.swift */; };
-		4359BC4C2923DC2900B6FC72 /* Hour-CoreDataHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 434D9A03273D2C270009C72C /* Hour-CoreDataHelpers.swift */; };
-		4359BC4D2923DCB800B6FC72 /* TimeIntervalExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 434D99FB273D2C270009C72C /* TimeIntervalExtension.swift */; };
 		435D4AAD276E3689009F4B96 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 435D4AAC276E3689009F4B96 /* README.md */; };
 		436D8921282A42170001DF1A /* ProjectTime Localizations in Resources */ = {isa = PBXBuildFile; fileRef = 436D8920282A42170001DF1A /* ProjectTime Localizations */; };
 		436D8924282A432E0001DF1A /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 436D8922282A432E0001DF1A /* Localizable.strings */; };
 		43739B752788281900E82F4B /* DataControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43739B742788281900E82F4B /* DataControllerTests.swift */; };
-		4387490D2924F7C6009A85CC /* EditProjectView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 434D9A12273D2C270009C72C /* EditProjectView.swift */; };
 		439FC8B1273D272F004B15DB /* ProjectTimeApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 439FC8B0273D272F004B15DB /* ProjectTimeApp.swift */; };
 		439FC8B3273D272F004B15DB /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 439FC8B2273D272F004B15DB /* ContentView.swift */; };
 		439FC8B5273D2730004B15DB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 439FC8B4273D2730004B15DB /* Assets.xcassets */; };
@@ -486,18 +476,8 @@
 				433B6DEB276C7A660069DE17 /* ExtensionTests.swift in Sources */,
 				43739B752788281900E82F4B /* DataControllerTests.swift in Sources */,
 				439FC8C7273D2731004B15DB /* ProjectTimeTests.swift in Sources */,
-				4359BC4A2923DBA800B6FC72 /* Project-CoreDataHelpers.swift in Sources */,
 				433B6DEA276C7A660069DE17 /* DevelopmentTests.swift in Sources */,
 				433B6DEC276C7A660069DE17 /* ProjectTests.swift in Sources */,
-				4359BC492923DBA200B6FC72 /* DataController.swift in Sources */,
-				4359BC4D2923DCB800B6FC72 /* TimeIntervalExtension.swift in Sources */,
-				4387490D2924F7C6009A85CC /* EditProjectView.swift in Sources */,
-				4359BC482923DB8900B6FC72 /* Task-CoreDataHelpers.swift in Sources */,
-				4349C3DB29226A3000CEBE5A /* Exporter.swift in Sources */,
-				4359BC4B2923DC1200B6FC72 /* Client-CoreDataHelpers.swift in Sources */,
-				4359BC472923DB4E00B6FC72 /* ProjectTime.xcdatamodeld in Sources */,
-				4359BC462923D91900B6FC72 /* ExportDocument.swift in Sources */,
-				4359BC4C2923DC2900B6FC72 /* Hour-CoreDataHelpers.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -730,7 +710,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = KE9E6T5ST4;
 				GENERATE_INFOPLIST_FILE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 15.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -755,7 +735,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = KE9E6T5ST4;
 				GENERATE_INFOPLIST_FILE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 15.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

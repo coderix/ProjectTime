@@ -26,12 +26,13 @@ class ProjectTests: BaseTestCase {
     }
 
     func testDeletingProjectCascadeDeletesHours() throws {
+      //  dataController.initializeDatabase()
         try dataController.createSampleData()
         XCTAssertEqual(dataController.count(for: Client.fetchRequest()), 3)
         XCTAssertEqual(dataController.count(for: Project.fetchRequest()), 6)
         XCTAssertEqual(dataController.count(for: Hour.fetchRequest()), 18)
         let request = NSFetchRequest<Project>(entityName: "Project")
-        let projects = try managedObjectContext.fetch(request)
+        let projects = try managedObjectContext.fetch(request) as [Project]
         dataController.delete(projects[0])
 
         XCTAssertEqual(dataController.count(for: Project.fetchRequest()), 5)

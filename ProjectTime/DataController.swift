@@ -235,7 +235,7 @@ class DataController: ObservableObject {
 
         }
 
-        try viewContext.save()
+    //    try viewContext.save()
 
     }
 
