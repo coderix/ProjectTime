@@ -14,7 +14,7 @@ struct ProjectsList: View {
     var fetchRequest: FetchRequest<Project>
     
     @State private var showingEditScreen = false
-   // @State private var selectedProject : Project?
+    // @State private var selectedProject : Project?
     @State private var selectedProjectForHoursList : Project? = nil
     @State private var selectedProjectForEditProject : Project? = nil
     
@@ -23,7 +23,7 @@ struct ProjectsList: View {
     
     @State private var showDeleteDialog = false
     @State private var showClient = true
- //   @State private var selectedAction : String? = nil
+    //   @State private var selectedAction : String? = nil
     
     init (client: Client) {
         fetchRequest = FetchRequest<Project>(entity: Project.entity(),
@@ -65,68 +65,39 @@ struct ProjectsList: View {
         }
     }
     
+    @State private var path = [String]()
+    @State private var selectedProject : Project?
+    @State var bool : Bool = false
+    
     var body: some View {
+        NavigationStack() {
             VStack {
-                VStack {
-                    if selectedProjectForHoursList != nil {
-                        NavigationLink(destination: ProjectHoursView(project: selectedProjectForHoursList!), isActive: $navigationViewHoursListIsActive){ EmptyView() }
-                    }
-                    if selectedProjectForEditProject != nil {
-                        NavigationLink(destination: EditProjectView(project: selectedProjectForEditProject!), isActive: $navigationViewEditProjectIsActive){ EmptyView() }
-                    }
-                }.hidden()
+                
                 List {
                     
                     
                     ForEach(fetchRequest.wrappedValue) { project in
                         
                         HStack {
-                            Text(project.projectTitle)
                             
-                                .frame(maxWidth: .infinity, alignment: .leading)
-                            
-                            HStack{
+                            HStack {
+                                NavigationLink(project.projectTitle, value: project)
                                 
-                                Button{
-                                    
-                                    self.selectedProjectForHoursList = project
-                                    self.navigationViewHoursListIsActive = true
-                                    
-                                }
-                            label: {
-                                Image(systemName: "stopwatch")
                             }
-                            .buttonStyle(.borderless)
+                            .navigationDestination(for: Project.self) { project in
+                                EditProjectView(project: project)
+                            }
+                            
+                            HStack {
+                                NavigationLink(project.projectTitle, value: project)
                                 
-                                
-                                Button {
-                                    self.selectedProjectForEditProject = project
-                                    self.navigationViewEditProjectIsActive = true
-                                } label: {
-                                    Image(systemName: "pencil")
-                                }
-                                .buttonStyle(.borderless)
-                                .accessibilityLabel(/*@START_MENU_TOKEN@*/"Label"/*@END_MENU_TOKEN@*/)
-                                .accessibilityHint("Edit")
-                                
-                                Button {
-                                    self.projectToDelete = project
-                                    showDeleteDialog = true
-                                } label: {
-                                    // Text("delete")
-                                    Image(systemName: "trash")
-                                }
-                                .tint(.red)
-                                .buttonStyle(.borderless)
+                            }
+                            .navigationDestination(for: Project.self) { project in
+                                EditProjectView(project: project)
                             }
                             
                         }
-                        
-                        
                     }
-                    
-                    
-                    
                     
                     
                 }
@@ -140,7 +111,8 @@ struct ProjectsList: View {
                     Text("Do you really want to delete the project?")
                 }
             }
-            
+        }
+        
         
     }
     

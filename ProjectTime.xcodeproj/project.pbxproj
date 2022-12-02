@@ -49,6 +49,7 @@
 		439FC8C7273D2731004B15DB /* ProjectTimeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 439FC8C6273D2731004B15DB /* ProjectTimeTests.swift */; };
 		439FC8D1273D2731004B15DB /* ProjectTimeUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 439FC8D0273D2731004B15DB /* ProjectTimeUITests.swift */; };
 		439FC8D3273D2731004B15DB /* ProjectTimeUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 439FC8D2273D2731004B15DB /* ProjectTimeUITestsLaunchTests.swift */; };
+		43A7309A2937B6A7003468AE /* HoursView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43A730992937B6A7003468AE /* HoursView.swift */; };
 		43B2DF6D276F6426002AFDB4 /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = 43B2DF6C276F6426002AFDB4 /* .gitignore */; };
 		43E9564C279F0B21005D7727 /* BindigExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43E9564B279F0B21005D7727 /* BindigExtension.swift */; };
 		43ECC5C827DF88DF00A9527B /* AddClientView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43ECC5C727DF88DF00A9527B /* AddClientView.swift */; };
@@ -118,6 +119,7 @@
 		439FC8CC273D2731004B15DB /* ProjectTimeUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ProjectTimeUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		439FC8D0273D2731004B15DB /* ProjectTimeUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectTimeUITests.swift; sourceTree = "<group>"; };
 		439FC8D2273D2731004B15DB /* ProjectTimeUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectTimeUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		43A730992937B6A7003468AE /* HoursView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HoursView.swift; sourceTree = "<group>"; };
 		43B2DF6C276F6426002AFDB4 /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
 		43E9564B279F0B21005D7727 /* BindigExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BindigExtension.swift; sourceTree = "<group>"; };
 		43ECC5C727DF88DF00A9527B /* AddClientView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddClientView.swift; sourceTree = "<group>"; };
@@ -186,6 +188,7 @@
 				434D9A02273D2C270009C72C /* EditHour.swift */,
 				434D9A03273D2C270009C72C /* Hour-CoreDataHelpers.swift */,
 				434D9A04273D2C270009C72C /* AddHourView.swift */,
+				43A730992937B6A7003468AE /* HoursView.swift */,
 			);
 			path = Hour;
 			sourceTree = "<group>";
@@ -256,6 +259,7 @@
 				433BB395273D702D006200AA /* ProjectTime.entitlements */,
 				439FC8B0273D272F004B15DB /* ProjectTimeApp.swift */,
 				434D9A09273D2C270009C72C /* DataController.swift */,
+				439FC8B2273D272F004B15DB /* ContentView.swift */,
 				439FC8BB273D2730004B15DB /* ProjectTime.xcdatamodeld */,
 				434D9A0A273D2C270009C72C /* Client */,
 				434D99F9273D2C270009C72C /* Extensions */,
@@ -264,7 +268,6 @@
 				434D9A00273D2C270009C72C /* Hour */,
 				434D9A0E273D2C270009C72C /* Project */,
 				434D9A05273D2C270009C72C /* Task */,
-				439FC8B2273D272F004B15DB /* ContentView.swift */,
 				439FC8B4273D2730004B15DB /* Assets.xcassets */,
 				439FC8B6273D2730004B15DB /* Preview Content */,
 			);
@@ -449,6 +452,7 @@
 				43389447283D0F070023049F /* ExportDocument.swift in Sources */,
 				434D9A1A273D2C270009C72C /* ProjectHoursView.swift in Sources */,
 				434D9A2A273D2C270009C72C /* AddProjectView.swift in Sources */,
+				43A7309A2937B6A7003468AE /* HoursView.swift in Sources */,
 				434D9A26273D2C270009C72C /* Project-CoreDataHelpers.swift in Sources */,
 				439FC8BD273D2730004B15DB /* ProjectTime.xcdatamodeld in Sources */,
 				434D9A1E273D2C270009C72C /* Task-CoreDataHelpers.swift in Sources */,

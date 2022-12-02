@@ -10,8 +10,8 @@ import CoreData
 
 struct ContentView: View {
     
-    @SceneStorage("selectedView") var selectedView: String?
-  //  @State var selectedView = ""
+ //   @SceneStorage("selectedView") var selectedView: String?
+    @State var selectedView = "hours"
     @Environment(\.managedObjectContext) private var viewContext
     
     @FetchRequest var clients: FetchedResults<Client>
@@ -20,6 +20,7 @@ struct ContentView: View {
     
     
     init(){
+       //$selectedView = "hours"
         let clientRequest: NSFetchRequest<Client> = Client.fetchRequest()
         clientRequest.sortDescriptors = [
             NSSortDescriptor(keyPath: \Client.name, ascending: true)
@@ -53,6 +54,17 @@ struct ContentView: View {
                 
                 .accessibilityIdentifier("Home")
             */
+            
+            if (projects.count > 0 ){
+                HoursView()
+                    .tabItem {
+                        Image(systemName: "hourglass")
+                        Text("Hours")
+                    }
+                    .tag(HoursView.tag)
+                    .accessibilityIdentifier("Hours")
+                    
+            }
             
             if (clients.count > 0  && tasks.count > 0){
                 ProjectsView()

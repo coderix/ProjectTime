@@ -55,7 +55,7 @@ struct ProjectHoursView: View {
                 
                 
             }
-            .padding()
+         
             
             HStack {
                 Text("Total: ")
@@ -64,7 +64,7 @@ struct ProjectHoursView: View {
                 Text(project.projectSalaryString)
                 Spacer()
             }
-            .padding(.leading, 15.0)
+       //     .padding(.leading, 15.0)
             List{
                 ForEach(project.projectHours) { hour in
                     
@@ -97,7 +97,7 @@ struct ProjectHoursView: View {
                             }
                         }
                     }
-                    .padding()
+                .padding()
                     .background(Color.secondarySystemGroupedBackground)
                     .cornerRadius(10)
                     .shadow(color: Color.black.opacity(0.2), radius: 5)
@@ -108,7 +108,7 @@ struct ProjectHoursView: View {
                 .onDelete(perform: deleteHours)
                 
             }
-            //   .padding()
+         //   .padding(.bottom)
             .background(Color.systemGroupedBackground.ignoresSafeArea())
             
             
@@ -165,6 +165,7 @@ struct ProjectHoursView: View {
             }
              */
         }
+        .padding() //VStack
         
         
     }

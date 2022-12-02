@@ -35,7 +35,7 @@ struct ProjectsView: View {
     }
 
     var body: some View {
-        NavigationView {
+        NavigationStack {
             Group {
                 if projects.count == 0 {
                     Text("No projects found")
@@ -68,7 +68,7 @@ struct ProjectsView: View {
                 AddProjectView().environment(\.managedObjectContext, self.viewContext)
             }
 
-            SelectSomethingView()
+        //    SelectSomethingView()
 
         }
 
