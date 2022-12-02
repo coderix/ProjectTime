@@ -14,35 +14,45 @@ struct HoursView: View {
     
     static let tag: String? = "hours"
     
-    @FetchRequest var projects: FetchedResults<Project>
+    @FetchRequest  var projects: FetchedResults<Project>
     @State private var selectedProject: Project?
+    @State private var firstRun = true
     
     init () {
         let projectFetchRequest: NSFetchRequest<Project> = Project.fetchRequest()
         projectFetchRequest.sortDescriptors = [NSSortDescriptor(keyPath: \Project.title, ascending: true)]
         self._projects = FetchRequest(fetchRequest: projectFetchRequest)
+        
+        
     }
     var body: some View {
         NavigationStack {
             VStack {
                 Form {
-                        Picker("project", selection: $selectedProject) {
-                            ForEach(projects) { project in
-                                Text(project.projectTitle).tag(project as Project?)
-                            }
+                    Picker("project", selection: $selectedProject) {
+                        ForEach(projects) { project in
+                            Text(project.projectTitle).tag(project as Project?)
                         }
+                    }
                     
                 }
                 .frame(maxHeight: 100)
-               
-            
+                
+                
                 
                 if let selectedProject {
                     ProjectHoursView(project: selectedProject)
-                      //  .padding()
                 }
                 Spacer()
             }
+            
+            .onAppear {
+                if firstRun == true {
+                    selectedProject = projects.first ?? Project()
+                    firstRun = false
+                }
+            }
+            
         }
     }
 }
