@@ -42,7 +42,7 @@ struct ProjectsView: View {
                         .foregroundColor(.secondary)
                         .accessibilityLabel(/*@START_MENU_TOKEN@*/"Label"/*@END_MENU_TOKEN@*/)
                 } else {
-                    ExtractedView()
+                    ProjectsList()
                 }
             }
             .navigationBarTitle("Projects")
@@ -50,11 +50,7 @@ struct ProjectsView: View {
             .toolbar {
 
                 #if os(iOS)
-/*
-                ToolbarItem(placement: .navigationBarTrailing) {
-                    EditButton()
-                }
- */
+
                 ToolbarItem(placement: .navigationBarTrailing) {
                     Button("Add a Project") {
                         showingAddProjectView.toggle()
@@ -67,9 +63,6 @@ struct ProjectsView: View {
             .sheet(isPresented: $showingAddProjectView) {
                 AddProjectView().environment(\.managedObjectContext, self.viewContext)
             }
-
-        //    SelectSomethingView()
-
         }
 
     }

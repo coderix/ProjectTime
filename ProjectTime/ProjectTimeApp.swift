@@ -9,7 +9,6 @@ import SwiftUI
 
 @main
 struct ProjectTimeApp: App {
-   // @StateObject var dataController: DataController
     @Environment(\.scenePhase) var scenePhase
     let dataController = DataController.shared
 

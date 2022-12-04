@@ -14,7 +14,6 @@ struct ProjectsList: View {
     var fetchRequest: FetchRequest<Project>
     
     @State private var showingEditScreen = false
-    // @State private var selectedProject : Project?
     @State private var selectedProjectForHoursList : Project? = nil
     @State private var selectedProjectForEditProject : Project? = nil
     
@@ -22,8 +21,8 @@ struct ProjectsList: View {
     @State var navigationViewEditProjectIsActive: Bool = false
     
     @State private var showDeleteDialog = false
+    @State private var projectToDelete : Project?
     @State private var showClient = true
-    //   @State private var selectedAction : String? = nil
     
     init (client: Client) {
         fetchRequest = FetchRequest<Project>(entity: Project.entity(),
@@ -39,24 +38,13 @@ struct ProjectsList: View {
     
     
     private func deleteProjects(offsets: IndexSet) {
-        withAnimation {
-            offsets.map { fetchRequest.wrappedValue[$0] }.forEach(viewContext.delete)
-            
-            do {
-                try viewContext.save()
-            } catch {
-                // Replace this implementation with code to handle the error appropriately.
-                // fatalError() causes the application to generate a crash log and terminate.
-                // You should not use this function in a shipping application,
-                // although it may be useful during development.
-                let nsError = error as NSError
-                
-                fatalError("Unresolved error \(nsError), \(nsError.userInfo)")
-            }
+        for index in offsets {
+            projectToDelete = fetchRequest.wrappedValue[index]
+            showDeleteDialog = true
         }
     }
     
-    @State private var projectToDelete : Project?
+    
     
     private func deleteProject() {
         if let p = projectToDelete {
@@ -65,8 +53,9 @@ struct ProjectsList: View {
         }
     }
     
+    
     @State private var path = [String]()
-    @State private var selectedProject : Project?
+    //@State private var selectedProject : Project?
     @State var bool : Bool = false
     
     var body: some View {
@@ -74,31 +63,19 @@ struct ProjectsList: View {
             VStack {
                 
                 List {
-                    
-                    
                     ForEach(fetchRequest.wrappedValue) { project in
                         
                         HStack {
-                            
-                            HStack {
-                                NavigationLink(project.projectTitle, value: project)
-                                
-                            }
-                            .navigationDestination(for: Project.self) { project in
-                                EditProjectView(project: project)
-                            }
-                            
-                            HStack {
-                                NavigationLink(project.projectTitle, value: project)
-                                
-                            }
-                            .navigationDestination(for: Project.self) { project in
-                                EditProjectView(project: project)
-                            }
+                            NavigationLink(project.projectTitle, value: project)
                             
                         }
+                        
+                        .navigationDestination(for: Project.self) { project in
+                            EditProjectView(project: project)
+                        }
+                        
                     }
-                    
+                    .onDelete(perform: deleteProjects)
                     
                 }
                 .listStyle(InsetGroupedListStyle())
@@ -112,10 +89,7 @@ struct ProjectsList: View {
                 }
             }
         }
-        
-        
     }
-    
 }
 
 struct ProjectsList_Previews: PreviewProvider {

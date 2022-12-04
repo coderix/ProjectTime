@@ -10,8 +10,8 @@ import CoreData
 
 struct ContentView: View {
     
- //   @SceneStorage("selectedView") var selectedView: String?
-    @State var selectedView = "hours"
+    @SceneStorage("selectedView") var selectedView: String?
+ //   @State var selectedView = "hours"
     @Environment(\.managedObjectContext) private var viewContext
     
     @FetchRequest var clients: FetchedResults<Client>
