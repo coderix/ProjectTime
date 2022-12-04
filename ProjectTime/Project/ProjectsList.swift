@@ -36,15 +36,12 @@ struct ProjectsList: View {
                                              sortDescriptors: [NSSortDescriptor(keyPath: \Project.timestamp, ascending: false)])
     }
     
-    
     private func deleteProjects(offsets: IndexSet) {
         for index in offsets {
             projectToDelete = fetchRequest.wrappedValue[index]
             showDeleteDialog = true
         }
     }
-    
-    
     
     private func deleteProject() {
         if let p = projectToDelete {
@@ -53,10 +50,7 @@ struct ProjectsList: View {
         }
     }
     
-    
     @State private var path = [String]()
-    //@State private var selectedProject : Project?
-    @State var bool : Bool = false
     
     var body: some View {
         NavigationStack() {
