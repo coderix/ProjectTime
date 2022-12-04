@@ -9,7 +9,6 @@ import SwiftUI
 import CoreData
 
 struct EditProjectView: View {
-  //  @StateObject private var viewModel = EditProjectModel()
     @Environment(\.presentationMode) var presentationMode
     @State private var isExporting: Bool = false
     
@@ -53,7 +52,6 @@ struct EditProjectView: View {
     }
     
     func update() {
-        //   project.client?.objectWillChange.send()
         project.title = title
         project.details = details
         project.rate = NSDecimalNumber(decimal: rate as Decimal)
@@ -113,8 +111,6 @@ struct EditProjectView: View {
                         dateFormatter.dateFormat = "yyyy-MM-dd"
                         now = dateFormatter.string(from: Date())
                        
-                     //   exporter.export(project: project)
-                       // export()
                         isExporting = true
                     }, label: {
                             Text("Export")
@@ -144,17 +140,11 @@ struct EditProjectView: View {
                                               action: delete), secondaryButton: .cancel())
             }
             .toolbar {
-                ToolbarItem(placement: .navigationBarLeading) {
-                    Button("Cancel") {
-                        cancel()
-                    }
-                }
                 ToolbarItem {
                     Button("Done") {
                         update()
                     }
                     .disabled(titleNotValid)
-                    
                 }
          
             //     .onChange(of: title) { _ in update() }
