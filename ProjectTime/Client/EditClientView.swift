@@ -51,7 +51,7 @@ struct EditClientView: View {
         client.timestamp = Date()
         client.rate = (rate) as NSDecimalNumber
         dataController.save()
-      //  presentationMode.wrappedValue.dismiss()
+        presentationMode.wrappedValue.dismiss()
     }
     
     func delete() {
@@ -62,7 +62,6 @@ struct EditClientView: View {
     var body: some View {
         
         VStack {
-            
             Form {
                 Section(header: Text("Client")) {
                     VStack {
@@ -85,48 +84,16 @@ struct EditClientView: View {
                 
             }
             
-            HStack {
-                Text("Projects")
-                
-                
-                Spacer()
-                Button("Add a Project") {
-                    showingAddProjectView.toggle()
-                }
-            }
-            .padding(.horizontal)
-            
-            
-            ProjectsList(client: client)
-            
-              .onDisappear(perform: update)
-                .navigationTitle("Edit client")
-                .navigationBarTitleDisplayMode(.inline)
-            
-            /*
-                .toolbar {
-                    ToolbarItem {
-                        Button("OK") {
-                            update()
-                        }
-                    }
-                }
-             */
-            
-                .alert(isPresented: $showingDeleteConfirm) {
-                    Alert(title: Text("Delete the client?"),
-                          message: Text("Deleting the client also deletes all projects belonging to the client"), // swiftlint:disable:this line_length
-                          primaryButton: .default(Text("Delete the client"),
-                                                  action: delete),
-                          secondaryButton: .cancel())
-                }
-            //  .onChange(of: name) { _ in update() }
-            
             
         }
-        
-        .sheet(isPresented: $showingAddProjectView) {
-            AddProjectView(client: client).environment(\.managedObjectContext, self.viewContext)
+        .navigationTitle("Edit client")
+        .navigationBarTitleDisplayMode(.inline)
+        .toolbar {
+            ToolbarItem{
+                Button("Done") {
+                    update()
+                }
+            }
         }
         
     }
@@ -147,7 +114,7 @@ struct EditClientView_Previews: PreviewProvider {
         project.rate = 76.50
         project.timestamp = Date()
         project.client = client
-        return NavigationView {
+        return NavigationStack {
             EditClientView(client: client)
                 .environment(\.managedObjectContext, dataController.container.viewContext)
                 .environmentObject(dataController)

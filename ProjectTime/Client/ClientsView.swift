@@ -42,23 +42,25 @@ struct ClientsView: View {
                         List {
                         
                             ForEach(clients) { client in
-                                NavigationLink(value: client) {
-                                    Text(client.clientName)
+                                HStack {
+                                    NavigationLink(value: client) {
+                                        Text(client.clientName)
+                                    }
                                 }
+                                .navigationDestination(for: Client.self) { client in
+                                    EditClientView(client: client)
+                                }
+                                
                             }
-               
-                            // too dangerous without an alert
                             .onDelete(perform: deleteClients)
-               
-                        .listStyle(InsetGroupedListStyle())
+                        
                     }
+                        .listStyle(InsetGroupedListStyle())
                 }
             }
 
             .navigationTitle("clients")
-            .navigationDestination(for: Client.self) { client in
-                EditClientView(client: client)
-            }
+            
 
             .toolbar {
 

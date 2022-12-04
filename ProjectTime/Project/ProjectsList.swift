@@ -53,7 +53,7 @@ struct ProjectsList: View {
     @State private var path = [String]()
     
     var body: some View {
-        NavigationStack() {
+     //   NavigationStack() {
             VStack {
                 
                 List {
@@ -82,7 +82,7 @@ struct ProjectsList: View {
                     Text("Do you really want to delete the project?")
                 }
             }
-        }
+    //    }
     }
 }
 
