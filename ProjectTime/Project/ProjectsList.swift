@@ -22,13 +22,16 @@ struct ProjectsList: View {
     
     @State private var showDeleteDialog = false
     @State private var projectToDelete : Project?
-    @State private var showClient = true
+    
+    /// Soll der Kundenname in der Projektliste angezeigt werden? Unnötig, wenn nur die Projekte eines Kunden gezeigt werden
+    @State private var showNameOfClient = true
+    
     
     init (client: Client) {
         fetchRequest = FetchRequest<Project>(entity: Project.entity(),
                                              sortDescriptors: [NSSortDescriptor(keyPath: \Project.timestamp, ascending: false)],
                                              predicate: NSPredicate(format: "client == %@", client))
-        _showClient = State(wrappedValue: false)
+        _showNameOfClient = State(wrappedValue: false)
     }
     
     init () {
@@ -53,14 +56,13 @@ struct ProjectsList: View {
     @State private var path = [String]()
     
     var body: some View {
-     //   NavigationStack() {
             VStack {
                 
                 List {
                     ForEach(fetchRequest.wrappedValue) { project in
                         
                         HStack {
-                            NavigationLink(project.projectTitle, value: project)
+                            NavigationLink(showNameOfClient ? "\(project.clientName) - \(project.projectTitle)" : project.projectTitle, value: project)
                             
                         }
                         

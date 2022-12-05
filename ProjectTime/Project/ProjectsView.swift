@@ -79,8 +79,4 @@ struct ProjectsView_Previews: PreviewProvider {
     }
 }
 
-struct ExtractedView: View {
-    var body: some View {
-        ProjectsList()
-    }
-}
+
