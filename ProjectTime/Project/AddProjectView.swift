@@ -82,7 +82,7 @@ struct AddProjectView: View {
     }
     
     var body: some View {
-        NavigationView {
+        NavigationStack {
             
             VStack {
                 Form {
@@ -148,7 +148,6 @@ struct AddProjectView_Previews: PreviewProvider {
     static var dataController = DataController.preview
     static var previews: some View {
         
-        // return
         AddProjectView()
             .environment(\.managedObjectContext, dataController.container.viewContext)
             .environmentObject(dataController)
