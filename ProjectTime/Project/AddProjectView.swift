@@ -38,6 +38,7 @@ struct AddProjectView: View {
         let projectFetchRequest: NSFetchRequest<Project> = Project.fetchRequest()
         projectFetchRequest.sortDescriptors = [NSSortDescriptor(keyPath: \Project.title, ascending: true)]
         self._projects = FetchRequest(fetchRequest: projectFetchRequest)
+        //    _selection = State(wrappedValue: self.clients.first!)
         
     }
     
@@ -54,7 +55,7 @@ struct AddProjectView: View {
         project.details = details
         project.timestamp = Date()
         project.closed = false
-        project.rate = 0.0
+        project.rate = NSDecimalNumber(decimal: rate as Decimal)
         project.client = selection
         project.id = UUID()
         dataController.save()
@@ -63,6 +64,7 @@ struct AddProjectView: View {
     }
     
     func cancel() {
+        print("cancel")
         presentationMode.wrappedValue.dismiss()
     }
     
@@ -94,6 +96,10 @@ struct AddProjectView: View {
                                 Text(client.clientName).tag(client as Client?)
                             }
                         }
+                        // Initialisierung des Stundensatzes mit dem Wert aus den Kundendaten
+                        .onChange(of: selection, perform: { c in
+                            rate = c!.rate! as Decimal
+                        })
                         
                     }
                     
@@ -124,16 +130,16 @@ struct AddProjectView: View {
             }
             .navigationTitle("New Project")
             .navigationBarTitleDisplayMode(.inline)
-            /*
-             .onAppear {
-             
-             if firstRun {
-             selection = clients.first!
-             firstRun.toggle()
-             }
-             
-             }
-             */
+            
+            
+            .onAppear {
+                if firstRun {
+                    selection = clients.first!
+                    
+                    firstRun.toggle()
+                }
+            }
+            
         }
     }
 }
