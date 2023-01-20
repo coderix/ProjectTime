@@ -45,7 +45,7 @@ struct HoursView: View {
                     .fontWeight(/*@START_MENU_TOKEN@*/.bold/*@END_MENU_TOKEN@*/)
                     
                 }
-                .frame(maxHeight: 100)
+                .frame(maxHeight: 120)
                 
                 
                 
