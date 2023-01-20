@@ -29,13 +29,15 @@ struct HoursView: View {
         NavigationStack {
             VStack {
                 Form {
-                    
+                    // HStack funktioniert nicht
                     Section("Project") {
                         Picker("", selection: $selectedProject) {
                                 ForEach(projects) { project in
                                     HStack {
                                         Text("\(project.clientName) - \(project.projectTitle)")
+                                       
                                       }
+                                    
                                     .tag(project as Project?)
                                 }
                         }
