@@ -16,6 +16,9 @@ extension Client {
         timestamp ?? Date()
     }
 
+    var projectsCount : Int {
+        return projects?.allObjects.count ?? 0
+    }
     var clientProjects: [Project] {
         let projectsArray = projects?.allObjects as? [Project] ?? []
         

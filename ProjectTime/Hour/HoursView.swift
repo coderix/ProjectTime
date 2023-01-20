@@ -71,22 +71,24 @@ struct HoursView: View {
                     }
                     
                     if let selectedClient {
-                        Picker("Project", selection: $selectedProject) {
-                            ForEach(selectedClient.clientProjects) { project in
-                                HStack {
-                                    Text(project.projectTitle)
-                                    
+                        if selectedClient.projectsCount > 0 {
+                            Picker("Project", selection: $selectedProject) {
+                                ForEach(selectedClient.clientProjects) { project in
+                                    HStack {
+                                        Text(project.projectTitle)
+                                        
+                                    }
+                                    .tag(project as Project?)
                                 }
-                                .tag(project as Project?)
                             }
-                        }
-                        .onChange(of: selectedProject) { _ in
-                            if let selectedProject {
-                                selectedProject.timestamp = Date()
-                                dataController.save()
+                            .onChange(of: selectedProject) { _ in
+                                if let selectedProject {
+                                    selectedProject.timestamp = Date()
+                                    dataController.save()
+                                }
                             }
-                        }
-                    }
+                        } //if selectedClient.projectsCount > 0
+                    } //if let selectedClient
                     
                 }
             }
