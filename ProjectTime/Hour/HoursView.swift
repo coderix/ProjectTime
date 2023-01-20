@@ -30,14 +30,17 @@ struct HoursView: View {
             VStack {
                 Form {
                     
-                        Picker("Project", selection: $selectedProject) {
-                            ForEach(projects) { project in
-                                HStack {
-                                    Text("\(project.clientName) - \(project.projectTitle)")
-                                  }
-                                .tag(project as Project?)
-                            }
+                    Section("Project") {
+                        Picker("", selection: $selectedProject) {
+                                ForEach(projects) { project in
+                                    HStack {
+                                        Text("\(project.clientName) - \(project.projectTitle)")
+                                      }
+                                    .tag(project as Project?)
+                                }
                         }
+                    }
+                    .fontWeight(/*@START_MENU_TOKEN@*/.bold/*@END_MENU_TOKEN@*/)
                     
                 }
                 .frame(maxHeight: 100)
