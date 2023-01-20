@@ -13,15 +13,37 @@ struct HoursView: View {
     @EnvironmentObject var dataController: DataController
     
     static let tag: String? = "hours"
+    @FetchRequest var lastClients: FetchedResults<Client>
+    
+    @State private var selectedClientProject: Project?
     
     @FetchRequest  var projects: FetchedResults<Project>
     @State private var selectedProject: Project?
+    
+    @FetchRequest  var clients: FetchedResults<Client>
+    @State private var selectedClient: Client?
+    
     @State private var firstRun = true
     
+    
+    
     init () {
+        
+        let lastClientFetchRequest: NSFetchRequest<Client> = Client.fetchRequest()
+        lastClientFetchRequest.fetchLimit = 1
+        lastClientFetchRequest.sortDescriptors = [NSSortDescriptor(keyPath: \Client.timestamp, ascending: false)]
+        _lastClients = FetchRequest(fetchRequest: lastClientFetchRequest)
+        
+        let clientFetchRequest: NSFetchRequest<Client> = Client.fetchRequest()
+        clientFetchRequest.sortDescriptors = [NSSortDescriptor(keyPath: \Client.name, ascending: true)]
+        self._clients = FetchRequest(fetchRequest: clientFetchRequest)
+        
+        
+        
         let projectFetchRequest: NSFetchRequest<Project> = Project.fetchRequest()
         projectFetchRequest.sortDescriptors = [NSSortDescriptor(keyPath: \Project.title, ascending: true)]
         self._projects = FetchRequest(fetchRequest: projectFetchRequest)
+        
         
         
     }
@@ -29,38 +51,66 @@ struct HoursView: View {
         NavigationStack {
             VStack {
                 Form {
-                    // HStack funktioniert nicht
-                    Section("Project") {
-                        Picker("", selection: $selectedProject) {
-                                ForEach(projects) { project in
-                                    HStack {
-                                        Text("\(project.clientName) - \(project.projectTitle)")
-                                       
-                                      }
+                    List {
+                            Picker("Client", selection: $selectedClient) {
+                                ForEach(clients) { client in
                                     
-                                    .tag(project as Project?)
+                                    Text("\(client.clientName)")
+                                        .tag(client as Client?)
                                 }
+                            }
+                            .onChange(of: selectedClient) { _ in
+                                if let selectedClient {
+                                    selectedProject = selectedClient.clientProjects.first
+                                    selectedClient.timestamp = Date()
+                                    dataController.save()
+                                }
+                            }
+                  
+                        
+                    }
+                    
+                    if let selectedClient {
+                        Picker("Project", selection: $selectedProject) {
+                            ForEach(selectedClient.clientProjects) { project in
+                                HStack {
+                                    Text(project.projectTitle)
+                                    
+                                }
+                                .tag(project as Project?)
+                            }
+                        }
+                        .onChange(of: selectedProject) { _ in
+                            if let selectedProject {
+                                selectedProject.timestamp = Date()
+                                dataController.save()
+                            }
                         }
                     }
-                    .fontWeight(/*@START_MENU_TOKEN@*/.bold/*@END_MENU_TOKEN@*/)
                     
                 }
-                .frame(maxHeight: 120)
+            }
+            .frame(maxHeight: 200)
+            
+            
+            
+            if let selectedProject {
+                ProjectHoursView(project: selectedProject)
+            }
+            Spacer()
+        }
+        
+        .onAppear {
+            if firstRun == true {
                 
+                selectedClient = lastClients.first
                 
-                
-                if let selectedProject {
-                    ProjectHoursView(project: selectedProject)
+                if let selectedClient {
+                    selectedProject = selectedClient.clientProjects.first
                 }
-                Spacer()
+                firstRun = false
             }
             
-            .onAppear {
-                if firstRun == true {
-                    selectedProject = projects.first ?? Project()
-                    firstRun = false
-                }
-            }
             
         }
     }
