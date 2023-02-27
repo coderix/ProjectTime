@@ -54,9 +54,11 @@ struct HoursView: View {
                     List {
                             Picker("Client", selection: $selectedClient) {
                                 ForEach(clients) { client in
-                                    
-                                    Text("\(client.clientName)")
-                                        .tag(client as Client?)
+                                    if client.projectsCount > 0 {
+                                        Text("\(client.clientName)")
+                                            .tag(client as Client?)
+                                    }
+                                   
                                 }
                             }
                             .onChange(of: selectedClient) { _ in
