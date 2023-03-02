@@ -47,7 +47,7 @@ struct ProjectHoursView: View {
         
         VStack {
             HStack {
-                
+                Spacer()
                 Button(action: add) {
                     Text("New Time")
                 }
