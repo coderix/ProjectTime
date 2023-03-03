@@ -35,13 +35,7 @@
 "Clients" = "Kunden";
 
 /* No comment provided by engineer. */
-"Close" = "Schließen";
-
-/* No comment provided by engineer. */
 "Continue" = "Weiter";
-
-/* No comment provided by engineer. */
-"delete" = "löschen";
 
 /* No comment provided by engineer. */
 "Delete" = "Löschen";
@@ -51,9 +45,6 @@
 
 /* No comment provided by engineer. */
 "Delete the client" = "Den Kunden löschen";
-
-/* No comment provided by engineer. */
-"Delete the client?" = "Den Kunden löschen?";
 
 /* No comment provided by engineer. */
 "Delete the client(s)?" = "Kunden löschen?";
@@ -71,9 +62,6 @@
 "Delete this Task" = "Aufgabe löschen";
 
 /* No comment provided by engineer. */
-"Deleting the client also deletes all projects belonging to the client" = "Dabei werden auch alle Projekte des Kunden gelöscht";
-
-/* No comment provided by engineer. */
 "Details" = "Details";
 
 /* No comment provided by engineer. */
@@ -84,12 +72,6 @@
 
 /* No comment provided by engineer. */
 "Duration:  %@" = "Dauer: %@";
-
-/* No comment provided by engineer. */
-"edit" = "bearbeiten";
-
-/* No comment provided by engineer. */
-"Edit" = "Bearbeiten";
 
 /* No comment provided by engineer. */
 "Edit client" = "Kunde bearbeiten";
@@ -104,7 +86,7 @@
 "Home" = "Home";
 
 /* No comment provided by engineer. */
-"hours" = "Stunden";
+"Hours" = "Zeiten";
 
 /* No comment provided by engineer. */
 "Invoice:" = "Rechnung:";
@@ -144,9 +126,6 @@
 
 /* No comment provided by engineer. */
 "Project Rate" = "Stundensatz";
-
-/* No comment provided by engineer. */
-"Project Times" = "Projektzeiten";
 
 /* No comment provided by engineer. */
 "Project Title" = "Projekttitel";
