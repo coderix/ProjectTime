@@ -95,7 +95,8 @@ struct HoursView: View {
                 }
             }
             .frame(maxHeight: 200)
-            
+            .navigationTitle(Text("Project Times"))
+            .navigationBarTitleDisplayMode(.inline)
             
             
             if let selectedProject {

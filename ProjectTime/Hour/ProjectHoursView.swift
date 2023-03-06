@@ -142,9 +142,7 @@ struct ProjectHoursView: View {
                 )
             }
             
-            
-            .navigationTitle(Text(project.projectTitle))
-            .navigationBarTitleDisplayMode(.inline)
+      
             
             .toolbar {
                 ToolbarItemGroup(placement: .navigationBarTrailing) {
