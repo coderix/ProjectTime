@@ -81,6 +81,7 @@ struct AddHourView: View {
 
         NavigationView {
             VStack {
+                Text("\(project.projectTitle) - \(project.clientName)")
                 Form {
                     HStack {
                         TextField("New task", text: $taskTitle)
@@ -130,7 +131,7 @@ struct AddHourView: View {
 
                 }
             }
-            .navigationBarTitle(Text("\(project.projectTitle) - New Time"))
+            .navigationBarTitle(Text("New Time"))
             .navigationBarTitleDisplayMode(.inline)
             .onAppear {
                 if firstRun == true {
