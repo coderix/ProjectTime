@@ -55,7 +55,7 @@ struct ProjectHoursView: View {
                 
                 
             }
-         
+            
             
             HStack {
                 Text("Total: ")
@@ -64,40 +64,38 @@ struct ProjectHoursView: View {
                 Text(project.projectSalaryString)
                 Spacer()
             }
-       //     .padding(.leading, 15.0)
+            
             List{
                 ForEach(project.projectHours) { hour in
                     
-                    HStack {
-                        VStack {
+                    VStack {
+                        
+                        HStack {
+                            Text(hour.formattedStartDay)
+                                .font(.footnote)
+                                .fontWeight(.medium)
                             
-                            HStack {
-                                Text(hour.formattedStartDay)
-                                    .font(.footnote)
-                                    .fontWeight(.medium)
-                                
-                                Text(hour.formattedStartTime)
-                                    .font(.footnote)
-                                
-                                Text("-")
-                                    .font(.footnote)
-                                
-                                Text(hour.formattedEndTime)
-                                    .font(.footnote)
-                                
-                                Spacer()
-                                Text(hour.durationString)
-                                    .font(.footnote)
-                            }
+                            Text(hour.formattedStartTime)
+                                .font(.footnote)
                             
-                            HStack {
-                                Text(hour.task?.taskTitle ?? "")
-                                    .font(.footnote)
-                                Spacer()
-                            }
+                            Text("-")
+                                .font(.footnote)
+                            
+                            Text(hour.formattedEndTime)
+                                .font(.footnote)
+                            
+                            Spacer()
+                            Text(hour.durationString)
+                                .font(.footnote)
+                        }
+                        
+                        HStack {
+                            Text(hour.task?.taskTitle ?? "")
+                                .font(.footnote)
+                            Spacer()
                         }
                     }
-                .padding()
+                    .padding()
                     .background(Color.secondarySystemGroupedBackground)
                     .cornerRadius(10)
                     .shadow(color: Color.black.opacity(0.2), radius: 5)
@@ -108,10 +106,7 @@ struct ProjectHoursView: View {
                 .onDelete(perform: deleteHours)
                 
             }
-         //   .padding(.bottom)
-            .background(Color.systemGroupedBackground.ignoresSafeArea())
-            
-            
+           
             .sheet(isPresented: $showingAddScreen) {
                 AddHourView(project: project).environment(\.managedObjectContext, self.viewContext)
                 
@@ -142,26 +137,17 @@ struct ProjectHoursView: View {
                 )
             }
             
-      
+            
             
             .toolbar {
                 ToolbarItemGroup(placement: .navigationBarTrailing) {
-                    //  Text(project.projectTitle)
                     
                     EditButton()
                     
                 }
             }
             
-            /*
-            .toolbar {
-                ToolbarItem(placement: .bottomBar) {
-                    Button("Pressme") {
-                        print("pressed")
-                    }
-                }
-            }
-             */
+            
         }
         .padding() //VStack
         
@@ -205,8 +191,8 @@ struct ProjectHoursView_Previews: PreviewProvider {
         
         return NavigationView {
             ProjectHoursView(project: project)
-            .environment(\.managedObjectContext, dataController.container.viewContext)
-            .previewInterfaceOrientation(.portraitUpsideDown)
+                .environment(\.managedObjectContext, dataController.container.viewContext)
+                .previewInterfaceOrientation(.portraitUpsideDown)
         }
     }
     
