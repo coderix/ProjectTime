@@ -94,13 +94,21 @@ struct EditProjectView: View {
                     
                     Section(header: Text("Rate")) {
                         TextField("Project Rate", value: $rate, format: .number)
-                        // .textFieldStyle(.roundedBorder)
+                         .textFieldStyle(.roundedBorder)
                             .keyboardType(.decimalPad)
-                        // .padding()
-                    }
+                                            }
                     
                     Section(header: Text("Details")) {
                         TextEditor(text: $details)
+                    }
+                    
+                   
+                    HStack {
+                        Text("Hours: ")
+                        Text(project.projectDurationString)
+                        Text("Invoice:")
+                        Text(project.projectSalaryString)
+                        Spacer()
                     }
                     
                     Button(action: {
@@ -119,6 +127,8 @@ struct EditProjectView: View {
                     Button("Delete this Project") {
                         showingDeleteConfirm.toggle()
                     }
+                    
+                    Text("Hallo")
                     
                 }
                 .fileExporter(isPresented: $isExporting, document: Exporter().export(project: project), contentType: .commaSeparatedText, defaultFilename: "ProjectTimeExport-\(project.projectTitleWithoutSlash)-\(now).csv") { result in

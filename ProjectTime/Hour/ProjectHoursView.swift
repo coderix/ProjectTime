@@ -56,7 +56,7 @@ struct ProjectHoursView: View {
                 
             }
             
-            
+            /*
             HStack {
                 Text("Total: ")
                 Text(project.projectDurationString)
@@ -64,6 +64,7 @@ struct ProjectHoursView: View {
                 Text(project.projectSalaryString)
                 Spacer()
             }
+             */
             
             List{
                 ForEach(project.projectHours) { hour in
